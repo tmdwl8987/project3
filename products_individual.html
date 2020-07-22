@@ -183,7 +183,7 @@
         }
         
         /*본문*/
-        .bath, .cabinet, .mirror, .sink, .door, .lighting, .tile, .toilet{
+        .bathtub, .cabinet, .mirror, .sink, .door, .lighting, .tile, .toilet{
             display: none;
         }
         section{
@@ -498,7 +498,7 @@
         $(document).ready(function(){
             //contents setting
             var section = $("section"),
-                bath = $(".bath"), cabinet = $(".cabinet"),
+                bathtub = $(".bathtub"), cabinet = $(".cabinet"),
                 mirror = $(".mirror"), sink = $(".sink"),
                 door = $(".door"), lighting = $(".lighting"),
                 tile = $(".tile"), toilet = $(".toilet");
@@ -522,7 +522,7 @@
             var modalSubmit = $(".modalBot > input:submit");
             var modalReset = $(".modalBot > input:reset");
             
-            var bathGuide = [
+            var bathtubGuide = [
                 "욕조 설명1",
                 "욕조 설명2",
                 "욕조 설명3",
@@ -537,7 +537,12 @@
                 "수납장 설명1",
                 "수납장 설명2",
                 "수납장 설명3",
-                "수납장 설명4"
+                "수납장 설명4",
+                "수납장 설명5",
+                "수납장 설명6",
+                "수납장 설명7",
+                "수납장 설명8",
+                "수납장 설명9"
             ];
             var mirrorGuide = [
                 "거울 설명1",
@@ -559,21 +564,29 @@
                 "세면대 설명6",
                 "세면대 설명7",
                 "세면대 설명8",
-                "세면대 설명9",
-                "세면대 설명10"
+                "세면대 설명9"
             ];
             var doorGuide = [
                 "문 설명1",
                 "문 설명2",
                 "문 설명3",
-                "문 설명4"
+                "문 설명4",
+                "문 설명5",
+                "문 설명6",
+                "문 설명7",
+                "문 설명8",
+                "문 설명9"
             ];
             var lightingGuide = [
                 "조명 설명1",
                 "조명 설명2",
                 "조명 설명3",
                 "조명 설명4",
-                "조명 설명5"
+                "조명 설명5",
+                "조명 설명6",
+                "조명 설명7",
+                "조명 설명8",
+                "조명 설명9"
             ];
             var tileGuide = [
                 "타일 설명1",
@@ -581,53 +594,62 @@
                 "타일 설명3",
                 "타일 설명4",
                 "타일 설명5",
-                "타일 설명5"
+                "타일 설명6",
+                "타일 설명7",
+                "타일 설명8",
+                "타일 설명9"
             ];
             var toiletGuide = [
                 "변기 설명1",
                 "변기 설명2",
-                "변기 설명3"
+                "변기 설명3",
+                "변기 설명4",
+                "변기 설명5",
+                "변기 설명6",
+                "변기 설명7",
+                "변기 설명8",
+                "변기 설명9"
             ];
             
                 /*setting*/
             for(var i = 0; i < 9; i++){
-                bath.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/bath/bath' + (i+1) + '.jpg" alt=""><h3>욕조' + (i+1) + '</h3><p>' + bathGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                bathtub.append(
+                    '<article><div class="articleInner"><img src="img/sub_product/bathtub/bathtub' + (i+1) + '.jpeg" alt=""><h3>욕조' + (i+1) + '</h3><p>' + bathtubGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 4; i++){
+            for(var i = 0; i < 9; i++){ /*VVVV*/
                 cabinet.append(
                     '<article><div class="articleInner"><img src="img/sub_product/cabinet/cabinet' + (i+1) + '.jpg" alt=""><h3>캐비넷' + (i+1) + '</h3><p>' + cabinetGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 mirror.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/mirror/mirror' + (i+1) + '.jpg" alt=""><h3>거울' + (i+1) + '</h3><p>' + mirrorGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/mirror/mirror' + (i+1) + '.jpeg" alt=""><h3>거울' + (i+1) + '</h3><p>' + mirrorGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 10; i++){
+            for(var i = 0; i < 9; i++){
                 sink.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/sink/sink' + (i+1) + '.jpg" alt=""><h3>세면대' + (i+1) + '</h3><p>' + sinkGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/sink/sink' + (i+1) + '.jpeg" alt=""><h3>세면대' + (i+1) + '</h3><p>' + sinkGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 4; i++){
+            for(var i = 0; i < 9; i++){ /*VVV*/
                 door.append(
                     '<article><div class="articleInner"><img src="img/sub_product/door/door' + (i+1) + '.png" alt=""><h3>문' + (i+1) + '</h3><p>' + doorGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 5; i++){
+            for(var i = 0; i < 9; i++){
                 lighting.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/lighting/lighting' + (i+1) + '.jpg" alt=""><h3>조명' + (i+1) + '</h3><p>' + lightingGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/lighting/lighting' + (i+1) + '.jpeg" alt=""><h3>조명' + (i+1) + '</h3><p>' + lightingGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 6; i++){
+            for(var i = 0; i < 9; i++){ /*VVV*/
                 tile.append(
                     '<article><div class="articleInner"><img src="img/sub_product/tile/tile' + (i+1) + '.png" alt=""><h3>타일' + (i+1) + '</h3><p>' + tileGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
-            for(var i = 0; i < 3; i++){
+            for(var i = 0; i < 9; i++){
                 toilet.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/toilet/toilet' + (i+1) + '.jpg" alt=""><h3>변기' + (i+1) + '</h3><p>' + toiletGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/toilet/toilet' + (i+1) + '.jpeg" alt=""><h3>변기' + (i+1) + '</h3><p>' + toiletGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             
@@ -653,7 +675,7 @@
                 }
             }
             
-            bath.css("display","grid");
+            bathtub.css("display","grid");
             estimateAction(addItemsCount);
             var articleBtn = $("article > .articleInner > input[type=button]"); //세팅 후 변수 할당
             
@@ -688,7 +710,7 @@
                 
                 if($(this).is(":checked") == true){
                     switch(tg){
-                        case 0: bath.stop().fadeIn(500); break;
+                        case 0: bathtub.stop().fadeIn(500); break;
                         case 1: cabinet.stop().fadeIn(500); break;
                         case 2: mirror.stop().fadeIn(500); break;
                         case 3: sink.stop().fadeIn(500); break;
@@ -882,8 +904,8 @@
                 </div>
                 <ul id = "radioGroup">
                     <li>
-                        <label for="r_bath">욕조</label>
-                        <input type="radio" name="roomStyle" id="r_bath" value="r_bath" checked>
+                        <label for="r_bathtub">욕조</label>
+                        <input type="radio" name="roomStyle" id="r_bathtub" value="r_bathtub" checked>
                     </li>
                     <li>
                         <label for="r_cabinet">수납장</label>
@@ -920,7 +942,7 @@
                 </div>
             </form>
             
-            <section class="bath"></section>
+            <section class="bathtub"></section>
             <section class="cabinet"></section>
             <section class="mirror"></section>
             <section class="sink"></section>

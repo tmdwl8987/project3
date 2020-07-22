@@ -30,26 +30,7 @@
     <link rel="stylesheet" href="css/index_section2.css">
     <link rel="stylesheet" href="css/index_section3.css">
     <link rel="stylesheet" href="css/index_section4.css">
-    <style>
-        #main5 {background: #333; overflow: hidden; padding-top: 90px; transition: 1s;}
-        .rotating-slider ul.slides li { color: #fff; background: #333;}
-        .rotating-slider ul.slides li .inner {box-sizing: border-box; height: 100%; width: 100%;}
-        .rotating-slider ul.slides li .inner img {box-sizing: border-box; height: 100%; width: 100%;}  
-            
-        footer {width: 100%; height: 170px; background: #222; position: absolute; left: 0; bottom: 0;}
-        
-        @media screen and (min-width:1280px) and (max-width:1599px){ /*large pc*/
-            #main5 {padding-top: 80px;}
-        }
-        @media screen and (min-width:768px) and (max-width:1279px){ /*태블릿*/
-            #main5 {padding-top: 70px;}
-        }
-        @media screen and (max-width:767px){ /*mobile*/
-            #main5 {padding-top: 50px;}
-            #main5 h1 {margin-bottom: -50px;}
-            .rotating-slider ul.slides li .inner img {box-sizing: border-box; height: 80%; width: 100%;}  
-        }
-    </style><!--section5-->
+    <link rel="stylesheet" href="css/index_section5.css">
     
     
     <script>
@@ -805,12 +786,11 @@
                  </div>
             </div>
         <div class="main" id="main5" style="overflow: hidden">
-            <h1 class="main_h1">EVENT</h1>
             <div class="rotating-slider">
                 <ul class="slides">
                     <li>
                       <div class="inner">
-                      <a href="community_event.html"><img src="img/index/EVENT1.jpg" alt="event1"></a>
+                          <a href="community_event.html"><!--<img src="img/index/EVENT1.jpg" alt="event1">--></a>
                       </div>
                     </li>
                     <li>
@@ -870,6 +850,7 @@
                     </li>
                 </ul>
             </div>
+            <h1 class="main_h1">EVENT</h1>
             <footer></footer>
         </div>
     </div>
