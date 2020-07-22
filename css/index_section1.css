@@ -3,8 +3,7 @@ div.vis{
     height: 100%;
     position: relative;
     padding-top: 0;
-    background-color: #000;
-    overflow-x: hidden;
+    background-color: #000
 }
 ul.mov {
     position: relative;
