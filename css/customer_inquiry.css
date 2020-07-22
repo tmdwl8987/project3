@@ -9,7 +9,7 @@ span {display: inline-block;}
 
 .inquiry_container > div {margin-bottom: 30px;}
 .in_name {display: inline-block; width: 20%; font-size: 18px;}
-#in_division {width: 23.333%; cursor: pointer;}
+#in_division {width: 23.333%; cursor: pointer; border-radius: 0;}
 #in_title {width: 80%;}
 #in_content {width: 80%; height: 200px; padding: 10px;}
 .inquiry_container > div:nth-child(3) .in_name {position: relative; left: 0; top: -180px;}
@@ -24,7 +24,7 @@ span.ph_line {width: 5%; text-align: center;}
 #email01 {width: 31%;}
 #email02 {width: 22%; float: right;}
 span.at {width: 5%; display: inline-block; text-align: center; font-size: 16px;}
-#selectEmail {display: inline-block; width: 22%; float: right; border-radius: 0; padding-left: 5px; border: 1px solid #c1c1c1; border-left: 0; cursor: pointer;}
+#selectEmail {display: inline-block; width: 22%; float: right; border-radius: 0; padding-left: 5px; border: 1px solid #c1c1c1; border-left: 0; cursor: pointer; margin-left: 0px;}
 
 
 .chk {display: none;}
