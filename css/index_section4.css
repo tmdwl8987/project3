@@ -59,7 +59,7 @@
     width: 215px;
 }
 #review_C .pc_ver .go::before{
-    background-color: ##403e3b;
+    background-color: #403e3b;
 }
 #review_C .pc_ver a.go:hover{
     border-color: #403e3b;
