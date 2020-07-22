@@ -59,10 +59,10 @@
     width: 215px;
 }
 #review_C .pc_ver .go::before{
-    background-color: #8c765a;
+    background-color: ##403e3b;
 }
 #review_C .pc_ver a.go:hover{
-    border-color: #8c765a;
+    border-color: #403e3b;
 }
 @media screen and (min-width:1280px) and (max-width:1599px){ /*large pc*/
     #review_C {width: 90%;}

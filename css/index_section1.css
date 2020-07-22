@@ -3,7 +3,8 @@ div.vis{
     height: 100%;
     position: relative;
     padding-top: 0;
-    background-color: #000
+    background-color: #000;
+    overflow: hidden;
 }
 ul.mov {
     position: relative;
@@ -133,7 +134,7 @@ div.pager ul li.tgg {
 
 }
 @media screen and (min-width:768px) and (max-width:1279px){ /*태블릿*/
-    div.vis ul li .text_b {bottom: 285px;}
+    div.vis ul li .text_b {bottom: 28%;}
     div.vis ul li .text_b h3 {font-size: 45px;transition: 1s}
     div.vis ul li .text_b h2 {font-size: 45px;transition: 1s}
     div.vis ul li .text_b a {font-size: 16px;}
