@@ -184,10 +184,10 @@
         line-height: 40px;
     }
     #review_C .mobile_ver .go::before{
-    background-color: #8c765a;
+    background-color: #403e3b;
     }
     #review_C .mobile_ver a.go:hover{
-        border-color: #8c765a;
+        border-color: #403e3b;
     }
     #review_C .mobile_ver .m_image div:nth-child(odd){
         margin-left: 2.5%
