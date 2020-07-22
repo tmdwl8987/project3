@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - COMPANY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	c90159ba2867b11a37bda91020ac9003"></script>--> <!--REST API-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	fd7dc33cff118f08594e5f1598689beb"></script> <!-- JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src = "js/sub_common.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    
+    <style>
+        #here{}
+        .subTop_bg{
+            background-image: url("img/sub_company/main_menu.png");
+            background-position: 90% center;
+        }
+        #mapBox{
+            margin: 0 auto;
+            width: 80%;
+            position:relative;
+        }
+        #mapBox::before{
+            content: "";
+            display: block;
+            padding-top: 40%;
+        }
+        #map{
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+        }
+        
+        #address{
+            padding: 5% 10%;
+            box-sizing: border-box;
+        }
+        #address h3{
+            border-bottom: 1px dashed #dcdcdc;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        #address ul>li{
+            margin-bottom: 50px;
+            line-height: 180%;
+        }
+        #address h4{
+            padding: 5px 0;
+        }
+        #address dl>dt{
+            margin-right: 5px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        #address dl>dd{
+            display: inline-block;
+            word-break: keep-all;
+        }
+        
+        #address ul>li:nth-child(1)>:nth-child(5){
+            margin-top: 15px;
+        }
+        
+        /*large pc*/
+        @media screen and (max-width:1599px){ 
+            #mapBox::before{
+                padding-top: 50%;
+            }
+        }
+
+        /*tablet*/
+        @media screen and (max-width:1279px){
+            #mapBox{
+                width: 100%;
+            }
+            #address{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        /*mobile*/
+        @media screen and (max-width:767px){
+            .main-content{
+                width: 90%;
+            }
+            .main-content h2{
+                padding: 30px 0 25px;
+            }
+            #mapBox::before{
+                padding-top: 70%;
+            }
+            #address ul>li{
+                line-height: 120%;
+            }
+            #address h3{
+                font-size: 1rem;
+                text-indent: 5px;
+            }
+            #address dl>dt{
+                font-size: 0.8rem;
+            }
+            #address dl>dd{
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+            var options = { //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(37.5349707819308, 126.90147458542), //지도의 중심좌표.
+                level: 3 //지도의 레벨(확대, 축소 정도)
+            };
+
+            var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+            
+            function setCenter() {            
+                // 이동할 위도 경도 위치를 생성합니다 
+                var moveLatLon = new kakao.maps.LatLng(37.5349707819308, 126.90147458542);
+
+                // 지도 중심을 이동 시킵니다
+                map.setCenter(moveLatLon);
+            }
+            
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new kakao.maps.LatLng(37.5349707819308, 126.90147458542);
+            
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+            
+            // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+
+            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+            // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>COMPANY</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>LOCATION</h2>
+            <div id="mapBox"><div id="map"></div></div>
+            <div id="address">
+                <ul>
+                    <li>
+                        <h3>Only Bath 본원 안내</h3>
+                        <h4>주소</h4>
+                        <dl>
+                            <dt>도로명주소</dt>
+                            <dd>서울특별시 영등포구 양평로 12길 10-8(더빌) 2층</dd>
+                        </dl>
+                        <dl>
+                            <dt>지번주소</dt>
+                            <dd>..</dd>
+                        </dl>
+                        <h4>연락처</h4>
+                        <dl>
+                            <dt>전화</dt>
+                            <dd>02.123.4567</dd>
+                        </dl>
+                        <dl>
+                            <dt>팩스</dt>
+                            <dd>02.123.1234</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <h3>오시는 길</h3>
+                        <dl>
+                            <dt>자가용 이용시</dt>
+                            <dd>네비게이션에 OnlyBath 주소 or 전화번호 입력. Only빌딩 1층 무료주차장 이용 가능</dd>
+                        </dl>
+                        <dl>
+                            <dt>지하철 이용시</dt>
+                            <dd>2호선, 9호선 당산역 1번 출구 도보 20m</dd>
+                        </dl>
+                        <dl>
+                            <dt>버스 이용시</dt>
+                            <dd>당산역 (19-176) - 일반 70, 70-3 - 간선 603 - 지선 6620,6631,6632</dd>
+                            <dd>당산역 (19-172) - 간선 603, 605, 661, 670, 760  - 지선 5620, 5714, 6514, 6620 , 6623 , 6631 , 6632</dd>
+                            <dd>당산역 (19-825)  - 공항 6008</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - CUSTOMER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/community_writing.css">
+
+    <script>
+        $(document).ready(function(){
+            var ind = $('.main-content form fieldset div #in_division'),
+                all = $('.main-content form fieldset div #all'),
+                rdo_in = $('.main-content form fieldset div .rdo input'),
+                ggo = $('in_end_box darkgray_btn');
+            
+            ind.hide();
+            
+            rdo_in.click(function(){
+                var i = $(this).index();
+                
+               if( i == 0){
+                   ind.hide();
+                   all.show();
+               } else if(i == 1 ){
+                   ind.show();
+                   all.hide();
+               } else {
+                   ind.hide();
+                   all.show();
+               }
+            });
+            
+           
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>CUSTOMER</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>1:1 문의</h2>
+            <form action="#">
+                <fieldset>
+                    <legend>리뷰 작성</legend>
+                    <div class="inquiry_container">
+                        <div>
+                            <p class="in_name">구분</p>
+                            <div class="rdo">
+                                <input type="radio" name="product" value="all" checked>전체시공
+                                <input type="radio" name="product" value="ind">개별시공
+                            </div>
+                            <select name="all_select" id="all">
+                                <option value="simple">심플</option>
+                                <option value="modern">모던</option>
+                                <option value="luxury">럭셔리</option>
+                                <option value="unique">유니크</option>
+                            </select>                            
+                            <select name="in_division" id="in_division">
+                                <option value="bath" selected="selected">욕조</option>
+                                <option value="sink">세면대</option>
+                                <option value="cabinet">욕실장</option>
+                                <option value="mirror">거울</option>
+                                <option value="5">기타</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p class="in_name">제목</p>
+                            <input type="text" name="in_title" id="in_title">
+                        </div>
+                        <div>
+                            <p class="in_name">내용</p>
+                            <textarea name="in_content" id="in_content" cols="30" rows="10" style="resize: none"></textarea>
+                        </div>
+                        <div>
+                            <p class="in_name">업로드</p>
+                            <input type="text" id="fileName" class="file_input_textbox" readonly>
+                            <div class="file_input_div">
+                                <input type="button" value="찾아보기" class="file_input_button gray_btn">
+                                <input type="file" class="file_input_hidden" onchange="javascript: document.getElementById('fileName').value = this.value">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="in_end_container">
+                    <input type="submit" name="in_finish" value="완료" class="in_end_box black_btn">
+                    <input type="button" name="in_cancel" value="취소" class="in_end_box darkgray_btn" onclick="location.href='community_review.html'">
+                </div>
+            </form>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

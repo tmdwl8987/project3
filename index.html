@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/jquery.rotating-slider.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" 
+    type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/rotating-slider.css">
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <link rel="stylesheet" href="css/index_section1.css">
+    <link rel="stylesheet" href="css/index_section2.css">
+    <link rel="stylesheet" href="css/index_section3.css">
+    <link rel="stylesheet" href="css/index_section4.css">
+    <style>
+        #main5 {background: #333; overflow: hidden; padding-top: 90px; transition: 1s;}
+        .rotating-slider ul.slides li { color: #fff; background: #333;}
+        .rotating-slider ul.slides li .inner {box-sizing: border-box; height: 100%; width: 100%;}
+        .rotating-slider ul.slides li .inner img {box-sizing: border-box; height: 100%; width: 100%;}  
+            
+        footer {width: 100%; height: 170px; background: #222; position: absolute; left: 0; bottom: 0;}
+        
+        @media screen and (min-width:1280px) and (max-width:1599px){ /*large pc*/
+            #main5 {padding-top: 80px;}
+        }
+        @media screen and (min-width:768px) and (max-width:1279px){ /*태블릿*/
+            #main5 {padding-top: 70px;}
+        }
+        @media screen and (max-width:767px){ /*mobile*/
+            #main5 {padding-top: 50px;}
+            #main5 h1 {margin-bottom: -50px;}
+            .rotating-slider ul.slides li .inner img {box-sizing: border-box; height: 80%; width: 100%;}  
+        }
+    </style><!--section5-->
+    
+    
+    <script>
+        $(document).ready(function(){
+            $("header").load("header.html");
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+            
+            if(windowWidth >= 1280){
+                section3Hover(); //???
+            }
+            
+            //메인페이지 : 휠
+            $(".main").on("mousewheel",function(event, delta){
+                var sct = $(window).scrollTop();
+                
+                if(delta > 0){
+                    var i = $(this).index() - 1;
+                    scrollBar(i);
+                    
+                    try{var prev = $(this).prev().offset().top;}catch(e){}
+                    $("html,body").stop().animate({"scrollTop":prev},1000);
+                }else if(delta <0){ 
+                    var i = $(this).index() +1;
+                    scrollBar(i);
+                    
+                    try{var next = $(this).next().offset().top;}catch(e){}
+                    $("html, body").stop().animate({"scrollTop":next},1000);
+                }
+            });
+            
+            //헤더: 스크롤 / 새로고침 시 스크롤바 활성화
+            $(window).scroll(function(){
+                var windowSct = $(this).scrollTop();
+                
+                $(".main").each(function(){
+                    var tg = $(this);
+                    var i = tg.index();
+                    
+                    if(tg.offset().top <= windowSct){
+                        switch(i){
+                            case 0: white(); break;
+                            case 1: black(); break;
+                            case 2: white(); break;
+                            case 3: black(); break;
+                            case 4: white(); break;
+                            default: break;
+                        }
+                   }
+                });
+                
+                
+                if(windowSct >= windowHeight){
+                    $("header").css("background-color","rgba(0,0,0,0)");
+                }else{
+                    $("header").css("background-color","rgba(0,0,0,0.3)");
+                    $(".pcNav .snbOutter").css("background-color","rgba(0,0,0,0.5)");
+                }
+                
+                
+                
+                if(windowSct >= windowHeight*0 && windowSct < windowHeight*1){
+                    scrollBar(0);
+                }
+                if(windowSct >=windowHeight*1 && windowSct < windowHeight*2){
+                    scrollBar(1);
+                }
+                if(windowSct >= windowHeight*2 && windowSct < windowHeight*3){
+                    scrollBar(2);
+                }
+                if(windowSct >= windowHeight*3 && windowSct < windowHeight*4){
+                    scrollBar(3);
+                }
+                if(windowSct >= windowHeight*4 && windowSct < windowHeight*5){
+                    scrollBar(4);
+                }
+                
+            });
+            
+            //스크롤바 - 활성화
+            function scrollBar(i){
+                if(i >= 0 && i < 5){
+                    $(".scrollBox div").removeClass("onScroll");
+                    $(".scrollBox div").eq(i).addClass("onScroll");
+                }
+            }
+            
+            //스크롤바 - 클릭
+            $(".scrollBox div").click(function(){
+                var tg = $(this).index();
+                $(".scrollBox div").removeClass("onScroll");
+                $(this).addClass("onScroll");
+                
+                $("html, body").stop().animate({scrollTop: tg * windowHeight},1000);
+            });
+            
+
+            //헤더 - 색상 변화
+            function white(){
+                $("#logo img").attr("src", "img/icon/logo_white.png");
+                $(".pcNav > .gnb > li > a").css("color","white");
+                $(".sign_pc > li > a").css("color","white");
+                $(".rank strong").css("color","white");
+                $(".rank a").css("color","white");
+                $(".rank").css("border-bottom","1px solid white");
+                $(".mobtn > div").css("background-color","white");
+                $(".pcNav .snbOutter").css("background-color","rgba(255,255,255,0.1)");
+            }
+            function black(){
+                $("#logo img").attr("src", "img/icon/logo_black.png");
+                $(".pcNav > .gnb > li > a").css("color","black");
+                $(".sign_pc > li > a").css("color","black");
+                $(".rank strong").css("color","black");
+                $(".rank a").css("color","black");
+                $(".rank").css("border-bottom","1px solid black");
+                $(".mobtn > div").css("background-color","black");
+                $(".pcNav .snbOutter").css("background-color","rgba(0,0,0,0.3)");
+            }  
+            
+            function section3Hover(){
+                $(".items").on({
+                    mouseenter:function(){
+                        $("#background_itemhover").css("background", "rgba(0,0,0,0.1)");
+                        $("#product_title").css("opacity", "0.9");
+                        $(".items").not(this).css("filter","brightness(90%)");
+                        $(this).css("filter","brightness(101%)");
+                        $("#bath_shadow").css("filter","brightness(90%)");
+                    },
+                    mouseleave:function(){
+                        $("#background_itemhover").css("background", "rgba(0,0,0,0)");
+                        $("#product_title").css("opacity", "1");
+                        $(".items").not(this).css("filter","brightness(100%)");
+                        $(this).css("filter","brightness(100%)");
+                        $("#bath_shadow").css("filter","brightness(100%)");
+                    }
+                });
+            }
+            
+            $(window).resize(function(){
+                if($(this).width() >= 1280){
+                    // 태블릿이하 모바일메뉴가 열린상태에서 
+                    //pc로 갔다가 태블릿으로 돌아왔을때 [메뉴가 닫혀있도록]
+                    $(".mobtn").removeClass("change");
+                    $(".mobileNav").stop().animate({left:"100%"}, 300);
+                    
+                    section3Hover();
+                }else{
+                    $(".items").off();
+                }
+            });
+        });
+    </script><!--index 전체-->
+    <script>
+        $(document).ready(function(){
+            var button =$('.pager > ul > li');
+            var visual =$('.vis > ul > li');
+            var current = 0;
+            var setIntervalId;
+            
+            button.on({
+                click:function(){
+                    var tg = $(this);
+                    var i =tg.index();
+                    button.removeClass('tgg');
+                    tg.addClass('tgg');
+                    move(i);
+                }
+            });
+            
+            timer();
+            $(".vis").on({
+                mouseover:function(){
+                    clearInterval(setIntervalId);
+                },
+                mouseout:function(){
+                    timer();
+                }
+            });
+            
+            function timer(){
+                setIntervalId = setInterval(function(){
+                    var n = current + 1;
+                    if(n == visual.length){
+                        n = 0;
+                    }
+                    button.eq(n).trigger('click');
+                }, 600000);
+            }
+
+            // 슬라이드 넘기기 왼쪽 -> 오른쪽
+            function move(i){
+                button.removeClass('tgg');
+                button.eq(i).addClass('tgg');
+                
+                if(current == i) return;
+                
+                var current1 = visual.eq(current);  
+                var next1 = visual.eq(i);
+                
+                current1.css({left:0}).stop().animate({left:'-100%'},1000);
+                next1.css({left: '100%'}).stop().animate({left:0},1000);
+                visual.find('.text_b').stop().animate({opacity: 0}, 500, function(){
+                    visual.find('.text_b').stop().animate({opacity: 1})
+                })
+              
+//                for(;;){
+//                    var nextLeft = next1.offset().left;
+//                    if(nextLeft == 0){
+//                        $('.vis > ul> li').removeClass('ing');
+//                        next1.addClass('ing')
+//                    }
+//                }
+                
+                current = i; 
+            }
+            // 슬라이드 넘기기 오른쪽 -> 왼쪽
+            function move_pre(i){
+                button.removeClass('tgg');
+                button.eq(i).addClass('tgg');
+                
+                if(current == i) return; // 현재 페이지와 선택한 페이지 버튼이 같으면 아무것도 실행하지 않는다.
+                
+                var current1 = visual.eq(current); // 클릭 전 li
+                var next1 = visual.eq(i);  // 현재 클릭한 li
+                
+            
+                current1.css({left:0}).stop().animate({left:'100%'},1000);
+                next1.css({left: '-100%'}).stop().animate({left:0},1000);
+                
+                 visual.find('.text_b').stop().animate({opacity: 0}, 800, function(){
+                    visual.find('.text_b').stop().animate({opacity: 1})
+                })
+                
+                current = i; 
+            }
+            
+            $(".next1").on({
+                click:function(){
+                    var i = current + 1;
+                    if(i >visual.length -1 ) i=0;
+                    button.eq(i).trigger('click');
+
+                }
+            });
+            $(".prev1").on({
+                click:function(){
+                    var i = current - 1;
+                    if(i < 0) i = visual.length -1;
+                    move_pre(i);
+                }
+            });
+            
+            visual.swipe({
+                swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                    if( direction == "left" ) {
+                        var i = current + 1;
+                        if(i >visual.length -1 ) i=0;
+                        button.eq(i).trigger('click');
+                    } else if( direction == "right" ) {
+                        var i = current - 1;
+                        if(i < 0) i = visual.length -1;
+                        move_pre(i);
+                        threshold:0
+                    }
+                },
+            })
+        });
+    </script><!--Section1-->
+    <script>
+        $(document).ready(function(){
+            var viewImg = $('.viewImg > div'),
+            imgBtn = $('.imgBtn > div');
+            
+            imgBtn.click(function(){
+                var i = $(this).index();
+                
+                viewImg.removeClass();
+                viewImg.fadeOut();
+                viewImg.eq(i).fadeIn();
+                
+                imgBtn.removeClass('pointer');
+                $(this).addClass('pointer');
+            });
+        
+        });
+    </script><!--Section2-->
+    <script>
+         $(document).ready(function(){
+             var $body = $(window.document.body);
+             var imgBox = $('#main4 > #review_C .mobile_ver .m_image div'),
+                 review = $('#main4 > .i_show > div'),
+                 closeBtn = review.find('img:nth-child(2)'),
+                 zero = 0;
+                
+             $('.i_show').hide();
+
+             imgBox.click(function () {
+                 var i = $(this).index();
+                 $('#main4').css({'overflow': 'hidden', 'height': '100%'});
+                 $('.i_show').show(); 
+                 review.eq(i).addClass("modal"); 
+                 
+                 $('.i_show').on('scroll mousewheel', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                   // return false;
+                 });
+                 
+             });
+             closeBtn.click(function () {
+                 $('.i_show').hide(); 
+                 $('#main4').css({'overflow': 'auto', 'height': '100%'});
+                 review.removeClass();
+             });
+
+         });
+    </script><!--Section4-->
+    <script>
+        $(function(){ 
+            $("footer").load("footer.html");
+            
+            $('.rotating-slider').rotatingSlider({
+                slideHeight : Math.min(360, window.innerWidth - 40),
+                slideWidth : Math.min(480, window.innerWidth- 40),
+            });
+        });
+    </script><!--Section5-->
+    <script>  
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script><!--Section5-->
+</head>
+<body>
+    <header>
+        <div class="headerBox">
+            <nav class="pcNav">
+                <ul class="gnb">
+                    <li> 
+                        <a href="JavaScript:;">COMPANY</a>
+                        <div class="snbOutter">
+                            <ul class="snb">
+                                <li><a href="company_brand.html">브랜드소개</a></li>
+                                <li><a href="company_location.html">오시는길</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li> 
+                        <a href="JavaScript:;">PRODUCT</a>
+                        <div class="snbOutter">
+                            <ul class="snb">
+                                <li><a href="products_all.html">전체시공</a></li>
+                                <li><a href="products_individual.html">부분시공</a></li>
+                                <li><a href="products_estimate.html">상세견적</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li> 
+                        <a href="deluxe.html">COMMUNITY</a>
+                        <div class="snbOutter">
+                            <ul class="snb">
+                                <li><a href="community_case.html">시공사례</a></li>
+                                <li><a href="community_review.html">시공후기</a></li>
+                                <li><a href="community_event.html">이벤트</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li> 
+                        <a href="JavaScript:;">CUSTOMER</a>
+                        <div class="snbOutter">
+                            <ul class="snb">
+                                <li><a href="customer_notice.html">공지사항</a></li>
+                                <li><a href="customer_FAQ.html">자주묻는질문</a></li>
+                                <li><a href="customer_inquiry.html">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <a id="logo" href="index.html"><img src="img/icon/logo_white.png" alt=""></a>
+            <ul class="sign_pc">
+                <li>
+                    <a href="join.html">회원가입</a>
+                </li>
+                <li>
+                    <a href="JavaScript:;" id="lg_pc">로그인</a>
+                </li>
+                <li>
+                    <ul class="rank">
+                        <li><strong>1</strong><a href="#">욕조</a></li>
+                        <li><strong>2</strong><a href="#">세면대</a></li>
+                        <li><strong>3</strong><a href="#">타일</a></li>
+                    </ul>
+                    <span>HOT!</span>
+                </li>
+            </ul>
+            
+            <div class="mobtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <nav class="mobileNav">
+                <div class="mobileBox">
+                    <ul class="gnb">
+                        <li> 
+                            <a href="JavaScript:;">COMPANY</a>
+                            <ul class="snb">
+                                <li><a href="company_brand.html">브랜드소개</a></li>
+                                <li><a href="company_location.html">오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="JavaScript:;">PRODUCT</a>
+                            <ul class="snb">
+                                <li><a href="products_all.html">전체시공</a></li>
+                                <li><a href="products_individual.html">부분시공</a></li>
+                                <li><a href="products_estimate.html">상세견적</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="JavaScript:;">COMMUNITY</a>
+                            <ul class="snb">
+                                <li><a href="community_case.html">시공사례</a></li>
+                                <li><a href="community_review.html">시공후기</a></li>
+                                <li><a href="community_event.html">이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="JavaScript:;">CUSTOMER</a>
+                            <ul class="snb">
+                                <li><a href="customer_notice.html">공지사항</a></li>
+                                <li><a href="customer_FAQ.html">자주묻는질문</a></li>
+                                <li><a href="customer_inquiry.html">1:1문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="sign_mobile">
+                        <div class="signBox">
+                            <button onclick="location.href='join.html'">JOIN</button>
+                            <button id="lg_m">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="login_wrap">
+            <form id="lg_wrap" action="#" method="post">
+                <fieldset>
+                   <legend>로그인</legend>
+                   <div><img src="img/icon/x.jpg" alt="닫기" id="btn_x"></div>
+                   <h1>로그인</h1>
+                    <div class="login_box">
+                       <div class="lg_box">
+                            <p><input type="text" id="lg_id" placeholder="아이디" required></p>
+                            <p><input type="password" id="lg_password" placeholder="비밀번호" required></p>
+                            <div>
+                                <input type="checkbox" id="lg_chk">
+                                <label for="lg_chk"><span></span>아이디 저장</label>
+                                <ul>
+                                    <li><a href="#">아이디 찾기</a></li>
+                                    <li><a href="#">비밀번호 찾기</a></li>
+                                </ul>
+                            </div>
+                            <p><input type="button" name="lg_login" value="로그인"></p>
+                            <p><input type="button" name="lg_join" value="회원가입" onclick="location.href = 'join.html'"></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </header>
+    <div class="scrollBox">
+        <div class="onScroll"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="wrap">
+        <div class="main" id="main1">
+            <div class="vis">
+                <ul class="mov">
+                     <li class="list ing">
+                        <div class="text_b">
+                            <h3>2020 NEW PRODUCT </h3> 
+                            <h2>DESIGN</h2>
+                            <a href="products_individual.html" class="go">MORE INFO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text_b">
+                            <h3>July In </h3> 
+                            <h2> Event</h2>
+                            <a href="community_event.html" class="go">MORE INFO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text_b">
+                            <h3>ONLYBTH BEST </h3> 
+                            <h2>REVIEW</h2>
+                            <a href="community_review.html" class="go">MORE INFO</a>
+                        </div>
+                    </li>        
+                </ul>
+            </div>
+            <div class="bbtn">
+                    <ul>
+                        <li class="prev1"><img src="img/icon/arrow/prev_arrow_img.png" alt=""></li>
+                        <li class="next1"><img src="img/icon/arrow/next_arrow_img.png" alt=""></li>
+                    </ul>
+                </div>
+            <div class="pager">
+                <ul class="container_p">
+                    <li class="tgg"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main" id="main2">
+            <h3>시공사례</h3>
+            <div class="viewImg">
+               <div class="showing">
+                   <img src="img/index/case1.png" alt="">
+                   <a class="go" href="products_all.html">자세히보기</a>
+               </div>
+               <div>
+                   <img src="img/index/case3.png" alt="">
+                   <a class="go" href="products_all.html">자세히보기</a>
+               </div>
+               <div>
+                   <img src="img/index/case2.png" alt="">
+                   <a class="go" href="products_all.html">자세히보기</a>
+               </div>
+               <div>
+                   <img src="img/index/case4.png" alt="">
+                   <a class="go" href="products_all.html">자세히보기</a>
+               </div>
+            </div>
+            <div class="imgBtn">
+                <div class="pointer">
+                    <img src="img/index/case1_btn.png" alt="">
+                    <p>SIMPLE</p>
+                </div>
+                <div>
+                    <img src="img/index/case3_btn.png" alt="">
+                    <p>LUXURY</p>
+                </div>
+                <div>
+                    <img src="img/index/case2_btn.png" alt="">
+                    <p>MODERN</p>
+                </div>
+                <div>
+                    <img src="img/index/case4_btn.png" alt="">
+                    <p>UNIQUE</p>
+                </div>
+            </div>
+        </div>
+        <div class="main" id="main3">
+            <div id="background_itemhover">
+                <div id="product_title">
+                    <h1>PRODUCT</h1>
+                    <p>제품에 마우스를 올려보세요</p>
+                </div>
+                <div class="items" id="mirror_item" data-aos="fade-down" onclick="location.href='products_individual.html'">
+                    <img src="img/index/product_mirror.png" alt="mirror_item">
+                    <div class="clickBox_item">
+                        <img src="img/icon/clickbar_left.png" alt="clickbar">
+                        <input type="button" value="click">
+                    </div>
+                    <a href="products_individual.html">Mirror</a>
+                </div>
+                <div class="items" id="cabinet_item" data-aos="fade-left" onclick="location.href='products_individual.html'">
+                    <img src="img/index/product_cabinet.png" alt="cabinet_item">
+                    <div class="clickBox_item">
+                        <img src="img/icon/clickbar_left.png" alt="clickbar">
+                        <input type="button" value="click">
+                    </div>
+                    <a href="products_individual.html">Cabinet</a>
+                </div>
+                <div class="items" id="sink_item"  data-aos="fade-down" onclick="location.href='products_individual.html'">
+                    <img src="img/index/product_sink.png" alt="sink_item">
+                    <img src="img/index/product_sink_m.png" alt="sink2_item">
+                    <div class="clickBox_item">
+                        <img src="img/icon/clickbar_left.png" alt="clickbar">
+                        <input type="button" value="click">
+                    </div>
+                    <a href="products_individual.html">Sink</a>
+                </div>
+                <div class="items" id="bath_item" data-aos="fade-right" onclick="location.href='products_individual.html'">
+                    <img src="img/index/product_bath.png" alt="bath_item">
+                    <div class="clickBox_item">
+                        <img src="img/icon/clickbar_right.png" alt="clickbar">
+                        <input type="button" value="click">
+                    </div>
+                    <a href="products_individual.html">Bath</a>
+                </div>
+                
+                <img src="img/index/product_shadow.png" alt="bath_shadow" id="bath_shadow" data-aos="zoom-in-right">
+            </div>
+            
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <div class="main" id="main4">
+            <div id="review_C">
+                <h3><span>온리의</span><br>REVIEW</h3>
+                <div class="pc_ver">
+                 <div>
+                     <img src="img/index/review1.png" alt="">
+                     <span>#ALL INTERIOR</span>
+                     <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~
+                     </p>
+                     <p>
+                     곽 승*
+                     </p>
+                 </div>
+                 <div>
+                     <img src="img/index/review2.png" alt="">
+                     <span>#CABINET</span>
+                     <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요. 
+                    </p>
+                     <p>
+                     박 지*
+                     </p>
+                 </div>
+                 <div>
+                     <img src="img/index/review3.png" alt="">
+                     <span>#SINK</span>
+                     <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요. 
+                     </p>
+                     <p>
+                     최 지*
+                     </p>
+                 </div>
+                 <div>
+                     <img src="img/index/review4.png" alt="">
+                     <span>#ALL INTERIOR</span>
+                     <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ
+                     </p>
+                     <p>
+                     최 승*
+                     </p>
+                 </div>
+                 <a href="community_review.html" class="go">See all review</a>
+                </div>
+                <div class="mobile_ver">
+                 <div class="m_image">
+                     <div>
+                          <img src="img/index/review1_m.png" alt="">
+                          <span>#ALL INTERIOR</span>
+                     </div>
+                     <div>
+                         <img src="img/index/review2_m.png" alt="">
+                         <span>#CABINET</span>
+                     </div>
+                     <div>
+                         <img src="img/index/review3_m.png" alt="">
+                         <span>#SINK</span>
+                     </div>
+                     <div>
+                         <img src="img/index/review4_m.png" alt="">
+                         <span>#ALL INTERIOR</span>
+                     </div>
+                     <div>
+                         <img src="img/index/review5_m.png" alt="">
+                         <span>#ALL INTERIOR</span>
+                     </div>
+                     <div>
+                         <img src="img/index/review6_m.png" alt="">
+                         <span>#BATH</span>
+                     </div>
+                 </div>     
+                 <a href="community_review.html" class="go">See all review</a>
+                </div>
+            </div>
+            <div class="i_show ">
+                     <div class="">
+                         <img src="img/index/review1_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">
+                         <div>
+                             <span>#ALL INTERIOR</span>
+                             <p>화장실 인테리어를 바꾸고 나서 들어갈 때마다 놀라고 있어요. 전의 화장실과 인테리어랑 정반대여서, 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~                 
+                             </p>
+                             <hr>
+                             <p>곽 승*</p>
+                         </div>             
+                     </div>
+                     <div class="">
+                         <img src="img/index/review2_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">
+                         <div>
+                             <span>#CABINET</span>
+                             <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가네요.
+                             </p>
+                             <hr>
+                             <p>박 지*</p>
+                         </div>             
+                     </div>
+                     <div class="">
+                         <img src="img/index/review3_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">             
+                         <div>
+                            <span>#SINK</span>
+                             <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 다른 세면대들과는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요.
+                              </p>
+                             <hr> 
+                             <p>최 지*</p>
+                         </div>
+                     </div>
+                     <div class="">
+                         <img src="img/index/review4_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">
+                         <div>
+                         <span>#ALL INTERIOR</span>
+                             <p>단순히 인테리어만 바꾸고 싶다고 생각해서 신청했는데, 꼼꼼하게 상담해주셔서 감사했어요. 그래서 인테리어도 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ
+                             </p>
+                             <hr>
+                             <p>최 승*</p>
+                         </div>             
+                     </div>
+                     <div class="">
+                         <img src="img/index/review5_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">
+                         <div>
+                         <span>#SINK</span>
+                             <p>원래 인테리어 맞겼던 곳에서 세면대 제품이 마음에 안 들어서 세면대만 따로 온리바스에서 주문했는데 굉장히 깔끔하네요. 특히 그 이음새부분이 티가 안나서 더 좋아요~
+                             </p>
+                             <hr>
+                             <p>곽 지*</p>
+                         </div>
+                     </div>
+                     <div class="">
+                         <img src="img/index/review6_m.png" alt="">
+                         <img src="img/icon/x.png" alt="">
+                         <div>
+                         <span>#Bath</span>
+                             <p>욕조만 바꾸고 싶어서 주문했는데 사이즈도 딱 맞고, 시공도 꼼꼼하게 해주셔서 너무 감사했어요. 또 관리방법 같은 걸 알려주셔서 더 깨끗하게 사용할 수 있을 것 같아요!!
+                             </p>
+                             <hr>
+                             <p>박 승*</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        <div class="main" id="main5" style="overflow: hidden">
+            <h1 class="main_h1">EVENT</h1>
+            <div class="rotating-slider">
+                <ul class="slides">
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT1.jpg" alt="event1"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT2.jpg" alt="event2"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT3.jpg" alt="event3"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT1.jpg" alt="event1"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT2.jpg" alt="event2"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT3.jpg" alt="event3"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT1.jpg" alt="event1"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT2.jpg" alt="event2"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT3.jpg" alt="event3"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT1.jpg" alt="event1"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT2.jpg" alt="event2"></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inner">
+                      <a href="community_event.html"><img src="img/index/EVENT3.jpg" alt="event3"></a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!--
+//변수 ht에 현재 브라우저의 높이값 저장
+var ht = $(window).height();
+
+//변수 scroll에 현재 문서가 스크롤된 거리 저장
+var scroll = $(window).scrollTop();
+
+
+if(scroll>=ht*0 && scroll< ht*1){
+    $(".scrollBox div").removeClass();
+    $(".scrollBox div").eq(0).addClass("onScroll");
+}
+if(scroll>=ht*1 && scroll< ht*2){
+    $(".scrollBox div").removeClass();
+    $(".scrollBox div").eq(1).addClass("onScroll");
+}
+if(scroll>=ht*2 && scroll< ht*3){
+    $(".scrollBox div").removeClass();
+    $(".scrollBox div").eq(2).addClass("onScroll");
+}
+if(scroll>=ht*3 && scroll< ht*4){
+    $(".scrollBox div").removeClass();
+    $(".scrollBox div").eq(3).addClass("onScroll");
+}
+if(scroll>=ht*4 && scroll< ht*5){
+    $(".scrollBox div").removeClass();
+    $(".scrollBox div").eq(4).addClass("onScroll");
+}
+-->

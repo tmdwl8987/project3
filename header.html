@@ -1,0 +1,206 @@
+<script>
+    $(".pcNav .snb").hide();
+    $(".pcNav .gnb > li").on({
+        mouseenter:function(){
+            $(this).find(".snb").stop().slideDown(300);
+        },
+        mouseleave:function(){
+            $(this).find(".snb").stop().slideUp(300);
+        }
+    });
+    
+    $(".mobtn").click(function(){
+        $(this).toggleClass("change");
+        
+/*        $('.main').css({'overflow': 'hidden', 'height': '100%'});*/
+        $('.mobileNav').on('scroll touchmove mousewheel', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        });
+        
+        if($(this).hasClass("change") === true){
+            $(".mobileNav").animate({left:0}, 300);
+        }else{
+            $(".mobileNav").animate({left:"100%"}, 300);
+        }
+    });
+    
+    var rank = $(".rank li");
+    var rankCount = 0;
+    
+    rank.eq(rankCount).css("top","0");
+    
+    setInterval(function () {
+        var prev = rank.eq(rankCount);
+        rankShow(prev, 0, "-100%");
+
+        rankCount++;
+
+        if (rankCount == rank.length) {
+            rankCount = 0;
+        }
+
+        var next = rank.eq(rankCount);
+        rankShow(next, "100%", 0);
+    }, 3000);
+
+    function rankShow(tg, start, end) {
+        tg.css("top", start).stop().animate({top: end}, 1000);
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        $('body').append("<div id ='glayLayer'></div><div id = 'overLayer'</div>");
+        $('#lg_pc, #lg_m').click(function(){
+            $('#glayLayer').show();
+            $('#login_wrap').show();
+        });
+        $('#login_wrap, #glayLayer').on('scroll touchmove mousewheel', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        });
+        $('#glayLayer, #btn_x').click(function(){
+            $('#glayLayer').hide();
+            $('#login_wrap').hide();
+        });
+        
+    });
+</script>
+<div class="headerBox">
+    <nav class="pcNav">
+        <ul class="gnb">
+            <li> 
+                <a href="JavaScript:;">COMPANY</a>
+                <div class="snbOutter">
+                    <ul class="snb">
+                        <li><a href="company_brand.html">브랜드소개</a></li>
+                        <li><a href="company_location.html">오시는길</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> 
+                <a href="JavaScript:;">PRODUCT</a>
+                <div class="snbOutter">
+                    <ul class="snb">
+                        <li><a href="products_all.html">전체시공</a></li>
+                        <li><a href="products_individual.html">부분시공</a></li>
+                        <li><a href="products_estimate.html">상세견적</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> 
+                <a href="deluxe.html">COMMUNITY</a>
+                <div class="snbOutter">
+                    <ul class="snb">
+                        <li><a href="community_case.html">시공사례</a></li>
+                        <li><a href="community_review.html">시공후기</a></li>
+                        <li><a href="community_event.html">이벤트</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> 
+                <a href="JavaScript:;">CUSTOMER</a>
+                <div class="snbOutter">
+                    <ul class="snb">
+                        <li><a href="customer_notice.html">공지사항</a></li>
+                        <li><a href="customer_FAQ.html">자주묻는질문</a></li>
+                        <li><a href="customer_inquiry.html">1:1문의</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <a id="logo" href="index.html"><img src="img/icon/logo_white.png" alt=""></a>
+    <ul class="sign_pc">
+        <li>
+            <a href="join.html">회원가입</a>
+        </li>
+        <li>
+            <a href="JavaScript:;" id="lg_pc">로그인</a>
+        </li>
+        <li>
+            <ul class="rank">
+                <li><strong>1</strong><a href="#">욕조</a></li>
+                <li><strong>2</strong><a href="#">세면대</a></li>
+                <li><strong>3</strong><a href="#">타일</a></li>
+            </ul>
+            <span>HOT!</span>
+        </li>
+    </ul>
+    
+    <div class="mobtn">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <nav class="mobileNav">
+        <div class="mobileBox">
+            <ul class="gnb">
+                <li> 
+                    <a href="JavaScript:;">COMPANY</a>
+                    <ul class="snb">
+                        <li><a href="company_brand.html">브랜드소개</a></li>
+                        <li><a href="company_location.html">오시는길</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href="JavaScript:;">PRODUCT</a>
+                    <ul class="snb">
+                        <li><a href="products_all.html">전체시공</a></li>
+                        <li><a href="products_individual.html">부분시공</a></li>
+                        <li><a href="products_estimate.html">상세견적</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href="JavaScript:;">COMMUNITY</a>
+                    <ul class="snb">
+                        <li><a href="community_case.html">시공사례</a></li>
+                        <li><a href="community_review.html">시공후기</a></li>
+                        <li><a href="community_event.html">이벤트</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href="JavaScript:;">CUSTOMER</a>
+                    <ul class="snb">
+                        <li><a href="customer_notice.html">공지사항</a></li>
+                        <li><a href="customer_FAQ.html">자주묻는질문</a></li>
+                        <li><a href="customer_inquiry.html">1:1문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="sign_mobile">
+                <div class="signBox">
+                    <button onclick="location.href='join.html'">JOIN</button>
+                    <button id="lg_m">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="login_wrap">
+    <form id="lg_wrap" action="#" method="post">
+        <fieldset>
+           <legend>로그인</legend>
+           <div><img src="img/icon/x.jpg" alt="닫기" id="btn_x"></div>
+           <h1>로그인</h1>
+            <div class="login_box">
+               <div class="lg_box">
+                    <p><input type="text" id="lg_id" placeholder="아이디" required></p>
+                    <p><input type="password" id="lg_password" placeholder="비밀번호" required></p>
+                    <div>
+                        <input type="checkbox" id="lg_chk">
+                        <label for="lg_chk"><span></span>아이디 저장</label>
+                        <ul>
+                            <li><a href="#">아이디 찾기</a></li>
+                            <li><a href="#">비밀번호 찾기</a></li>
+                        </ul>
+                    </div>
+                    <p><input type="button" name="lg_login" value="로그인"></p>
+                    <p><input type="button" name="lg_join" value="회원가입" onclick="location.href = 'join.html'"></p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

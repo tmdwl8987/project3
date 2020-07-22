@@ -1,0 +1,189 @@
+* {box-sizing: border-box;}
+.subTop_bg{background-image: url(../img/sub_join,login/join_main_menu2.jpg);}
+.main-content {width: 1276px; margin: 0 auto; transition: 1s;}
+.join_container h3 {padding: 120px 0px 15px 20px; font-size: 1.7rem; font-weight: normal;}
+
+.join_box {border-top: 2px solid #999; padding: 0px 20px;}
+.join_box input {display: inline-block; height: 36px; margin-left: -4px; border: 1px solid #c1c1c1;}
+.join_box input[type="text"] {padding-left: 10px;}
+.join_box2 .im_box2 > div {margin-top: 30px;}
+.join_box2 .im_box2 div label {display: inline-block; width: 30%; font-size: 18px;}
+.join_box2 .im_box2 div label span {color: #f2505d;}
+.join_box2 .im_box2 div p {display: inline-block; margin-left: 30%; font-size: 13px;}
+.join_box2 .im_box2 div:nth-child(1) {padding-top: 30px;}
+.join_box2 .im_box2 div:nth-child(1) input[type="text"] {width: 70%;}
+.join_box2 .im_box2 div:nth-child(2) input[type="text"] {width: 45%;}
+.join_box2 .im_box2 div:nth-child(2) .gray_btn {width: 20%; height: 35px; float: right; font-size: 15px; border: 1px solid #dedede;}
+
+.join_box2 .im_box2 div:nth-child(3) input[type="password"] {width: 70%; padding-left: 10px;}
+.join_box2 .im_box2 div:nth-child(4) input[type="password"] {width: 70%; padding-left: 10px;}
+.join_box2 .im_box2 .alert {margin-left: 30%; border-radius: 5px; font-size: 13px; padding: 5px; margin-top: 10px;}
+.join_box2 .im_box2 .alert-success {background: rgba(0,125,32,0.2); border: 1px solid #007d20; color: #007d20;}
+.join_box2 .im_box2 .alert-danger {background: rgba(221,0,0,0.2); border: 1px solid #dd0000; color: #dd0000;}
+.join_box2 .im_box2 div:nth-child(7) input[type="text"] {width: 20%; margin-right: -4px;}
+.join_box2 .im_box2 div:nth-child(7) > span.ph_line {display: inline-block; width: 5%; text-align: center;}
+
+
+.join_box3 .im_box3 div p {display: inline-block; width: 30%; font-size: 18px;}
+.join_box3 .im_box3 > div {margin-top: 45px;}
+.join_box3 .im_box3 > div:nth-child(1) {padding-top: 30px;}
+.join_box3 .im_box3 div:nth-child(1) label {display: inline-block; font-size: 16px; cursor: pointer;}
+.join_box3 .im_box3 div:nth-child(1) input[type="radio"] {display: inline-block; margin-left: 5px; margin-right: 15px; margin-top: -2px; vertical-align: middle; width: 15px; height: 15px; appearance: none; border-radius: 100%; background-color: #fff; cursor: pointer;}
+.join_box3 .im_box3 div:nth-child(1) input[type="radio"]:checked {background-color: #f2505d; border: 0;}
+
+.join_box3 .im_box3 div:nth-child(2) select {width: 18.333%; height: 36px; border-radius: 0; padding-left: 10px; margin: 0 -4px; border: 1px solid #c1c1c1; cursor: pointer;}
+.join_box3 .im_box3 div:nth-child(2) span.ymd {width: 5%; display: inline-block; padding-left: 10px; font-size: 16px;}
+
+.join_box3 .im_box3 div:nth-child(3) p {position: relative; left: 0; top: -110px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box {position: relative; display: inline-block; width: 70%; margin-left: -4px; overflow: hidden;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div {height: 36px; border: 1px solid #c1c1c1;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(1) {width: 40%; display: inline-block; float: left; margin-bottom: 10px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(2) {border: 0;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(3) {width: 100%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:last-child {width: 100%;  margin-top: 5px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input {border: 0}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="zip"] {width: 50%; margin-left: 0; display: inline-block;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="addr1"] {width: 80%; margin-left: 0; }
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="addr2"] {width: 80%; margin-left: 0;}
+.join_box3 .im_box3 div:nth-child(3) .address_box span.add {display: inline-block; width: 20%; height: 36px; line-height: 36px; background: rgba(239,239,239,0.3); text-align: center; font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box span.add1 {width: 50%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[type="button"] {width: 30%; height: 35px; margin-left: 20px; vertical-align: middle; font-size: 15px; border: 1px solid #dedede;}
+
+.join_box3 .im_box3 div:nth-child(4) input[name="email01"] {width: 25%; height: 36px;}
+.join_box3 .im_box3 div:nth-child(4) input[name="email02"] {width: 19%; height: 36px; float: right;}
+.join_box3 .im_box3 div:nth-child(4) span.at {width: 5%; display: inline-block; text-align: center; font-size: 16px;}
+.join_box3 .im_box3 div:nth-child(4) select {display: inline-block; width: 19%; height: 36px; float: right; border-radius: 0; padding-left: 5px; border: 1px solid #c1c1c1; border-left: 0; cursor: pointer;}
+
+.join_box3 .im_box3 div:nth-child(5) {overflow: hidden;}
+.join_box3 .im_box3 div:nth-child(5) p {float: left; line-height: 1.4;}
+.join_box3 .im_box3 div:nth-child(5) .event_rd {display: inline-block; width: 70%; padding-bottom: 20px; border-bottom: 1px solid #e1e3e4; font-size: 16px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div {display: inline-block; width: 70%; margin: 10px 0 0 0;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > span {display: inline-block; width: 30%; font-size: 16px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > label {display: inline-block; font-size: 16px; cursor: pointer;}
+.join_box3 .im_box3 div:nth-child(5) input[type="radio"] {display: inline-block; margin-left: 5px; margin-right: 15px; margin-top: -2px; vertical-align: middle; width: 15px; height: 15px; border-radius: 100%; background-color: #fff; cursor: pointer;}
+.join_box3 .im_box3 div:nth-child(5) input[type="radio"]:checked {background-color: #f2505d; border: 0;}
+
+.finish_container {text-align: center; margin-top: 80px; margin-bottom: 200px;}
+.finish_container .finish_box {width: 20%; padding: 12px 0px; font-size: 18px;}
+.finish_container .darkgray_btn {margin-left: 10px;}
+
+
+
+
+@media screen and (min-width:1280px) and (max-width:1599px) {
+    .main-content {width: 80%;}
+}
+
+
+
+@media screen and (min-width:768px) and (max-width:1279px) {
+.main-content {width: 80%;}
+.join_container h3 {padding: 100px 0px 15px 10px; font-size: 1.5rem;}
+.join_box {padding: 0px 10px;}
+.join_box input {height: 32px; margin-left: -4px;}
+.join_box2 .im_box2 > div {margin-top: 25px;}
+.join_box2 .im_box2 div label {width: 30%; font-size: 16px;}
+.join_box2 .im_box2 div p {margin-left: 30%; font-size: 12px;}
+.join_box2 .im_box2 div:nth-child(1) {padding-top: 20px;}
+.join_box2 .im_box2 div:nth-child(1) input[type="text"] {width: 70%;}
+.join_box2 .im_box2 div:nth-child(2) input[type="text"] {width: 45%;}
+.join_box2 .im_box2 div:nth-child(2) input[type="button"] {width: 20%; font-size: 14px; height: 31px;}
+.join_box2 .im_box2 div:nth-child(3) input[type="password"] {width: 70%;}
+.join_box2 .im_box2 div:nth-child(4) input[type="password"] {width: 70%;}
+.join_box2 .im_box2 .alert {margin-left: 30%; border-radius: 5px; font-size: 12px; padding: 5px; margin-top: 10px;}
+.join_box2 .im_box2 div:nth-child(7) input[type="text"] {width: 20%; margin-right: -4px;}
+.join_box2 .im_box2 div:nth-child(7) > span.ph_line {width: 5%; text-align: center;}
+    
+    
+.join_box3 .im_box3 div p {width: 30%; font-size: 16px;}
+.join_box3 .im_box3 > div {margin-top: 35px;}
+.join_box3 .im_box3 > div:nth-child(1) {padding-top: 10px;}
+.join_box3 .im_box3 div:nth-child(1) label {font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(2) select {width: 16.333%; height: 32px; border-radius: 0; padding-left: 10px; margin: 0 -4px;}
+.join_box3 .im_box3 div:nth-child(2) span.ymd {width: 7%; padding-left: 5px; font-size: 15px;}
+
+.join_box3 .im_box3 div:nth-child(3) p {position: relative; left: 0; top: -100px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div {height: 32px; border: 1px solid #c1c1c1;}
+
+.join_box3 .im_box3 div:nth-child(3) .address_box span.add {height: 32px; line-height: 32px; font-size: 14px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[type="button"] {width: 30%; font-size: 14px; height: 31px;}
+
+.join_box3 .im_box3 div:nth-child(4) input[name="email01"] {width: 25%; height: 32px;}
+.join_box3 .im_box3 div:nth-child(4) input[name="email02"] {width: 19%; height: 32px;}
+.join_box3 .im_box3 div:nth-child(4) span.at {width: 5%; font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(4) select {width: 19%; height: 32px;}    
+    
+.join_box3 .im_box3 div:nth-child(5) .event_rd {width: 70%; padding-bottom: 10px; font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div {width: 70%; margin: 10px 0 0 0;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > span {width: 30%; font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > label {font-size: 15px;}
+
+.finish_container {text-align: center; margin-top: 80px; margin-bottom: 180px;}
+.finish_container .finish_box {width: 20%; padding: 10px 0px; font-size: 16px;}
+}
+
+
+
+@media screen and (max-width:767px) {
+.main-content {width: 90%;}
+.join_container h3 {padding: 60px 0px 10px 10px; font-size: 1.3rem;}
+.join_box {padding: 0px 0px;}
+.join_box input {height: 32px; margin-left: 0px;}
+.join_box2 .im_box2 > div {margin-top: 20px;}
+.join_box2 .im_box2 div label {width: 100%; font-size: 15px; margin-bottom: 5px; font-weight: bold;}
+.join_box2 .im_box2 div p {margin-left: 0%; font-size: 11px;}
+.join_box2 .im_box2 div:nth-child(1) {padding-top: 20px;}
+.join_box2 .im_box2 div:nth-child(1) input[type="text"] {width: 100%;}
+.join_box2 .im_box2 div:nth-child(2) input[type="text"] {width: 70%;}
+.join_box2 .im_box2 div:nth-child(2) input[type="button"] {width: 30%; font-size: 12px; height: 31px;}
+.join_box2 .im_box2 div:nth-child(3) input[type="password"] {width: 100%;}
+.join_box2 .im_box2 div:nth-child(4) input[type="password"] {width: 100%;}
+.join_box2 .im_box2 .alert {margin-left: 0%; border-radius: 5px; font-size: 12px; padding: 5px; margin-top: 10px;}
+.join_box2 .im_box2 div:nth-child(7) input[type="text"] {width: 30%; margin-left: -4px; margin-right: -4px;}
+.join_box2 .im_box2 div:nth-child(7) input[type="text"]:nth-child(2) {width: 30%; margin-left: 0px;}
+.join_box2 .im_box2 div:nth-child(7) > span.ph_line {width: 5%; text-align: center;}
+    
+    
+.join_box3 .im_box3 div p {width: 30%; font-size: 15px; margin-bottom: 5px; font-weight: bold;}
+.join_box3 .im_box3 > div {margin-top: 30px; }
+.join_box3 .im_box3 > div:nth-child(1) {padding-top: 10px;}
+
+.join_box3 .im_box3 div:nth-child(1) label {font-size: 15px;}
+.join_box3 .im_box3 div:nth-child(2) p {width: 100%;}
+.join_box3 .im_box3 div:nth-child(2) select {width: 25%; height: 32px; border-radius: 0; padding-left: 10px; margin: 0 -4px;}
+.join_box3 .im_box3 div:nth-child(2) select:nth-child(2) {margin-left: 0px;}
+.join_box3 .im_box3 div:nth-child(2) span.ymd {width: 8.333%; padding-left: 5px; font-size: 14px;}
+
+    
+.join_box3 .im_box3 div:nth-child(3) p {position: relative; left: 0; top: 0; width: 100%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box {position: relative; display: inline-block; width: 100%; margin-left: 0px; overflow: hidden;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div {height: 32px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(1) {width: 60%; display: inline-block; float: left; margin-bottom: 10px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(2) {border: 0;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:nth-child(3) {width: 100%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box div:last-child {width: 100%; margin-top: 5px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input {border: 0}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="zip"] {width: 50%; display: inline-block;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="addr1"] {width: 70%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[name="addr2"] {width: 70%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box span.add {display: inline-block; width: 30%; height: 32px; line-height: 32px; font-size: 12px;}
+.join_box3 .im_box3 div:nth-child(3) .address_box span.add1 {width: 50%;}
+.join_box3 .im_box3 div:nth-child(3) .address_box input[type="button"] {width: 90%; height: 31px; margin-left: 10%; font-size: 12px;}
+    
+.join_box3 .im_box3 div:nth-child(4) p {width: 100%;}
+.join_box3 .im_box3 div:nth-child(4) input[name="email01"] {width: 40%; height: 32px;}
+.join_box3 .im_box3 div:nth-child(4) input[name="email02"] {width: 25%; height: 32px;}
+.join_box3 .im_box3 div:nth-child(4) span.at {width: 5%; font-size: 14px;}
+.join_box3 .im_box3 div:nth-child(4) select {width: 25%; height: 32px;}
+    
+.join_box3 .im_box3 div:nth-child(5) p {width: 100%;}
+.join_box3 .im_box3 div:nth-child(5) p br {display: none;}
+.join_box3 .im_box3 div:nth-child(5) .event_rd {width: 100%; padding-bottom: 10px; font-size: 13px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div {width: 100%; margin: 7px 0 0 0;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > span {width: 30%; font-size: 14px;}
+.join_box3 .im_box3 div:nth-child(5) .marketing_box div > label {font-size: 14px;}
+
+.finish_container {text-align: center; margin-top: 80px; margin-bottom: 160px;}
+.finish_container .finish_box {width: 47%; padding: 8px 0px; font-size: 15px;}
+.finish_container .darkgray_btn {margin-left: 4%;}
+}

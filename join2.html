@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - 회원가입</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/join2.css">
+       
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            // 아이디- 영문, 숫자 조합해서 입력
+            $("#join_id").change(function(){
+                checkID($('#join_id').val());
+            });
+            function checkID(id){
+                
+                if(!/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/.test(id)){            
+                    alert('6~12자의 영문, 숫자를 조합해서 사용해주세요.');
+                    $('#join_id').val('').focus();
+                    return false;
+                }    
+                var checkNumber = password.search(/[0-9]/g);
+                var checkEnglish = password.search(/[a-z]/ig);
+                if(checkNumber <0 || checkEnglish <0){
+                    alert("숫자와 영문자를 혼용하여야 합니다.");
+                    $('#join_id').val('').focus();
+                    return false;
+                }
+            }
+            
+            // 패스워드- 영문, 숫자 및 특수문자 조합해서 입력
+            $("#join_password").change(function(){
+                checkPassword($('#join_password').val());
+            });
+            function checkPassword(password){
+                
+                if(!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/.test(password)){            
+                    alert('8~16자의 영문, 숫자 및 특수문자를 조합해서 사용해주세요.');
+                    $('#join_password').val('').focus();
+                    return false;
+                }    
+                var checkNumber = password.search(/[0-9]/g);
+                var checkEnglish = password.search(/[a-z]/ig);
+                if(checkNumber <0 || checkEnglish <0){
+                    alert("숫자와 영문자를 혼용하여야 합니다.");
+                    $('#join_password').val('').focus();
+                    return false;
+                }
+                if(/(\w)\1\1\1/.test(password)){
+                    alert('같은 문자를 4번 이상 사용하실 수 없습니다.');
+                    $('#join_password').val('').focus();
+                    return false;
+                }
+            }
+            
+            // 비밀번호 일치합니다, 일치하지 않습니다.
+            $(".alert-success").hide();
+            $(".alert-danger").hide();
+            $("input").keyup(function(){
+                var pwd1=$("#join_password").val();
+                var pwd2=$("#join_password_check").val();
+                if(pwd1 != "" && pwd2 != ""){
+                    if(pwd1 == pwd2){
+                        $(".alert-success").show();
+                        $(".alert-danger").hide();
+                        $("#submit").removeAttr("disabled");
+                    }else{
+                        $(".alert-success").hide();
+                        $(".alert-danger").show();
+                        $("#submit").attr("disabled", "disabled");
+                    }
+                }
+            });
+            
+            //휴대폰 숫자만 입력하기
+/*            $("input:text[numberOnly]").on("keyup", function() {
+                $(this).val($(this).val().replace(/[^0-9]/g,""));
+            });*/
+
+            // 생년월일
+            appendYear();
+            appendMonth();
+            appendDay();
+            function appendYear(){
+                var date = new Date();
+                var year = date.getFullYear();
+                var selectValue = document.getElementById("year");
+                var optionIndex = 0;
+                
+                for(var i=year-100; i<=year; i++){
+                    selectValue.add(new Option(i),optionIndex++);  
+                }
+            }
+            
+            function appendMonth(){
+                var selectValue = document.getElementById("month"); 
+                var optionIndex = 0;
+                
+                for(var i=1; i<=12; i++){
+                    selectValue.add(new Option(i),optionIndex++);
+                }
+            }
+            
+            function appendDay(){
+                var selectValue = document.getElementById("day");
+                var optionIndex = 0;
+                
+                for(var i=1; i<=31; i++){
+                    selectValue.add(new Option(i),optionIndex++);
+                }
+            } 
+            
+            //이메일 직접입력, 선택체크
+            $('#selectEmail').change(function(){
+                $("#selectEmail option:selected").each(function () { if($(this).val()== "1"){  //직접입력일 경우
+                    $("#email02").val(''); //값 초기화
+                    $("#email02").attr("disabled",false);  //활성화
+                }else{  //직접입력이 아닐경우
+                    $("#email02").val($(this).text());  //선택값 입력
+                    $("#email02").attr("disabled",true);  //비활성화
+                    }
+                });
+            });
+        });
+
+        // 우편번호 (5자리)
+        function openZipSearch() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    $('[name=zip]').val(data.zonecode); 
+                    $('[name=addr1]').val(data.address);
+                    $('[name=addr2]').val(data.buildingName);
+                }
+            }).open();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>회원가입</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <form action="index.html">
+                <fieldset class="join_container join_container2">
+                    <legend>필수 정보</legend>
+                    <h3>필수 정보</h3>
+                    <div class="join_box join_box2">
+                       <div class="im_box2">
+                            <div>
+                                <label for="username">이름 <span>(*)</span></label>
+                                <input type="text" id="username" required>
+                            </div>
+                            <div>
+                                <label for="join_id">회원아이디 <span>(*)</span></label>
+                                <input type="text" id="join_id" required>
+                                <input type="button" class="gray_btn" value="중복확인">
+                                <p>6~12자의 영문, 숫자를 조합해서 사용해주세요.</p>
+                            </div>
+                            <div>
+                                <label for="join_password">비밀번호 <span>(*)</span></label>
+                                <input type="password" id="join_password" required>
+                                <p>8~16자의 영문, 숫자 및 특수문자를 조합해서 사용해주세요.</p>
+                            </div>
+                            <div>
+                                <label for="join_password_check">비밀번호 확인 <span>(*)</span></label>
+                                <input type="password" id="join_password_check" required class="essential_im">
+                                
+                            </div>
+                            <div class="alert alert-success">비밀번호가 일치합니다.</div>
+                            <div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+                            <div>
+                                <label for="phone">휴대폰 <span>(*)</span></label>
+                                <input type="text" id="phone" required>
+                                <span class="ph_line">-</span>
+                                <input type="text" id="phone2" required>
+                                <span class="ph_line">-</span>
+                                <input type="text" id="phone3" required>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="join_container join_container3">
+                    <legend>추가 정보</legend>
+                    <h3>추가 정보</h3>
+                    <div class="join_box join_box3">
+                        <div class="im_box3">
+                            <div>
+                                <p>성별</p>
+                                <label for="rd1">남</label> <input type="radio" name="sex"  id="rd1" checked="checked">
+                                <label for="rd2">여</label> <input type="radio" name="sex" id="rd2">
+                            </div>
+                            <div>
+                                <p>생년월일</p>
+                                <select name="year" id="year"></select>
+                                <span class="ymd">년</span>
+                                <select name="month" id="month"></select>
+                                <span class="ymd">월</span>
+                                <select name="day" id="day"></select>
+                                <span class="ymd">일</span>
+                            </div>
+                            <div>
+                                <p>주소</p>
+                                <div class="address_box">
+                                    <div><span class="add add1">우편번호</span><input type="text" name="zip"></div>
+                                    <div><input type="button" onclick="openZipSearch()" value="검색" class="gray_btn"></div>
+                                    <div><span class="add add2">주소</span><input type="text" name="addr1" readonly></div>
+                                    <div><span class="add add3">상세</span><input type="text" name="addr2"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>E-mail</p>
+                                <input type="text" name="email01" id="email01"> <span class="at">@</span> 
+                                <select name="selectEmail" id="selectEmail">
+                                   <!-- value: 서버로 보내지는 값 -->
+                                    <option value="1">직접입력</option>
+                                    <option value="naver.com" selected="selected">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                    <option value="freechal.com">freechal.com</option>
+                                </select>
+                                <input type="text" name="email02" id="email02" disabled value = "naver.com">
+                            </div>
+                            <div>
+                                <p>마케팅 정보 <br>수신동의</p>
+                                <span class="event_rd">이메일 및 SNS를 통한 이벤트 광고정보 수신에 동의합니다. (선택)</span>
+                                <div class="marketing_box">
+                                    <div>
+                                        <span>이메일</span>
+                                        <label for="rd3">수신</label> <input type="radio" name="email" id="rd3" checked="checked">
+                                        <label for="rd4">수신하지 않음</label> <input type="radio" name="email" id="rd4">
+                                    </div>
+                                    <div>
+                                        <span>SNS</span>
+                                        <label for="rd5">수신</label> <input type="radio" name="sns" id="rd5" checked="checked">
+                                        <label for="rd6">수신하지 않음</label> <input type="radio" name="sns" id="rd6">
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="finish_container">
+                    <input type="submit" name="join_finish" value="완료"  class="finish_box black_btn">
+                    <input type="button" name="join_cancel" value="취소" class="finish_box darkgray_btn" onclick="location.href='index.html'">
+                </div>
+            </form>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

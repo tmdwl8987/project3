@@ -1,0 +1,229 @@
+* {box-sizing: border-box;}
+input, select, label{cursor: pointer;}
+.subTop_bg{background-image: url("../img/sub_product/main_menu.png"); background-size: cover; background-position: 30% center;}
+.main-content {width: 1276px; margin: 0 auto; transition: 1s;}
+.join_container h3 {padding: 120px 0px 15px 20px; font-size: 1.7rem; font-weight: normal;}
+
+.join_box {border: 2px solid #bbb; padding: 0px 30px; overflow: hidden;}
+input {display: inline-block; height: 36px; margin-left: -4px; border: 1px solid #c1c1c1;}
+input[type="text"] {padding-left: 10px;}
+textarea {border: 1px solid #c1c1c1;}
+
+.join_box > div {margin-top: 45px;}
+.join_box div label {display: inline-block; width: 30%; font-size: 18px;}
+.join_box div label span {color: #f2505d;}
+.join_box div p {display: inline-block; width: 30%; font-size: 18px;}
+.join_box div p span {color: #f2505d;}
+
+.join_box > div:nth-child(1) {padding-top: 30px;}
+.join_box > div:nth-child(1) input[type="text"] {width: 70%;}
+
+
+.join_box > div:nth-child(2) input[type="text"] {width: 20%; margin-right: -4px;}
+.join_box > div:nth-child(2) > span.ph_line {display: inline-block; width: 5%; text-align: center;}
+
+
+.join_box > div:nth-child(3) input[name="email01"] {width: 25%;}
+.join_box > div:nth-child(3) input[name="email02"] {width: 19%; float: right;}
+.join_box > div:nth-child(3) span.at {width: 5%; display: inline-block; text-align: center; font-size: 16px;}
+.join_box > div:nth-child(3) select {display: inline-block; width: 19%; height: 36px; float: right; border-radius: 0; padding-left: 5px; border: 1px solid #c1c1c1; border-left: 0;}
+
+
+.join_box > div:nth-child(4) p {position: relative; left: 0; top: -105px;}
+.join_box > div:nth-child(4) .address_box {display: inline-block; width: 70%; margin-left: -4px; overflow: hidden;}
+.join_box > div:nth-child(4) .address_box div {height: 36px; border: 1px solid #c1c1c1;}
+.join_box > div:nth-child(4) .address_box div:nth-child(1) {width: 40%; display: inline-block; float: left; margin-bottom: 10px;}
+.join_box > div:nth-child(4) .address_box div:nth-child(2) {border: 0;}
+.join_box > div:nth-child(4) .address_box div:nth-child(3) {width: 100%;}
+.join_box > div:nth-child(4) .address_box div:last-child {width: 100%;  margin-top: 5px;}
+.join_box > div:nth-child(4) .address_box input {border: 0}
+.join_box > div:nth-child(4) .address_box input[name="zip"] {width: 50%; display: inline-block;}
+.join_box > div:nth-child(4) .address_box input[name="addr1"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box input[name="addr2"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box span.add {display: inline-block; width: 20%; height: 36px; line-height: 36px; background: rgba(239,239,239,0.3); text-align: center; font-size: 15px;}
+.join_box > div:nth-child(4) .address_box span.add1 {width: 50%;}
+.join_box > div:nth-child(4) .address_box input[type="button"] {width: 30%; height: 35px; margin-left: 20px; vertical-align: middle; font-size: 15px; border: 1px solid #dedede;}
+
+
+
+.join_box > div:nth-child(5) select {width: 18.333%; height: 36px; border-radius: 0; padding-left: 10px; margin: 0 -4px; border: 1px solid #c1c1c1;}
+.join_box > div:nth-child(5) span.ymd {width: 5%; display: inline-block; padding-left: 10px; font-size: 16px;}
+
+
+.join_box > div:nth-child(6) p {position: relative; left: 0; top: -25px;}
+.join_box > div:nth-child(6) #conditions {width: 70%; display: inline-block; position: relative; margin-left: -4px;}
+.join_box > div:nth-child(6) #conditions #btnGroup {width: 30%; display: inline-block; position: relative; left: 0; top: -4px; margin-right: 5%;}
+.join_box > div:nth-child(6) #conditions #selectGroup1 {width: 30%; display: inline-block; margin-left: -4px; margin-right: 5%; }
+.join_box > div:nth-child(6) #conditions #selectGroup2 {width: 30%; display: inline-block; margin-left: -4px;}
+        
+#btnGroup input[type=button]{display: inline-block; border: 1px solid #66625e; background-color: white; color: #66625e; width: 50%; height: 36px; font-size: 15px;}
+#btnGroup input[type=button]:first-child {border-top-left-radius: 3px; border-bottom-left-radius: 3px; margin-left: 0;}
+#btnGroup input[type=button]:last-child {border-top-right-radius: 3px; border-bottom-right-radius: 3px;}
+#btnGroup input[type=button].on {color: white; background-color: #66625e;}
+.sBox{display: inline-block; height: 36px; position: relative; width: calc(100% - 40px);}
+.selectGroup select{-webkit-appearance: none; -moz-appearance: none; appearance: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; width: 100%; height: 36px;  text-align: center; padding: 5px 0 5px 10px; border: 1px solid #eee; background-color: rgba(0, 0, 0, 0);border: 1px solid #66625e;}
+.selectGroup img{width: 20px; height: 20px; position: absolute; top: 10px; right:10px; z-index: -1;}
+.selectGroup span{width: 40px; height: 36px; line-height: 36px; display: inline-block; text-align: center; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-color: #66625e; color: white; font-size: 15px; float: right;}
+
+
+.join_box > div:nth-child(7) p {position: relative; left: 0; top: -180px;}
+.join_box > div:nth-child(7) > .img_outbox {width: 70%; height: 200px; display: inline-block; margin-left: -4px; border: 1px solid #dedede; background: rgba(239,239,239,0.3); overflow-x: scroll;}
+.join_box > div:nth-child(7) .img_outbox .img_inbox {width: 200%;}
+.join_box > div:nth-child(7) .img_outbox img {width: 200px; margin-right: 20px; float: left; margin-top: 20px;}
+.join_box > div:nth-child(7) .img_outbox img:nth-child(1) {margin-left: 20px;}
+.join_box > div:nth-child(7) .img_detail {margin-left: 30%; font-size: 14px; padding-top: 5px;}
+
+
+.join_box > div:nth-child(8) p {position: relative; left: 0; top: 25px;}
+.join_box > div:nth-child(8) #in_content {width: 70%; padding: 10px; margin-left: 30%;}
+
+
+.join_box > div:nth-child(9) {margin-bottom: 75px;}
+.join_box > div:nth-child(9) p {float: left; line-height: 36px;}
+.join_box > div:nth-child(9) .file_input_textbox {float: left; width: 25%;}
+.join_box > div:nth-child(9) .file_input_div {position: relative; width: 110px; height: 36px; overflow: hidden; cursor: pointer !important;}
+.join_box > div:nth-child(9) .file_input_div .file_input_button {width: 105px; position: absolute; left: 0; top: 0; margin-left: 10px; height: 35px; font-size: 15px; border: 1px solid #dedede;}
+.join_box > div:nth-child(9) .file_input_div .file_input_hidden {font-size: 30px; position: absolute; left: 0; top: 0; border: 0; opacity: 0;}
+
+
+.in_end_container {text-align: center; margin-top: 80px; margin-bottom: 200px;}
+.in_end_container .in_end_box {width: 20%; height: 51px; line-height: 51px; font-size: 18px;}
+.in_end_container .darkgray_btn {margin-left: 10px;}
+
+
+
+@media screen and (min-width:1280px) and (max-width:1599px) {
+    .main-content {width: 80%;}
+}
+
+
+
+@media screen and (min-width:768px) and (max-width:1279px) {
+.main-content {width: 80%;}
+input {height: 32px; margin-left: -4px;}
+.join_box > div {margin-top: 40px;}
+.join_box div label {width: 30%; font-size: 16px;}
+.join_box div p {width: 30%; font-size: 16px;}
+
+.join_box > div:nth-child(3) input[name="email01"] {width: 25%;}
+.join_box > div:nth-child(3) input[name="email02"] {width: 19%;}
+.join_box > div:nth-child(3) span.at {width: 5%; font-size: 14px;}
+.join_box > div:nth-child(3) select {width: 19%; height: 32px;}
+    
+.join_box > div:nth-child(4) p {top: -90px;}
+.join_box > div:nth-child(4) .address_box {width: 70%;}
+.join_box > div:nth-child(4) .address_box div {height: 32px;}
+.join_box > div:nth-child(4) .address_box div:nth-child(1) {width: 40%; margin-bottom: 10px;}
+.join_box > div:nth-child(4) .address_box div:nth-child(2) {border: 0;}
+.join_box > div:nth-child(4) .address_box div:nth-child(3) {width: 100%;}
+.join_box > div:nth-child(4) .address_box div:last-child {width: 100%;  margin-top: 5px;}
+.join_box > div:nth-child(4) .address_box input {border: 0}
+.join_box > div:nth-child(4) .address_box input[name="zip"] {width: 50%;}
+.join_box > div:nth-child(4) .address_box input[name="addr1"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box input[name="addr2"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box span.add {width: 20%; height: 32px; line-height: 32px; background: rgba(239,239,239,0.3); text-align: center; font-size: 14px;}
+.join_box > div:nth-child(4) .address_box span.add1 {width: 50%;}
+.join_box > div:nth-child(4) .address_box input[type="button"] {width: 30%; height: 31px; margin-left: 20px; font-size: 14px;}
+    
+.join_box > div:nth-child(5) select {width: 18.333%; height: 32px;}
+.join_box > div:nth-child(5) span.ymd {width: 5%; padding-left: 10px; font-size: 16px;}
+    
+.join_box > div:nth-child(6) p {position: relative; left: 0; top: -25px;}
+.join_box > div:nth-child(6) #conditions {width: 70%; position: relative; margin-left: -4px;}
+.join_box > div:nth-child(6) #conditions #btnGroup {width: 30%; position: relative; left: 0; top: -4px; margin-right: 5%;}
+.join_box > div:nth-child(6) #conditions #selectGroup1 {width: 30%; margin-left: -4px; margin-right: 5%; }
+.join_box > div:nth-child(6) #conditions #selectGroup2 {width: 30%; margin-left: -4px;}
+        
+#btnGroup input[type=button]{width: 50%; height: 32px; font-size: 14px;}
+.sBox{height: 32px; position: relative; width: calc(100% - 40px);}
+.selectGroup select{width: 100%; height: 32px; text-align: center; padding: 5px 0 5px 10px;}
+.selectGroup img{width: 20px; height: 20px; position: absolute; top: 10px; right: 10px; z-index: -1;}
+.selectGroup span{width: 40px; height: 32px; line-height: 32px; text-align: center;font-size: 14px;}
+    
+.join_box > div:nth-child(7) .img_detail {margin-left: 30%; font-size: 13px; padding-top: 5px;}
+    
+.join_box > div:nth-child(9) {margin-bottom: 75px;}
+.join_box > div:nth-child(9) p {float: left; line-height: 32px;}
+.join_box > div:nth-child(9) .file_input_textbox {float: left; width: 25%;}
+.join_box > div:nth-child(9) .file_input_div {position: relative; width: 110px; height: 32px;}
+.join_box > div:nth-child(9) .file_input_div .file_input_button {width: 105px; margin-left: 10px; height: 31px; font-size: 14px;}
+    
+.in_end_container {text-align: center; margin-top: 80px; margin-bottom: 180px;}
+.in_end_container .in_end_box {width: 20%; height: 43px; line-height: 43px; font-size: 16px;}
+}
+
+
+
+@media screen and (max-width:767px) {
+.main-content {width: 90%;}
+.main-content h2 {padding: 60px 0 50px 0;}
+input {height: 32px; margin-left: -4px;}
+.join_box {border: 0; padding: 0px 0px; overflow: hidden;}
+.join_box > div {margin-top: 30px;}
+.join_box div label {width: 100%; font-size: 15px; padding-bottom: 5px;}
+.join_box div p {width: 100%; font-size: 15px; padding-bottom: 5px;}
+    
+.join_box > div:nth-child(1) {padding-top: 0px; margin-top: 0;}
+.join_box > div:nth-child(1) input[type="text"] {width: 100%; margin-left: 0px;}
+
+.join_box > div:nth-child(2) input[type="text"] {width: 30%; margin-left: 0px;}
+.join_box > div:nth-child(2) input[type="text"]:nth-child(4) {margin-left: -4px;}
+.join_box > div:nth-child(2) input[type="text"]:nth-child(6) {margin-left: -4px;}
+.join_box > div:nth-child(2) > span.ph_line {display: inline-block; width: 5%; text-align: center;}
+    
+.join_box > div:nth-child(3) input[name="email01"] {width: 35%; margin-left: 0px; margin-right: -4px;}
+.join_box > div:nth-child(3) input[name="email02"] {width: 29%;}
+.join_box > div:nth-child(3) span.at {width: 7%; font-size: 14px;}
+.join_box > div:nth-child(3) select {width: 29%; height: 32px;}
+    
+.join_box > div:nth-child(4) p {top: 0;}
+.join_box > div:nth-child(4) .address_box {width: 100%; margin-left: 0px;}
+.join_box > div:nth-child(4) .address_box div {height: 32px;}
+.join_box > div:nth-child(4) .address_box div:nth-child(1) {width: 60%; margin-bottom: 10px;}
+.join_box > div:nth-child(4) .address_box div:nth-child(2) {border: 0; }
+.join_box > div:nth-child(4) .address_box div:nth-child(3) {width: 100%;}
+.join_box > div:nth-child(4) .address_box div:last-child {width: 100%; margin-top: 5px;}
+.join_box > div:nth-child(4) .address_box input {border: 0;}
+.join_box > div:nth-child(4) .address_box input[name="zip"] {width: 50%;}
+.join_box > div:nth-child(4) .address_box input[name="addr1"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box input[name="addr2"] {width: 80%;}
+.join_box > div:nth-child(4) .address_box span.add {width: 30%; height: 32px; line-height: 32px; background: rgba(239,239,239,0.3); text-align: center; font-size: 12px;}
+.join_box > div:nth-child(4) .address_box span.add1 {width: 50%;}
+.join_box > div:nth-child(4) .address_box input[type="button"] {width: 90%; height: 31px; margin-left: 20px; font-size: 12px;}
+    
+.join_box > div:nth-child(5) select {width: 25%; height: 32px;  margin: 0 -4px;}
+.join_box > div:nth-child(5) select:nth-child(2) {margin-left: 0;}
+.join_box > div:nth-child(5) span.ymd {width: 8.333%; padding-left: 5px; font-size: 14px;}
+    
+.join_box > div:nth-child(6) p {top: 0px;}
+.join_box > div:nth-child(6) #conditions {width: 100%; position: relative; margin-left: 0px;}
+.join_box > div:nth-child(6) #conditions #btnGroup {width: 100%; position: relative; left: 0; top: 0px; margin-right: 0;}
+.join_box > div:nth-child(6) #conditions #selectGroup1 {width: 100%; margin-left: 0px; margin-right: 0;}
+.join_box > div:nth-child(6) #conditions #selectGroup2 {width: 100%; margin-left: 0px; position: relative; left: 0; top: -3px;}
+        
+#btnGroup input[type=button]{width: 50%; height: 32px; font-size: 12px;}
+.sBox{height: 32px; position: relative; width: calc(100% - 40px);}
+.selectGroup select{width: 100%; height: 32px; text-align: center; padding: 5px 0 5px 10px;}
+.selectGroup img{width: 20px; height: 20px; position: absolute; top: 10px; right: 10px; z-index: -1;}
+.selectGroup span{width: 40px; height: 32px; line-height: 32px; text-align: center;font-size: 12px;}
+
+.join_box > div:nth-child(7) p {top: 0px;}
+.join_box > div:nth-child(7) > .img_outbox {width: 100%; height: 150px; display: inline-block; margin-left: 0px; border: 1px solid #dedede; background: rgba(239,239,239,0.3); overflow-x: scroll;}
+.join_box > div:nth-child(7) .img_outbox .img_inbox {width: 200%;}
+.join_box > div:nth-child(7) .img_outbox img {width: 150px; margin-right: 20px; float: left; margin-top: 25px;}
+.join_box > div:nth-child(7) .img_outbox img:nth-child(1) {margin-left: 20px;}
+.join_box > div:nth-child(7) .img_detail {margin-left: 0%; font-size: 12px; padding-top: 5px;}
+
+.join_box > div:nth-child(8) p {top: 0px;}
+.join_box > div:nth-child(8) #in_content {width: 100%; padding: 10px; margin-left: 0%;}
+    
+.join_box > div:nth-child(9) {margin-bottom: 20px;}
+.join_box > div:nth-child(9) p {float: none; height: 22px; line-height: 22px;}
+.join_box > div:nth-child(9) .file_input_textbox {float: left; width: 50%; margin-left: 0px;}
+.join_box > div:nth-child(9) .file_input_div {position: relative; width: 110px; height: 32px;}
+.join_box > div:nth-child(9) .file_input_div .file_input_button {width: 105px; margin-left: 10px; height: 31px; font-size: 12px;}
+
+.in_end_container {text-align: center; margin-top: 80px; margin-bottom: 160px;}
+.in_end_container .in_end_box {width: 47%; font-size: 15px; height: 38px; line-height: 38px;}
+.in_end_container .darkgray_btn {margin-left: 4%;}
+}

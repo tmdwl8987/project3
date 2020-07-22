@@ -1,0 +1,54 @@
+* {box-sizing: border-box;}
+.subTop_bg{background-image: url(../img/sub_join,login/join_main_menu2.jpg);}
+.main-content {width: 1276px; margin: 0 auto; transition: 1s;}
+.join_container h3 {padding: 120px 0px 15px 20px; font-size: 1.7rem; font-weight: normal;}
+
+.join_box {border-top: 2px solid #999; padding: 0px 20px;}
+.join_box div:nth-child(1) {padding: 60px 0 15px 0;}
+.join_box div:nth-child(2) {border-top: 1px solid #e6e6e6; padding-top: 15px;}
+.join_box input[class="chk"] {display: none;}
+.join_box input[class="chk"] +label span {display: inline-block; width: 15px; height: 15px; margin: -1px 10px 0 20px; vertical-align: middle; border: 1px solid #a6a6a6; cursor: pointer; background: #ffffff;}
+.join_box input[class="chk"]:checked +label span {background: url(../img/icon/check_box3.jpg) no-repeat; background-size: 100%; border: 0; box-sizing: border-box;}
+.join_box label {font-size: 16px; cursor: pointer;}
+.join_box .summary {display: none;}
+.join_box textarea {display: block; background: #eeeeee; border: none; width: calc(100% - 40px); padding: 10px; margin: 15px 0px 40px 20px; overflow-y: scroll; overflow-x: hidden; font-size: 14px;}
+
+
+.next_container {text-align: center; margin-top: 80px; margin-bottom: 200px;}
+.next_container .next_box {width: 20%; padding: 12px 0px; font-size: 18px;}
+.next_container .darkgray_btn {margin-left: 10px;}
+
+
+@media screen and (min-width:1280px) and (max-width:1599px) {
+    .main-content{width: 80%;}
+}
+
+
+@media screen and (min-width:768px) and (max-width:1279px) {
+.main-content{width: 80%;}
+.join_container h3 {padding: 100px 0px 15px 10px; font-size: 1.5rem;}
+.join_box {padding: 0px 10px;}
+.join_box div:nth-child(1) {padding: 50px 0 15px 0;}
+.join_box input[class="chk"] +label span {width: 15px; height: 15px; margin: -1px 10px 0 10px;}
+.join_box label {font-size: 15px;}
+.join_box textarea {display: block; background: #eeeeee; border: none; width: 100%; padding: 10px; margin: 15px 0px 40px 10px; font-size: 13px;}
+.next_container {text-align: center; margin-top: 80px; margin-bottom: 180px;}
+.next_container .next_box {width: 20%; padding: 10px 0px; font-size: 16px;}
+
+
+}
+
+@media screen and (max-width:767px) {
+.main-content {width: 90%;}
+.join_container h3 {padding: 60px 0px 10px 0px; font-size: 1.3rem;}
+.join_box {padding: 0px 0px;}
+.join_box div:nth-child(1) {padding: 40px 0 10px 0;}
+.join_box div:nth-child(2) {padding: 10px 0 10px 0;}
+.join_box input[class="chk"] +label span {width: 14px; height: 14px; margin: -1px 10px 0 0px;}
+.join_box label {font-size: 14px; line-height: 1.3;}
+.join_box .summary {display: block; float: right; font-size: 14px; border-bottom: 1px solid #757575; color:#757575; cursor: pointer;}
+.join_box textarea {display: none; background: #eeeeee; border: none; width: 100%; padding: 10px; margin: 10px 0px 40px 0px; font-size: 12px;}
+.next_container {text-align: center; margin-top: 80px; margin-bottom: 160px;}
+.next_container .next_box {width: 47%; padding: 8px 0px; font-size: 15px;}
+.next_container .darkgray_btn {margin-left: 4%;}
+}

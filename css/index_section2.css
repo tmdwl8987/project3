@@ -1,0 +1,134 @@
+#main2 h3{
+    font-size: 35px;
+    letter-spacing: 15px;
+    font-weight: 300;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: 1s;
+}
+.viewImg {
+    width: 550px;
+    height: 550px;
+    position: relative;
+    top: 480px;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    transition: 1s;
+}
+.viewImg div{
+    position: absolute;
+    display: none;
+    
+}
+.viewImg div img {
+    width: 100%;
+}
+.viewImg div a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.viewImg div a.go {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    border-color: #fff;
+}
+.viewImg div a.go:before{
+    background-color: #403e3b;
+}
+.viewImg div a:hover{
+    border-color: #403e3b;
+}
+.go:hover:before{
+    width: 100%;  
+}
+.viewImg .showing{
+    display: block;
+}
+.imgBtn {
+    width: 80%;
+    min-width: 1375px;
+    max-width: 1550px;
+    position: relative;
+    margin: 0 auto;
+}
+.imgBtn div{
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    cursor: pointer;
+}
+.imgBtn div:nth-child(1){top:-280px}
+.imgBtn div:nth-child(2){top:-280px; right: 0;}
+.imgBtn div:nth-child(4){right: 0;}
+.imgBtn div img {
+    width: 100%;
+}
+.imgBtn div p {
+    letter-spacing: 13px;
+    font-size: 30px;
+    font-weight: 300;
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    top: 0;
+    line-height: 15;
+    text-indent: 210px;
+    color: #fff;
+}
+.imgBtn div.pointer p{
+    background: rgba(0,0,0,0.5);
+    border-color: #fff;
+}
+.imgBtn div:hover p {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+}
+@media screen and (min-width:1280px) and (max-width:1599px){ /*large pc*/
+    #main2 h3{font-size: 30px;letter-spacing: 14px;transition: 1s; }
+    .viewImg { width: 500px; height: 500px; transition: 1s; }
+    .viewImg div a.go {width: 150px;height: 45px; line-height: 45px;transition: 1s;}
+    .imgBtn {width: 80%; min-width: 1180px;transition: 1s;}
+    .imgBtn div {width: 300px; height: 220px;}
+    .imgBtn div:nth-child(1){top:-205px;}
+    .imgBtn div:nth-child(2){top:-205px; right: 0;}
+    .imgBtn div:nth-child(3){top:35px;}
+    .imgBtn div:nth-child(4){top:35px; right: 0;}
+    .imgBtn div img {height: 100%;}
+    .imgBtn div p {width: 300px;height: 220px;line-height: 16;text-indent: 120px;font-size: 25px;}
+}
+@media screen and (min-width:768px) and (max-width:1279px){ /*태블릿*/
+    #main2 h3{font-size: 25px;letter-spacing: 13px;transition: 1s; top: 90px;transform: translate(-50%,30%)}
+    .viewImg {max-width: 380px; _width: 28%;max-height: 380px;top: 340px;transition: 1s;transform: translate(-50%, -54%);border: 1px solid}
+    .viewImg div a.go {width: 150px;height: 50px;line-height: 50px;}
+    .imgBtn {min-width: 30%;top: 25%;transition: 1s;min-width: 750px;}
+    .imgBtn div{max-width: 220px;max-height: 50px;transition: 1s; border: 1px solid #403E3B;width: 20%; min-width: 178px;}
+    .imgBtn div img {display: none;}
+    .imgBtn div p {max-width: 220px;max-height: 50px;line-height: 50px;font-size: 23px;text-indent: 30px;transition: 1s;color:#403E3B;width: 100%; letter-spacing: 7px}
+    .imgBtn div:nth-child(3) p{text-indent: 25px;}
+    .imgBtn div.pointer p{color:#fff; border-color: #fff;}
+    .imgBtn div:nth-child(1){top:0px;left: 2%;}
+    .imgBtn div:nth-child(2){top:0px;left: 27%;}
+    .imgBtn div:nth-child(3){top:0px;left: 52%;}
+    .imgBtn div:nth-child(4){top:0px;left: 77%;}
+}
+@media screen and (max-width:767px){ /*mobile*/
+    #main2 h3{font-size: 20px;letter-spacing: 12px;transition: 1s;top: 70px ;}
+    .viewImg {width: 300px;height: 300px;top: 250px;transition: 1s;}
+    .viewImg div a.go {width: 120px;height: 40px;line-height: 40px;}
+    .imgBtn {width: 0%; min-width: 0px;top: 22%;transition: 1s;}
+    .imgBtn div{width: 145px;height: 50px;transition: 1s;border: 1px solid #403E3B;}
+    .imgBtn div img {display: none;}
+    .imgBtn div p {width: 145px; height: 50px;line-height: 50px;font-size: 14px;text-indent: 20px;transition: 1s;color:#403E3B;letter-spacing: 10px;}
+    .imgBtn div.pointer p{_color:#fff;}
+    .imgBtn div:nth-child(3) p{text-indent: 15px;}
+    .imgBtn div:nth-child(1){top:25px;left: -150px;}
+    .imgBtn div:nth-child(2){top:25px;left: 5px;}
+    .imgBtn div:nth-child(3){top:80px; left: -150px;}
+    .imgBtn div:nth-child(4){top:80px;left: 5px;}
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - MainMenu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    
+    <style>
+        #here{}
+        .subTop_bg{
+            /*top 배경 이미지 설정하는 곳*/
+            background: url(img/sub_community/bg.png)no-repeat ;
+            background-position: 50% center;
+        } 
+        #chk_box {
+            height: 40px;
+            line-height: 40px;
+            text-align: right;
+        }
+        #chk_box input[type="radio"] {
+            display: inline-block; 
+            margin-left: 15px; 
+            margin-right: 3px; 
+            margin-top: -2px; 
+            vertical-align: middle; 
+            width: 15px; 
+            height: 15px; 
+            appearance: none; 
+            background-color: #fff;
+            border: 1px solid #c1c1c1;
+            
+        }
+        #chk_box input[type="radio"]:checked {
+            background-color: #f2505d; 
+            border: 0;
+        }
+        article ul {display: none;}
+        article ul.page {display: block;}
+        article ul li {
+            border-top: 1px solid #bfbfbf;
+            border-right: 0;
+            border-left: 0;
+            clear: both;
+            display: table;
+            width: 100%;
+            cursor: pointer;
+        }
+        article ul li:last-child{
+            border-bottom: 1px solid #bfbfbf
+        }
+        article ul li img {
+            float: left;
+            display: block;
+            margin:15px 15px
+        }
+        article ul li h3 {
+            font-size: 20px;
+            letter-spacing: 3px;
+            padding-top: 15px
+        }
+        article ul li p{
+            padding: 5px;
+        }
+        article ul li p:nth-child(3){
+            margin: 8px 0 0 0;
+            background: #f2f2f2;
+            overflow: hidden;
+            color: #73726e
+        }
+        article .page p:last-child{
+            word-spacing: 3px; 
+            line-height: 1.5;
+        }
+        /*.sponsor_page {
+            height: 50vh;
+        }*/
+        article .pager_box {
+            width: 10%;
+            min-width: 230px;
+            margin: 0 auto;
+            position: relative;
+            bottom: 0px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 50px
+        }
+        article .pager_box > i, div > p {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid ;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+        article .pager_box div p{
+            display: inline-block;
+        }
+        article .pager_box div p:nth-child(1){
+            margin-right: 20px
+        }
+        article .pager_box > i:hover, div > p:hover {
+            border-color: #f2505d
+        }
+        article .pager_box > div >.pointer {
+            color: #f2505d
+        }
+        /*large pc*/
+        @media screen and (min-width:1280px) and (max-width:1599px){ 
+
+        }
+
+        /*tablet*/
+        @media screen and (min-width:768px) and (max-width:1279px){
+            .subTop_bg{background-position: 80% center;} 
+            #chk_box {text-align: center;}
+        }
+
+        /*mobile*/
+        @media screen and (max-width:767px){
+            .subTop_bg{background-position: 75% center;} 
+            #chk_box{text-align: center}
+            #chk_box input[type="radio"] {margin-left: 5px; margin-right: 0}
+            article .page{width: 100%; text-align: center; _border: 1px solid}
+            article .page li{/*display: inline-block;width: 45%;*/_margin: 1%}
+            article .page li img {float: none; margin: 10px 0px 5px 12px; width:95%;}
+            article .page li h3{font-size: 16px;letter-spacing: 2px; padding-top: 10px; padding-bottom: 5px}
+            article .page li p:nth-child(3){margin-bottom: 10px; font-size: 15px;
+            background: #403e3b; color: #fff}
+            article .page li p:last-child{display: none;}
+            article .pager_box {min-width: 200px; height: 80px;}
+            article .pager_box i, div > p {width: 30px; height: 30px;line-height: 30px;}
+        }
+    </style>
+    <script>
+        $(function(){
+           var all_p = $('.all_page'),
+               home_p = $('.home_page'), 
+               hotel_p = $('.service_page'),
+               spon_p = $('.sponsor_page');
+            home_p.hide();
+            hotel_p.hide();
+            spon_p.hide();
+            //숫자버튼시 ul에 page클래스 부여
+            //인풋 선택시 artcle 전부 하이드 처리 + 선택 카테고리만 쇼 + 선택 카테고리 안에 있는 ul에 page클래스 부여
+            $('#chk_box > #all').click(function(){
+                all_p.show();
+                all_p.find('>ul:nth-child(1)').addClass('page');
+                
+                home_p.hide();
+                hotel_p.hide();
+                spon_p.hide();
+            });
+            $('#chk_box > #home').click(function(){
+                home_p.show();
+                all_p.find('>ul').removeClass('page');
+                
+                all_p.hide();
+                hotel_p.hide();
+                spon_p.hide();
+            });
+            $('#chk_box > #service').click(function(){
+                hotel_p.show();
+                all_p.find('>ul').removeClass('page');
+                
+                all_p.hide();
+                home_p.hide();
+                spon_p.hide();
+            });
+            $('#chk_box > #sponsor').click(function(){
+                spon_p.show();
+                all_p.find('>ul').removeClass('page');                
+                all_p.hide();
+                hotel_p.hide();
+                home_p.hide();
+            });
+            
+            //페이지 넘김 버튼 설정
+                var num = 0,
+                i =$(this).index();
+            
+            $('.pager_box > div > p').click(function(){  
+                
+                var ii = $(this).index();
+                
+                $('.pager_box > div > p').removeClass();
+                $('.pager_box > div > p').eq(ii).addClass("pointer");
+                $('.all_page> ul ').removeClass("page");
+                $('.all_page> ul ').eq(ii).addClass("page");
+                num = ii;
+                
+            });
+            //왼쪽으로[prev]
+                $('.lb').click(function(){
+                    listNum = $('.page_wrap > div > p').length;
+                    num = num - 1;
+                    if(num < 0) {
+                        num = 0;
+                        return;
+                    }
+                    $('.pager_box > div > p').removeClass();
+                    $('.pager_box > div > p').eq(num).addClass("pointer");
+                    $('.all_page> ul ').removeClass("page");
+                    $('.all_page> ul ').eq(num).addClass("page");
+                    
+                });
+            //오른쪽으로[next]
+                $('.rb').click(function(){
+                    listNum = $('.pager_box > div > p').length;
+                    num = num + 1;
+                    if(num >= listNum) {
+                        num = listNum - 1;
+                        return;
+                    }
+                    $('.pager_box > div > p').removeClass();
+                    $('.pager_box > div > p').eq(num).addClass("pointer");
+                    $('.all_page> ul ').removeClass("page");
+                    $('.all_page> ul ').eq(num).addClass("page");
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>COMMUNITY</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>시공사례</h2>
+            <div id = "here">
+               <article id="chk_box">
+                   <input type="radio" name="select" id="all" class="chk" value="all" checked="checked" >
+                       <label for="all">전체</label>
+                   <input type="radio" name="select" id="home" class="chk" value="home">
+                       <label for="home">아파트, 주택</label>
+                   <input type="radio" name="select" id="service" class="chk" value="service">
+                      <label for="service">시설</label>         
+                   <input type="radio" name="select" id="sponsor" class="chk" value="sponsor">
+                      <label for="sponsor">협찬</label>              
+               </article>
+                <article class="all_page">
+                    <ul class="page">
+                        <li>
+                            <img src="img/sub_community/case/hotel1.png" alt=""/>
+                            <h3>영종도 파라다이스시티 호텔 </h3>
+                            <p>온리바스 > 호텔 | 2020-07-13</p>
+                            <p> 영종도에 위치한 파라다이스시티 호텔 욕조 시공 사례입니다. 
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/home1.png" alt=""/>
+                            <h3>신영 수내동 분당 지웰 푸르지오</h3>
+                            <p>온리바스 > 아파트 | 2020-07-01</p>
+                            <p>이번에 새로 시공된 분당 지웰 푸르지오에서 온리바스가 화장실 시공을 맡아 인테리어 작업을 실시 했습니다. 제품은 욕조, 욕실장(상부장/하부장 + 세면대 포함), 천장재, 샤워부스가 사용이 되었습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/servise1.png" alt=""/>
+                            <h3>수원 해우재 박물관</h3>
+                            <p>온리바스 > 서비스시설 | 2020-06-28</p>
+                            <p>해우재 박물관은 외부에서 봤을 때 변기 형태를 띄고 있는 것처럼 보여지며, 뿐만 아니라 건물 내부 한 가운데 화장실을 두어서 욕실의 중요성을 강조했습니다. 이런 특별한 인테리어 구조를 가진 해우재 박물관에 온리바스의 제품들로 인테리어를 구성하게 되었습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/hotel2.png" alt=""/>
+                            <h3>서울 사당 카라쉬 호텔</h3>
+                            <p>온리바스 > 호텔 | 2020-06-20</p>
+                            <p>서울 사당동에 위치한 호텔 카라쉬는 모던하고 세련된 인테리어를 가지고 있어, 그에 맞는 인테리어 시공을 실시하였습니다. 낮에는 깔끔한 모습으로, 밤에는 야경에 어울리는 느낌으로 연출해보았습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/servise2.png" alt=""/>
+                            <h3>청담 드레스 가든[공용화장실]</h3>
+                            <p>온리바스 > 서비스시설 | 2020-06-18</p>
+                            <p>LARL소재로 제작한 직배수타입의 공용세면대 제품을 시공하였으며, 화장실에서 편의성과 디자인의 미려함이 높게 평가되는 제품입니다.
+                            </p>
+                        </li>                  
+                    </ul>
+                    <ul class="">
+                        <li>
+                            <img src="img/sub_community/case/spon.png" alt=""/>
+                            <h3>영화'기생충' 제작협찬</h3>
+                            <p>온리바스 > 협찬 | 2020-06-09</p>
+                            <p>상영예정작인 봉준호 감독의 '기생충'영화에서 화장실신에서 등장하는 욕조 소품 협찬이 있었습니다. 디자인컷을 보시고 많은 관심 부탁드립니다.
+                            </p>
+                        </li>                             
+                        <li>
+                            <img src="img/sub_community/case/home2.png" alt=""/>
+                            <h3>창원 봉곡동 50평 주택</h3>
+                            <p>온리바스 > 아파트&amp;주택 | 2020-06-01</p>
+                            <p>심플하면서도 모던한 느낌이 묻어나는 세면대와 욕조 제품으로 시공하였으며, 세로로 긴 거울을 사용해 제품들과의 조화를 이루었습니다.
+                            </p>
+                        </li>                        
+                        <li>
+                           <img src="img/sub_community/case/home3.png" alt=""/>   
+                            <h3>대림산업 e편한세상 운정 어반프라임</h3>
+                            <p>온리바스 > 아파트 | 2020-05-29</p>
+                            <p>욕실장(상부장/하부장), 천장제, 샤워부스, 수납형에이프런 제품을 사용하여 제한된 공간에 알맞게 배치를 하여 갑갑한 느낌 없이 편리한 느낌을 받을 수 있게 인테리어 시공을 진행했습니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="pager_box">
+                        <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        <p>2</p>
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>                      
+                    </div>
+                </article>
+                <article class="home_page">
+                    <ul class="page">
+                        <li>
+                            <img src="img/sub_community/case/home1.png" alt=""/>
+                            <h3>신영 수내동 분당 지웰 푸르지오</h3>
+                            <p>온리바스 > 아파트 | 2020-07-01</p>
+                            <p>이번에 새로 시공된 분당 지웰 푸르지오에서 온리바스가 화장실 시공을 맡아 인테리어 작업을 실시 했습니다. 제품은 욕조, 욕실장(상부장/하부장 + 세면대 포함), 천장재, 샤워부스가 사용이 되었습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/home2.png" alt=""/>
+                            <h3>창원 봉곡동 50평 주택</h3>
+                            <p>온리바스 > 아파트&amp;주택 | 2020-06-01</p>
+                            <p>심플하면서도 모던한 느낌이 묻어나는 세면대와 욕조 제품으로 시공하였으며, 세로로 긴 거울을 사용해 제품들과의 조화를 이루었습니다.
+                            </p>
+                        </li>                        
+                        <li>
+                           <img src="img/sub_community/case/home3.png" alt=""/>   
+                            <h3>대림산업 e편한세상 운정 어반프라임</h3>
+                            <p>온리바스 > 아파트 | 2020-05-29</p>
+                            <p>욕실장(상부장/하부장), 천장제, 샤워부스, 수납형에이프런 제품을 사용하여 제한된 공간에 알맞게 배치를 하여 갑갑한 느낌 없이 편리한 느낌을 받을 수 있게 인테리어 시공을 진행했습니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="pager_box">
+                        <i class="fas fa-chevron-left"></i>
+                        <p class="pointer">1</p>
+                        <i class="fas fa-chevron-right"></i>                      
+                    </div>
+                </article>
+                <article class="service_page">
+                    <ul class="page">
+                        <li>
+                            <img src="img/sub_community/case/hotel1.png" alt=""/>
+                            <h3>영종도 파라다이스시티 호텔 </h3>
+                            <p>온리바스 > 호텔 | 2020-07-13</p>
+                            <p> 영종도에 위치한 파라다이스시티 호텔 욕조 시공 사례입니다. 
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/servise1.png" alt=""/>
+                            <h3>수원 해우재 박물관</h3>
+                            <p>온리바스 > 서비스시설 | 2020-06-28</p>
+                            <p>해우재 박물관은 외부에서 봤을 때 변기 형태를 띄고 있는 것처럼 보여지며, 건물 내부 한 가운데 화장실을 두어서 욕실의 중요성을 강조했습니다. 이런 특별한 인테리어 구조를 가진 해우재 박물관에 온리바스의 제품들로 인테리어를 구성하게 되었습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/hotel2.png" alt=""/>
+                            <h3>서울 사당 카라쉬 호텔</h3>
+                            <p>온리바스 > 호텔 | 2020-06-20</p>
+                            <p>서울 사당동에 위치한 호텔 카라쉬는 모던하고 세련된 인테리어를 가지고 있어, 그에 맞는 인테리어 시공을 실시하였습니다. 낮에는 깔끔한 모습으로, 밤에는 야경에 어울리는 느낌으로 연출해보았습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="img/sub_community/case/servise2.png" alt=""/>
+                            <h3>청담 드레스 가든[공용화장실]</h3>
+                            <p>온리바스 > 서비스시설 | 2020-06-18</p>
+                            <p>LARL소재로 제작한 직배수타입의 공용세면대 제품을 시공하였으며, 화장실에서 편의성과 디자인의 미려함이 높게 평가되는 제품입니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="pager_box">
+                        <i class="fas fa-chevron-left"></i>
+                        <p class="pointer">1</p>
+                        <i class="fas fa-chevron-right"></i>                      
+                    </div>
+                </article>
+                <article class="sponsor_page">
+                    <ul class="page">
+                        <li>
+                            <img src="img/sub_community/case/spon.png" alt=""/>
+                            <h3>영화'기생충' 제작협찬</h3>
+                            <p>온리바스 > 협찬 | 2020-06-09</p>
+                            <p>상영예정작인 봉준호 감독의 '기생충'영화에서 화장실신에서 등장하는 욕조 소품 협찬이 있었습니다. 디자인컷을 보시고 많은 관심 부탁드립니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="pager_box">
+                        <i class="fas fa-chevron-left"></i>
+                        <p class="pointer">1</p>
+                        <i class="fas fa-chevron-right"></i>                      
+                    </div>
+                </article>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

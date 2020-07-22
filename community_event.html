@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - PRODUCT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    
+    <style>
+        input, select, label{
+            cursor: pointer;
+        }
+        .main-content{
+            padding-bottom: 80px;
+            width: 1290px;
+            transition: 1s;
+        }
+        .subTop_bg{
+            /*top 배경 이미지 설정하는 곳*/
+            background: url(img/sub_community/bg.png)no-repeat ;
+            background-position: 50% center;
+        }        
+        ul.list {           
+            margin: 0 auto;
+            overflow: hidden;
+            top: 0;
+            transition: 1s;
+        }
+        ul.list > li {
+            width: 100%;
+            clear: both;
+            border-bottom: 1px solid #ddd;    
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            top: 0
+        }
+        ul.list > li:first-child{
+            border-top: 1px solid #ddd
+        }
+        ul.list > li img.evn{
+            float: left;
+            width: 12%;
+            margin: 15px;
+        }
+        ul.list > li h4{
+            font-size: 18px;
+            padding: 0 0 10px 0;
+            margin-top: 15px;
+        }
+        ul.list > li p{
+            background: #ddd;
+            overflow: hidden;
+            width: 270px;
+        }
+        ul.list > li > ul {
+            width: 100%;
+            clear: both;
+            text-align: center;
+            padding-top: 20px
+        }
+        ul.list > li > ul li {
+            background: #fafafa;
+             padding: 50px;
+        }
+        ul.list > li > ul li img:first-child{
+            _width: 59%;
+        }
+        ul.list > li > ul li img{
+            display: block;
+            margin: auto;
+        }
+        /*large pc*/
+        @media screen and (max-width:1599px){      
+            .main-content{width: 80%;transition: 1s}
+            ul.list > li > ul li img:first-child{min-width: 700px;}
+        }
+        /*tablet*/
+        @media screen and (max-width:1279px){            
+            .subTop_bg{background-position: 80% center;} 
+            .main-content{transition: 1s;width: 80%;}        
+            ul.list {transition: 1s; }
+            ul.list > li img.evn{
+                float: left;
+                width: 20%;
+                margin: 15px;
+            }
+            ul.list > li h4{
+                font-size: 18px;
+                padding: 0 0 10px 0;
+                margin-top: 15px;
+            }
+            ul.list > li > ul li {
+                background: #fafafa;
+                 padding: 50px;
+            }
+            ul.list > li > ul li img:first-child{
+                min-width: 0%;
+            }
+            ul.list > li > ul li img{
+                display: block;
+                margin: auto; 
+                width: 70%;
+            }
+        }
+        /*mobile*/
+        @media screen and (max-width:767px){            
+            .subTop_bg{background-position: 75% center;} 
+            .main-content{transition: 1s;width: 80%;}        
+            ul.list {transition: 1s; }
+            ul.list > li {text-align: center;margin: 0 auto;padding: 15px 0;transition: 1s;}
+            ul.list > li img.evn{
+                float: none;
+                width: 90%;
+                margin: 5px;                
+            }            
+            ul.list > li h4{
+                font-size: 17px;
+                padding: 0 0 10px 0;
+                margin-top: 15px;
+            }
+            ul.list > li p{
+                margin: 0 auto; 
+                font-size: 13px;
+                width: 220px;
+                padding: 3px 0
+            }
+            l.list > li > ul{
+                width: 100%;
+                _padding-top: 20px;
+            }
+            ul.list > li > ul li {
+                background: #fafafa;
+                 padding: 25px;
+            }
+            ul.list > li > ul li img:first-child{
+                min-width: 0%;
+            }
+            ul.list > li > ul li img{
+                display: block;
+                margin: auto; 
+                width: 100%;
+            }
+        }
+            
+    </style>
+    <script>
+        $(document).ready(function(){
+            var eventmore = $("ul.list > li"),
+                sub_li = $('.list > li > .sub_c'),
+                plus = $(".nt_box_top div img"),
+                cur = 10,
+                isOn = 0;     
+            
+                sub_li.hide();       
+          
+            eventmore.on("click",function(e){
+                if (isOn == 1){
+                    cur = 100;
+                }
+                var i = eventmore.index(this);
+                
+                if(cur != i){
+                    sub_li.hide();
+                    sub_li.eq(i).slideDown(1000);
+                    isOn = 2;
+                }
+                else {
+                    sub_li.eq(i).slideUp();
+                    isOn = 1;
+                }
+                cur = i;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>COMMUNITY</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>EVENT</h2>
+            <ul class="list">               
+                <li>
+                    <img class="evn" src="img/index/EVENT3.jpg"  alt=""/>
+                    <h4>행사명 : 리모델링 어땠어요?</h4>
+                    <p>진행기간 : 2020-07-01~2020-07-31</p>
+                    <!--<img class="ch" src="img/icon/plus.jpg" alt="더보기">-->
+                    <ul class="sub_c">
+                        <li>                           
+                            <img src="img/sub_community/event/event_1.png" alt="">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <img class="evn" src="img/index/EVENT1.jpg"  alt=""/>
+                    <h4>행사명 : 우리집 첫 욕실은?</h4>
+                    <p>진행기간 : 2020-07-01~2020-09-31</p>
+                    <ul class="sub_c">
+                        <li>                           
+                            <img src="img/sub_community/event/event_2.png" alt="">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <img class="evn" src="img/index/EVENT2.jpg"  alt=""/>
+                    <h4>행사명 : 우리집 욕실.호텔처럼!</h4>
+                    <p>진행기간 : 2020-07-01~2020-09-31</p>
+                    <ul class="sub_c">
+                        <li>
+                            <img src="img/sub_community/event/event_3.png" alt="">
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--//main-content-->
+        <footer></footer>
+    </div><!--//wrapper-->
+</body>
+</html>

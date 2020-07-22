@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - MainMenu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script> 
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>   
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">  
+    
+    <style>
+        #here{ color: #403e3b}    
+        .mobile_ver{display: none;}
+        .btn_box{display: none;}
+        .mm{display: none;}
+        /*.main_content > #here > #content > div > ul > li > i.fas{color:#f2505d;}*/
+        .subTop_bg{
+            /*top 배경 이미지 설정하는 곳*/
+            background: url(img/sub_community/bg.png)no-repeat ;
+            background-position: 50% center;
+        } 
+        h3.font_s{
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            letter-spacing: 5px;
+            border-bottom: 1px solid
+        }
+        #best_rv {
+            width: 100%;
+            max-width: 1545px;
+            margin:  0 auto;
+            margin-bottom: 150px;
+        }
+        #best_rv div{
+            float: left;
+            width: 22%;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0.5%;
+            padding: 10px;
+        }
+        #best_rv div *{
+            width: 100%;
+            margin: 0 auto;
+            vertical-align: top;            
+        }        
+        #best_rv div span {
+            display: inline-block;
+            text-align: left;
+            padding: 15px 0 0px 0;
+            font-family: 'Kalam', cursive;
+            font-size: 20px;
+        }
+        #best_rv div i {
+            margin-top: -30px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 18px;
+            color: #f2505d;
+            display: block
+        }
+        #best_rv div p {
+            text-align: left;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        /*버튼*/
+        #content > h3 {
+            height: 35px;
+            color: #403e3b;
+            line-height: 35px;
+            font-size: 22px;
+            letter-spacing: 3px;
+            border-bottom: 1px solid;
+            
+        }
+        #content .chk_box {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid
+        }
+        #content .chk_box *{
+            cursor: pointer;
+        }
+        #content .chk_box button {
+            width: 250px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid ;
+            cursor: pointer;
+        }
+        #content .chk_box button:not(:first-child){
+            margin-left: 20px;
+        }
+        #content .chk_box .tg {
+            background: #403E3B;
+            color: #fff !important;    
+            border: 0;
+        }
+        #content .chk_box button:hover,label:hover{
+            color: #F2505D;
+            border-color: #403E3B;
+        }  
+        /*리뷰 컨텐츠*/
+        #content {
+            width: 100%;
+            clear: both;
+        }        
+        #content div ul li{
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0 20px 0px;
+            display: table;
+            clear: both;
+            width: 100%;
+            position: relative;
+        }
+        #content div ul li img {
+            float: left;
+            display: block;
+            margin: 0 20px ;
+        }
+        #content div ul li h3 {
+            font-size: 20px;
+            padding-top: 15px;
+        }
+        #content div ul li p:nth-child(3){
+            margin: 8px 0 0 0;
+            background: #f2f2f2;
+            overflow: hidden;
+            color: #73726e;
+        }
+        #content div ul li p:nth-child(4){
+            word-spacing: 1px; 
+            line-height: 1.5;
+        }
+        #content div ul li p:nth-child(5){
+                margin-top: 5px
+        }
+        #content div ul li a {
+            color: #bfbfbf;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        #content div ul li a:hover{
+            text-decoration: underline;
+            color: #403e3b
+        }
+        #content div ul li i{
+            position: absolute;
+            right: 60px;
+            bottom: 10px;     
+            color: #f2505d ;
+            cursor: pointer;
+        }
+        #content div ul li span {
+            position: absolute;
+            right: 23px;
+            bottom: 10px; 
+            cursor: pointer;    
+        }
+        #content .pager_box {
+            width: 338px;           
+            margin: 0 auto;
+            position: relative;
+            bottom: 0px;
+            height: 150px;
+            display: flex;
+            padding-top: 50px;
+            _border: 1px solid
+        }
+        #content .pager_box i, #content .pager_box div p{
+            width: 35px;
+            border: 1px solid ;
+            text-align: center;
+            height: 35px;
+            line-height: 35px;
+            margin: 0 auto;
+            cursor: pointer;            
+        }
+        #content .pager_box div p{
+            display: inline-block;
+        }
+        #content .pager_box div p:not(:first-child){
+            margin-left: 15px
+        }
+        #content .pager_box .pointer{
+            color: #f2505d !important;
+            border-color: #f2505d !important;
+        }
+        #content .pager_box i:hover, #content .pager_box div p:hover {
+            color: #f2505d;
+            border-color: #403e3b;   
+        }
+        a.go{
+            position: absolute;
+            border: 1px solid ;
+            bottom: 110px;
+            right: 0;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;            
+        }
+        /*large pc*/
+        @media screen and (min-width:1280px) and (max-width:1599px){ 
+
+        }
+        /*tablet*/
+        @media screen and (min-width:768px) and (max-width:1279px){
+            .subTop_bg{background-position: 80% center;} 
+            h3.font_s {font-size: 30px}
+            #best_rv{text-align: center}
+            #best_rv h3{width: 87%;max-width: 780px;margin: 0 auto; _text-align: left}
+            #best_rv div {float: none;display: inline-block;width: 40%;max-width: 355px;border:1px solid rgba(0,0,0,0.2);margin:10px 5px;margin-bottom: 15px;padding:10px;box-shadow: 2px 2px 5px rgba(0,0,0,0.5); vertical-align: top;}
+            #best_rv div:nth-child(3){margin-top: -160px;}
+            #best_rv div span {font-size: 18px;}
+            #best_rv div span:after{display: block; content: ""; border-bottom: 1px solid #969696;}
+            #best_rv div P:nth-child(4){height: 120px;overflow-y: scroll;}
+            #best_rv div p:nth-child(4)::-webkit-scrollbar{width: 10px;}
+            #best_rv div p:nth-child(4)::-webkit-scrollbar-thumb{
+                background-color: #73726E; 
+                background-clip: padding-box; 
+                border: 4px solid transparent 
+            }
+            #best_rv div p:nth-child(4)::-webkit-scrollbar-track{background-color: #fff}
+            #best_rv div p:nth-child(5){border-top: 1px solid #969696}
+            /*리뷰*/
+            #content .chk_box button {width: 170px;}
+            #content div ul li{
+                border-bottom: 1px solid #ddd;
+                padding: 20px 0 20px 0px;
+                display: table;
+                clear: both;
+                width: 100%;
+                position: relative;
+            }
+            #content div ul li:first-child{border-top: 1px solid ;}
+            #content div ul li img {width: 30%;margin: 0 15px ;}
+            #content div ul li h3 {
+                font-size: 18px;
+                letter-spacing: 2px; 
+                padding-top: 10px;
+            }
+            #content div ul li p:nth-child(4){
+                word-spacing: 2px; 
+                font-size: 15px;
+                margin-top: 5px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* 라인수 */
+                -webkit-box-orient: vertical;
+                word-wrap:break-word;
+            }
+            #content div ul li p:nth-child(5){
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            #content div ul li a {
+                position: absolute;
+                bottom: 20px;
+            }                        
+            #content .pager_box {width: 45%;}
+            a.go{bottom: 30px;right: 50%;transform: translate(50%); width: 350px;}
+            
+        }
+            /*mobile*/
+        @media screen and (max-width:767px){
+            .subTop_bg{background-position: 75% center;} 
+            #best_rv{display: none;}
+            .pp{display: none;}
+            /*.main_content > #here > .mobile_ver > div > ul > li > div > i.fas{color:#f2505d;}*/
+             h3.font_s {font-size: 25px;}
+            .mobile_ver {display: block;width: 90%; margin: 0 auto; box-shadow: none;margin-bottom: 100px}
+            .mobile_ver {padding-top: 10px;border: 1px solid ;margin-top: 5px;}
+            .mobile_ver .swiper-wrapper div img {width: 90%; margin: 0 auto; display: block;}
+            .mobile_ver .swiper-wrapper div span { 
+                display: inline-block;padding: 5px 0 0 15px;font-family: 'Kalam', cursive; ;
+            }  
+            .mobile_ver .swiper-wrapper div i:after{
+                display: block; content:""; border-bottom: 1px solid #7a7a7a;margin-top: 5px
+            }
+            .mobile_ver .swiper-wrapper div i {
+                color: #f2505d;display: block;text-align: right; margin: -22px 14px 10px;
+            }
+            .mobile_ver .swiper-wrapper div p:nth-child(4) {
+                line-height: 1.5;text-align: justify;font-size: 14px;width: 90%;margin: 0 auto
+            }
+            .mobile_ver .swiper-wrapper div p:nth-child(5) {
+                padding:5px 15px; font-size: 14px;
+            }
+            .mobile_ver .swiper-wrapper div p:nth-child(5):before{
+                display: block;content:"";
+                border-top: 1px solid #7a7a7a; margin-bottom: 4px;
+            }
+            .mobile_ver .swiper-wrapper div p:last-child{ text-indent: -999999px;}
+            .btn_box{display: block;}
+            .btn_box i {position: absolute;top: 400px;font-size: 30px;}
+            .btn_box i.swiper-button-prev {background-image: none; left: -10px; outline: 0}
+            .btn_box i.swiper-button-next {background-image: none; right: -15px; outline: 0}
+            /*버튼*/
+            #content_m > h3 {height: 35px;color: #403e3b;line-height: 35px; font-size: 22px;
+                letter-spacing: 3px;border-bottom: 1px solid;            
+            }
+            #content_m .chk_box {width: 100%;margin: 0 auto;text-align: center;
+                padding: 30px 0;border-bottom: 1px solid;
+            }            
+            #content_m .chk_box button {width: 27%;height: 40px;background: #fff;
+                border: 1px solid ;cursor: pointer;
+            }
+            #content_m .chk_box button:not(:first-child){margin-left: 20px;}
+            #content_m .chk_box .tg {background: #403E3B;color: #fff !important; border: 0; }
+            #content_m .chk_box button:hover,label:hover{color: #F2505D;border-color: #403E3B; }  
+             /*리뷰*/
+            .mm{display: block}
+            #content_m{width: 100%;}
+            #content_m div ul{display: none}
+            #content_m div ul.page{display: block;}
+            #content_m div ul.page li { border-bottom: 1px solid;padding:15px 5px;position: relative;margin-bottom: 10px}
+            #content_m div ul.page li img:first-child {width: 95%; display: block;margin:  0 auto;}
+            #content_m div ul.page li h3 {width: 95%;font-size: 18px;margin: 0 auto;padding: 5px 0}
+            #content_m div ul.page li p:nth-child(3){background: #ddd; padding: 4px 0;width: 95%;margin: 0 auto;font-size: 14px}
+            #content_m div ul.page li a{display: inline-block; margin: 10px 0 10px 2.5% ; font-size: 14px; _border: 1px solid}
+            #content_m div ul.page li img:nth-child(5){width: 20px; vertical-align: sub;cursor: pointer}
+            #content_m div ul.page li img:nth-child(5).on{transform: rotate(180deg); transition: all 0.5s;}
+            #content_m div ul.page li div {display: none; width: 95%;margin: 0 auto;font-size: 14px;}
+            #content_m div ul.page li div p{font-size: 15px;text-align: justify;line-height: 1.6;}
+            #content_m div ul.page li div p:before{display: block;content: ""; border-top: 1px solid #ddd;padding-top: 5px}
+            #content_m div ul.page li div i {position: absolute; bottom: 4%; right: 18%;cursor: pointer;color: #f2505d;}
+            #content_m div ul.page li div span {position: absolute; bottom: 4%;right: 7%;cursor: pointer}
+            #content_m .pager_box {                
+                width: 280px;           
+                margin: 0 auto;
+                position: relative;
+                bottom: 0px;
+                height: 140px;
+                display: flex;
+                padding-top: 50px;
+            }
+            #content_m .pager_box i, #content_m .pager_box div p{
+                width: 35px;
+                border: 1px solid ;
+                text-align: center;
+                height: 35px;
+                line-height: 35px;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+            #content_m .pager_box div p{
+                display: inline-block;                
+            }
+            #content_m .pager_box div p:not(:first-child){
+                margin-left: 15px
+            }
+            #content_m .pager_box .pointer{
+                color: #f2505d !important;
+                border-color: #f2505d !important;
+            }
+            #content_m .pager_box i:hover, #content_m .pager_box div p:hover {
+                color: #f2505d;
+                border-color: #403e3b;   
+            }
+            a.go{bottom: 20px;right: 50%; width: 250px; transform: translate(50%);font-size: 14px;}
+            a.go:before{background: #403E3B;}
+        }                   
+    </style>
+    <script>  
+        $(document).ready(function(){
+            /*기초셋팅*/
+            $('#content > .review_box > ul').fadeOut();
+            $('#content > .review_box > .page').fadeIn();
+            $('#content > .all ').fadeOut();
+            $('#content > .Individual ').fadeOut();
+            $('#content_m > .all_m').fadeOut();
+            $('#content_m > .Individual_m').fadeOut();
+            //pc소스
+            /*아이콘 클릭*/
+            var clik = 0;
+            $('#content div ul li i').click(function(){
+                
+                if( clik == 0){
+                    
+                    $(this).removeClass('far') ;
+                    $(this).addClass('fas');      
+                    
+                    clik += 1;
+                }else{
+                    $(this).removeClass('fas');
+                    $(this).addClass('far') ;
+                    clik =0;
+                }
+            });
+            $('#content > .chk_box > button').click(function(){
+               var i = $(this).index();
+                if(i == 0){
+                    $('#content > .review_box ').fadeIn();
+                    $('#content > .all ').fadeOut();
+                    $('#content > .Individual ').fadeOut();
+                }else if(i == 1){
+                    $('#content > .review_box ').fadeOut();
+                    $('#content > .all ').fadeIn();
+                    $('#content > .Individual ').fadeOut();
+                }else if(i == 2){
+                    $('#content > .review_box ').fadeOut();
+                    $('#content > .all ').fadeOut();
+                    $('#content > .Individual ').fadeIn();
+                    $('#content > .Individual > ul:not(:nth-child(1))').fadeOut();
+                }else{
+                    $('#content > .review_box ').fadeIn();
+                    $('#content > .all ').fadeOut();
+                    $('#content > .Individual ').fadeOut();
+                }                
+                $('#content > .chk_box > button').removeClass('tg');
+                $(this).addClass('tg');
+            });            
+               
+            var num = 0;
+            $('#content > .review_box > .pager_box > div > p').click(function(){      
+                var ii = $(this).index();
+                $('#content > .review_box > .pager_box > div > p').removeClass();
+                $('#content > .review_box > .pager_box > div > p').eq(ii).addClass("pointer");
+                $('#content > .review_box > ul ').fadeOut();
+                $('#content > .review_box > ul ').eq(ii).fadeIn();
+                num = ii;                
+            });            
+            //왼쪽으로[prev]
+                $('#content > .review_box > .pager_box > .lb').click(function(){
+                    listNum = $('#content > .review_box > .pager_box > div > p').length;
+                    num = num - 1;
+                    if(num < 0) {
+                        num = 0;
+                        return;
+                    }
+                    $('#content > .review_box > .pager_box > div > p').removeClass();
+                    $('#content > .review_box > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content > .review_box > ul ').fadeOut();
+                    $('#content > .review_box > ul ').eq(num).fadeIn();
+                    
+                });
+            //오른쪽으로[next]
+                $('#content > .review_box > .pager_box > .rb').click(function(){
+                    listNum = $('#content > .review_box > .pager_box > div > p').length;
+                    num = num + 1;
+                    if(num >= listNum) {
+                        num = listNum - 1;
+                        return;
+                    }
+                    $('#content > .review_box > .pager_box > div > p').removeClass();
+                    $('#content > .review_box > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content > .review_box > ul ').fadeOut();
+                    $('#content > .review_box > ul ').eq(num).fadeIn();
+                });
+            /*개별시공*/
+            $('#content > .Individual > .pager_box > div > p').click(function(){      
+                var ii = $(this).index();
+                $('#content > .Individual > .pager_box > div > p').removeClass();
+                $('#content > .Individual > .pager_box > div > p').eq(ii).addClass("pointer");
+                $('#content > .Individual > ul ').fadeOut();
+                $('#content > .Individual > ul ').eq(ii).fadeIn();
+                num = ii;                
+            });            
+            //왼쪽으로[prev]
+                $('#content > .Individual > .pager_box > .lb').click(function(){
+                    listNum = $('#content > .Individual > .pager_box > div > p').length;
+                    num = num - 1;
+                    if(num < 0) {
+                        num = 0;
+                        return;
+                    }
+                    $('#content > .Individual > .pager_box > div > p').removeClass();
+                    $('#content > .Individual > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content > .Individual > ul ').fadeOut();
+                    $('#content > .Individual > ul ').eq(num).fadeIn();
+                    
+                });
+            //오른쪽으로[next]
+                $('#content > .Individual > .pager_box > .rb').click(function(){
+                    listNum = $('#content > .Individual > .pager_box > div > p').length;
+                    num = num + 1;
+                    if(num >= listNum) {
+                        num = listNum - 1;
+                        return;
+                    }
+                    $('#content > .Individual > .pager_box > div > p').removeClass();
+                    $('#content > .Individual > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content > .Individual > ul ').fadeOut();
+                    $('#content > .Individual > ul ').eq(num).fadeIn();
+                });
+            
+            //모바일 소스
+            new Swiper('.swiper-container', {
+                autoHeight : true,                  // 자동높이 사용여부 : 사용하지 않을시 기본값은 false
+                loop : true,                        // 슬라이드 반복   
+                autoplay: {
+                    delay: 3500,
+                },
+                navigation : {                      // 네비게이션
+                    nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+                    prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+                }
+            });
+            $('#content_m > .chk_box > button').click(function(){
+               var i = $(this).index();
+                if(i == 0){
+                    $('#content_m > .small1 ').fadeIn();
+                    $('#content_m > .all_m ').fadeOut();
+                    $('#content_m > .Individual_m ').fadeOut();
+                }else if(i == 1){
+                    $('#content_m > .small1 ').fadeOut();
+                    $('#content_m > .all_m ').fadeIn();
+                    $('#content_m > .Individual_m ').fadeOut();
+                }else if(i == 2){
+                    $('#content_m > .small1 ').fadeOut();
+                    $('#content_m > .all_m ').fadeOut();
+                    $('#content_m > .Individual_m ').fadeIn();
+                    $('#content >_m .Individual > ul:not(:nth-child(1))').fadeOut();
+                }else{
+                    $('#content_m > .small1 ').fadeIn();
+                    $('#content_m > .all_m ').fadeOut();
+                    $('#content_m > .Individual_m ').fadeOut();
+                }                
+                $('#content_m > .chk_box > button').removeClass('tg');
+                $(this).addClass('tg');
+            });
+            /*페이지 이동*/
+            var num = 0;
+            $('#content_m > .small1 > .pager_box > div > p').click(function(){      
+                var ii = $(this).index();
+                $('#content_m > .small1 > .pager_box > div > p').removeClass();
+                $('#content_m > .small1 > .pager_box > div > p').eq(ii).addClass("pointer");
+                $('#content_m > .small1 > ul ').fadeOut();
+                $('#content_m > .small1 > ul ').eq(ii).fadeIn();
+                $('#content_m > .small1 > ul ').removeClass();
+                $('#content_m > .small1 > ul ').eq(ii).addClass("page");
+                num = ii;                
+            });            
+            //왼쪽으로[prev]
+                $('#content_m > .small1 > .pager_box > .lb').click(function(){
+                    listNum = $('#content_m > .small1 > .pager_box > div > p').length;
+                    num = num - 1;
+                    if(num < 0) {
+                        num = 0;
+                        return;
+                    }
+                    $('#content_m > .small1 > .pager_box > div > p').removeClass();
+                    $('#content_m > .small1 > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content_m > .small1 > ul ').fadeOut();
+                    $('#content_m > .small1 > ul ').eq(num).fadeIn();
+                    $('#content_m > .small1 > ul ').removeClass();
+                    $('#content_m > .small1 > ul ').eq(num).addClass("page");
+                    
+                });
+            //오른쪽으로[next]
+                $('#content_m > .small1 > .pager_box > .rb').click(function(){
+                    listNum = $('#content_m > .small1 > .pager_box > div > p').length;
+                    num = num + 1;
+                    if(num >= listNum) {
+                        num = listNum - 1;
+                        return;
+                    }
+                    $('#content_m > .small1 > .pager_box > div > p').removeClass();
+                    $('#content_m > .small1 > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content_m > .small1 > ul ').fadeOut();
+                    $('#content_m > .small1 > ul ').eq(num).fadeIn();
+                    $('#content_m > .small1 > ul ').removeClass();
+                    $('#content_m > .small1 > ul ').eq(num).addClass("page");
+                });
+            /*개별시공*/
+            $('#content_m > .Individual_m > .pager_box > div > p').click(function(){      
+                var ii = $(this).index();
+                $('#content_m > .Individual_m > .pager_box > div > p').removeClass();
+                $('#content_m > .Individual_m > .pager_box > div > p').eq(ii).addClass("pointer");
+                $('#content_m > .Individual_m > ul ').fadeOut();
+                $('#content_m > .Individual_m > ul ').eq(ii).fadeIn();
+                $('#content_m > .Individual_m > ul ').removeClass();
+                $('#content_m > .Individual_m > ul ').eq(ii).addClass("page");
+                num = ii;                
+            });            
+            //왼쪽으로[prev]
+                $('#content_m > .Individual_m > .pager_box > .lb').click(function(){
+                    listNum = $('#content_m > .Individual_m > .pager_box > div > p').length;
+                    num = num - 1;
+                    if(num < 0) {
+                        num = 0;
+                        return;
+                    }
+                    $('#content_m > .Individual_m > .pager_box > div > p').removeClass();
+                    $('#content_m > .Individual_m > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content_m > .Individual_m > ul ').fadeOut();
+                    $('#content_m > .Individual_m > ul ').eq(num).fadeIn();
+                    $('#content_m > .Individual_m > ul ').removeClass();
+                    $('#content_m > .Individual_m > ul ').eq(num).addClass("page");
+                    
+                });
+            //오른쪽으로[next]
+                $('#content_m > .Individual_m > .pager_box > .rb').click(function(){
+                    listNum = $('#content_m > .Individual_m > .pager_box > div > p').length;
+                    num = num + 1;
+                    if(num >= listNum) {
+                        num = listNum - 1;
+                        return;
+                    }
+                    $('#content_m > .Individual_m > .pager_box > div > p').removeClass();
+                    $('#content_m > .Individual_m > .pager_box > div > p').eq(num).addClass("pointer");
+                    $('#content_m > .Individual_m > ul ').fadeOut();
+                    $('#content_m > .Individual_m > ul ').eq(num).fadeIn();
+                    $('#content_m > .Individual_m > ul ').removeClass();
+                    $('#content_m > .Individual_m > ul ').eq(num).addClass("page");
+                });
+            //768px이상일때 햄버거메뉴의 서브메뉴 슬라이드 업/다운
+            var cur = 10;
+            var isOn = 2;
+            $("#content_m > div > ul > li > a").click(function(){
+                var i = $(this).index();
+             
+                 //동일한 것을 두번 눌렀을 경우 cur 과 i 값이 동일 이므로 cur을 다른 값으로 setting
+                    if(isOn == 1){
+                        cur = 10;
+                    }
+                    var i = $(this).index();
+                    
+                    if(cur != i){
+                        $("#content_m > div > ul > li > div").hide();
+                        $("#content_m > div > ul > li > img:nth-child(5)").removeClass("on");
+                        $(this).siblings("img:nth-child(5)").addClass("on");
+                        $(this).siblings("div").slideDown();
+                        isOn = 2; //slide다운상태
+                    }
+                    else{
+                        $("#content_m > div > ul > li > img:nth-child(5)").removeClass("on");
+                        $(this).siblings("div").slideUp();
+                        isOn = 1; //slide업상태
+                    }
+                    cur = i;      
+            });        
+            var cl = 0;
+            $(' #content_m div ul.page li div i').click(function(){
+                
+                if( cl == 0){
+                    
+                    $(this).removeClass('far') ;
+                    $(this).addClass('fas');   
+                    
+                    cl += 1;
+                }else{
+                    $(this).removeClass('fas');
+                    $(this).addClass('far') ;
+                    cl =0;
+                }
+            });
+            
+});
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>COMMUNITY</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>시공후기</h2>
+            <div id = "here">
+              <h3 class="font_s">Best Review</h3>
+               <article id="best_rv" >
+                      <!--<h3 class="font_s">Best Review</h3>-->
+                       <div >
+                           <img src="img/index/review1.png" alt="">
+                           <span>#ALL INTERIOR</span>
+                           <i class="fas fa-heart"></i>
+                           <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~
+                           </p>
+                           <p>
+                               곽 승*
+                           </p>                           
+                       </div>
+                       <div>
+                           <img src="img/index/review2.png" alt="">
+                           <span>#CABINET</span><i class="fas fa-heart"></i>
+                           <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요. 
+                           </p>
+                           <p>
+                               박 지*
+                           </p>                           
+                       </div>
+                       <div>
+                           <img src="img/index/review3.png" alt="">
+                           <span>#SINK</span><i class="fas fa-heart"></i>
+                           <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요. 
+                           </p>
+                           <p>
+                               최 지*
+                           </p>                           
+                       </div>
+                       <div>
+                           <img src="img/index/review4.png" alt="">
+                           <span>#ALL INTERIOR</span><i class="fas fa-heart"></i>
+                           <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ
+                           </p>
+                           <p>
+                               최 승*
+                           </p>                           
+                       </div>                     
+               </article>
+               <article class="mobile_ver swiper-container">                   
+                      <div class="swiper-wrapper">
+                       <div class="swiper-slide">
+                           <img src="img/index/review1_m.png" alt="">
+                           <span>#ALL INTERIOR</span>
+                           <i class="fas fa-heart"></i>
+                           <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~
+                           </p>
+                           <p>곽 승*</p>    
+                           <p>높이 맞추기</p>                       
+                       </div>
+                       <div class="swiper-slide">
+                           <img src="img/index/review2_m.png" alt="">
+                           <span>#CABINET</span><i class="fas fa-heart"></i>
+                           <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요. 
+                           </p>
+                           <p>박 지*</p>     
+                           <p>높이 맞추기</p>               
+                       </div>
+                       <div class="swiper-slide">
+                           <img src="img/index/review3_m.png" alt="">
+                           <span>#SINK</span><i class="fas fa-heart"></i>
+                           <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요. 
+                           </p>
+                           <p>최 지*</p>          
+                           <p>높이 맞추기</p>                    
+                       </div>
+                       <div class="swiper-slide">
+                           <img src="img/index/review4_m.png" alt="">
+                           <span>#ALL INTERIOR</span><i class="fas fa-heart"></i>
+                           <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ
+                           </p>
+                           <p>최 승*</p>         
+                           <p>높이 맞추기</p>                
+                       </div>
+                    </div>                                       
+               </article>
+               <div class="btn_box">
+                        <i class="fas fa-chevron-left swiper-button-prev"></i>
+                        <i class="fas fa-chevron-right swiper-button-next"></i>
+               </div>  
+               <!--리뷰 pc버전-->
+               <article id="content" class="pp">
+                 <h3>전체리뷰</h3>
+                 <div class="chk_box">
+                     <button class="pull tg">전체</button>
+                     <button class="">전체시공</button>
+                     <button class="">개별시공</button>
+                 </div><!--버튼 박스-->
+                 <div class="review_box">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review1.png" alt="인테리어사진"/>
+                          <h3>신세계에요ㅜㅜ</h3>
+                          <p>전체시공 > 모던 | 2020-07-23</p>
+                          <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~</p>
+                          <p>곽 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="fas fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review2.png" alt="인테리어사진"/>
+                          <h3>깔끔하니 이뻐요!!</h3>
+                          <p>개별시공 > 욕실장 | 2020-07-20</p>
+                          <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요.</p>
+                          <p>박 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review3.png" alt="인테리어사진"/>
+                          <h3>만족스러워요~</h3>
+                          <p>개별시공 > 세면대 | 2020-07-20</p>
+                          <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요.</p>
+                          <p>최 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review4.png" alt="인테리어사진"/>
+                          <h3>아주아주 마음에 들어요!</h3>
+                          <p>전체시공 > 심플 | 2020-07-13</p>
+                          <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ</p>
+                          <p>최 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review5.png" alt="인테리어사진"/>
+                          <h3>디자인 괜찮네요</h3>
+                          <p>개별시공 > 세면대 | 2020-07-03</p>
+                          <p>원래 인테리어 맞겼던 곳에서 세면대 제품이 마음에 안 들어서 세면대만 따로 온리바스에서 주문했는데 굉장히 깔끔하네요. 특히 그 이음새부분이 티가 안나서 더 좋아요~
+                          </p>
+                          <p>곽 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                      
+                  </ul>
+                  <ul>
+                      <li>
+                          <img src="img/sub_community/rivew/review6.png" alt="인테리어사진"/>
+                          <h3>크기도 딱 맞고, 외형도 마음에 들어요~</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <p>욕조만 바꾸고 싶어서 주문했는데 사이즈도 딱 맞고, 시공도 꼼꼼하게 해주셔서 너무 감사했어요. 또 관리방법 같은 걸 알려주셔서 더 깨끗하게 사용할 수 있을 것 같아요!!
+                         </p>
+                         <p>박 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review7.png" alt="인테리어사진"/>
+                          <h3>고민하다가 결국 질렀습니다:)</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <p>우연치 않게 광고로 알게 되었다가 금액이 살짝 부담되서 몇 개월 고민하다가 질렀는데, 너무 이뻐요ㅜㅜㅜㅜ원래 욕조 없다가 생기니깐 삶의 질이 올라가는 기분이에요!</p>
+                          <p>한 예*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review8.png" alt="인테리어사진"/>
+                          <h3>거울 하나 바꿨을 뿐인데 분위기가 달라졌어요!!</h3>
+                          <p>개별시공 > 거울 | 2020-06-18</p>
+                          <p>원래는 라이트 없는 거울을 살려고 했는데, 가격 차이가 얼마 나지 않아서 라이트 달린 거울 사서 아주 만족 중이에요! 원ㅇ래 인테리어 자체가 어두운 편이여서 더 잘 어울리는 거 같아요 ㅎㅎ</p>
+                          <p>이 수*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review9.png" alt="인테리어사진"/>
+                          <h3>독특해서 마음에 들어요</h3>
+                          <p>개별시공 > 세면대 | 2020-06-17</p>
+                          <p>독특한 디자인 아주 좋아요~</p>
+                          <p>강 아*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review10.png" alt="인테리어사진"/>
+                          <h3>수납공간 적당해요</h3>
+                          <p>개별시공 > 욕실장 | 2020-06-08</p>
+                          <p>욕실용품 둘만한 곳을 찾고 있었는데, 디자인이랑 수납 괜찮아보여서 주문했고, 제품 사진이랑 동일해요. 다만 샴푸 통 같이 큰 제품은 안 들어가네요..ㅜ</p>
+                          <p>정 소*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                      
+                  </ul>
+                  <ul>
+                      <li>
+                          <img src="img/sub_community/rivew/review11.png" alt="인테리어사진"/>
+                          <h3>김이 안 생겨서 좋아요~</h3>
+                          <p>개별시공 > 거울 | 2020-06-07</p>
+                          <p>샤워 할 때마다 김서리는게 싫었는데, 교체하고 나서는 안 생겨서 좋아요~</p>
+                          <p>조 수*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review12.png" alt="인테리어사진"/>
+                          <h3>사이즈 적당해요!</h3>
+                          <p>개별시공 > 욕조 | 2020-06-02</p>
+                          <p>아담한 사이즈를 원해서 제일 작은 걸로 시켰는 데 좋네요. 다만 높이가 조금 아쉬워요ㅠ</p>
+                          <p>김 하*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review13.png" alt="인테리어사진"/>
+                          <h3>조명이 정말 예뻐요</h3>
+                          <p>개별시공 > 거울 | 2020-05-31</p>
+                          <p>조명이 예뻐서 좋아요. 그리고 조명만 따로 끄고 킬 수 있어서 좋았어요~</p>
+                          <p>김 고*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review14.png" alt="인테리어사진"/>
+                          <h3>고급진 느낌이 나서 만족 중이에요</h3>
+                          <p>전체시공 > 럭셔리 | 2020-05-31</p>
+                          <p>제품 개별개별로 보면 좀 그저 그랬는데, 전체적으로 완성시키고 보니 굉장히 느낌 있네요. 이래서 전문가의 안목을 믿어야하나 봐요~감사합니다:&#41;</p>
+                          <p>김 유*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review15.png" alt="인테리어사진"/>
+                          <h3>깔금해서 보기 좋아요~!</h3>
+                          <p>개별시공 > 캐비넷 | 2020-06-30</p>
+                          <p>깔끔하고 단정한 걸 찾았는데 딱 원하는 제품이 있어서 바로 주문했어요. 그리고 배송이 왔을 때도 구조에 맞게 잘 설치해주셔서 하자 없이 잘 사용중이에요!</p>
+                          <p>임 유
+                          *</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                      
+                  </ul> 
+                  <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>
+                  </div> 
+                 </div><!--리뷰 박스-->
+                 <div class="all">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review1.png" alt="인테리어사진"/>
+                          <h3>신세계에요ㅜㅜ</h3>
+                          <p>전체시공 > 모던 | 2020-07-23</p>
+                          <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~</p>
+                          <p>곽 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review4.png" alt="인테리어사진"/>
+                          <h3>아주아주 마음에 들어요!</h3>
+                          <p>전체시공 > 심플 | 2020-07-13</p>
+                          <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ</p>
+                          <p>최 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li> 
+                      <li>
+                          <img src="img/sub_community/rivew/review14.png" alt="인테리어사진"/>
+                          <h3>고급진 느낌이 나서 만족 중이에요</h3>
+                          <p>전체시공 > 럭셔리 | 2020-05-31</p>
+                          <p>제품 개별개별로 보면 좀 그저 그랬는데, 전체적으로 완성시키고 보니 굉장히 느낌 있네요. 이래서 전문가의 안목을 믿어야하나 봐요~감사합니다:&#41;</p>
+                          <p>김 유*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                
+                  </ul>
+                 <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>
+                  </div> 
+                 </div><!--전체시공 박스-->
+                 <div class="Individual">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review2.png" alt="인테리어사진"/>
+                          <h3>깔끔하니 이뻐요!!</h3>
+                          <p>개별시공 > 욕실장 | 2020-07-20</p>
+                          <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요.</p>
+                          <p>박 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review3.png" alt="인테리어사진"/>
+                          <h3>만족스러워요~</h3>
+                          <p>개별시공 > 세면대 | 2020-07-20</p>
+                          <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요.</p>
+                          <p>최 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review5.png" alt="인테리어사진"/>
+                          <h3>디자인 괜찮네요</h3>
+                          <p>개별시공 > 세면대 | 2020-07-03</p>
+                          <p>원래 인테리어 맞겼던 곳에서 세면대 제품이 마음에 안 들어서 세면대만 따로 온리바스에서 주문했는데 굉장히 깔끔하네요. 특히 그 이음새부분이 티가 안나서 더 좋아요~
+                          </p>
+                          <p>곽 지*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review6.png" alt="인테리어사진"/>
+                          <h3>크기도 딱 맞고, 외형도 마음에 들어요~</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <p>욕조만 바꾸고 싶어서 주문했는데 사이즈도 딱 맞고, 시공도 꼼꼼하게 해주셔서 너무 감사했어요. 또 관리방법 같은 걸 알려주셔서 더 깨끗하게 사용할 수 있을 것 같아요!!
+                         </p>
+                         <p>박 승*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review7.png" alt="인테리어사진"/>
+                          <h3>고민하다가 결국 질렀습니다:)</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <p>우연치 않게 광고로 알게 되었다가 금액이 살짝 부담되서 몇 개월 고민하다가 질렀는데, 너무 이뻐요ㅜㅜㅜㅜ원래 욕조 없다가 생기니깐 삶의 질이 올라가는 기분이에요!</p>
+                          <p>한 예*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                      
+                  </ul>
+                  <ul>                      
+                      <li>
+                          <img src="img/sub_community/rivew/review8.png" alt="인테리어사진"/>
+                          <h3>거울 하나 바꿨을 뿐인데 분위기가 달라졌어요!!</h3>
+                          <p>개별시공 > 거울 | 2020-06-18</p>
+                          <p>원래는 라이트 없는 거울을 살려고 했는데, 가격 차이가 얼마 나지 않아서 라이트 달린 거울 사서 아주 만족 중이에요! 원ㅇ래 인테리어 자체가 어두운 편이여서 더 잘 어울리는 거 같아요 ㅎㅎ</p>
+                          <p>이 수*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review9.png" alt="인테리어사진"/>
+                          <h3>독특해서 마음에 들어요</h3>
+                          <p>개별시공 > 세면대 | 2020-06-17</p>
+                          <p>독특한 디자인 아주 좋아요~</p>
+                          <p>강 아*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review10.png" alt="인테리어사진"/>
+                          <h3>수납공간 적당해요</h3>
+                          <p>개별시공 > 욕실장 | 2020-06-08</p>
+                          <p>욕실용품 둘만한 곳을 찾고 있었는데, 디자인이랑 수납 괜찮아보여서 주문했고, 제품 사진이랑 동일해요. 다만 샴푸 통 같이 큰 제품은 안 들어가네요..ㅜ</p>
+                          <p>정 소*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>        
+                      <li>
+                          <img src="img/sub_community/rivew/review11.png" alt="인테리어사진"/>
+                          <h3>김이 안 생겨서 좋아요~</h3>
+                          <p>개별시공 > 거울 | 2020-06-07</p>
+                          <p>샤워 할 때마다 김서리는게 싫었는데, 교체하고 나서는 안 생겨서 좋아요~</p>
+                          <p>조 수*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review12.png" alt="인테리어사진"/>
+                          <h3>사이즈 적당해요!</h3>
+                          <p>개별시공 > 욕조 | 2020-06-02</p>
+                          <p>아담한 사이즈를 원해서 제일 작은 걸로 시켰는 데 좋네요. 다만 높이가 조금 아쉬워요ㅠ</p>
+                          <p>김 하*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                  </ul>
+                  <ul class="">
+                      <li>
+                          <img src="img/sub_community/rivew/review13.png" alt="인테리어사진"/>
+                          <h3>조명이 정말 예뻐요</h3>
+                          <p>개별시공 > 거울 | 2020-05-31</p>
+                          <p>조명이 예뻐서 좋아요. 그리고 조명만 따로 끄고 킬 수 있어서 좋았어요~</p>
+                          <p>김 고*</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review15.png" alt="인테리어사진"/>
+                          <h3>깔금해서 보기 좋아요~!</h3>
+                          <p>개별시공 > 캐비넷 | 2020-06-30</p>
+                          <p>깔끔하고 단정한 걸 찾았는데 딱 원하는 제품이 있어서 바로 주문했어요. 그리고 배송이 왔을 때도 구조에 맞게 잘 설치해주셔서 하자 없이 잘 사용중이에요!</p>
+                          <p>임 유
+                          *</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <i class="far fa-heart"></i><span>추천</span>
+                      </li>                      
+                  </ul> 
+                  <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        </div>
+                       <i class="fas fa-chevron-right rb"></i>
+                  </div> 
+                 </div><!--개별시공 박스-->         
+                 <a href="community_writing.html" class="go">리뷰작성하기</a>              
+               </article>
+               
+               <!--리뷰 모바일버전-->
+               <article id="content_m" class="mm">
+                <h3>전체리뷰</h3>
+                 <div class="chk_box">
+                     <button class="tg">전체</button>
+                     <button class="">전체시공</button>
+                     <button class="">개별시공</button>
+                 </div><!--버튼 박스-->
+                 <div class="small1">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review1.png" alt="인테리어사진"/>
+                          <h3>신세계에요ㅜㅜ</h3>
+                          <p>전체시공 > 모던 | 2020-07-23</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~</p>
+                          <p>곽 승*</p>                          
+                          <i class="fas fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review2.png" alt="인테리어사진"/>
+                          <h3>깔끔하니 이뻐요!!</h3>
+                          <p>개별시공 > 욕실장 | 2020-07-20</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요.</p>
+                          <p>박 지*</p>                          
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review3.png" alt="인테리어사진"/>
+                          <h3>만족스러워요~</h3>
+                          <p>개별시공 > 세면대 | 2020-07-20</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                              <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요.</p>
+                              <p>최 지*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review4.png" alt="인테리어사진"/>
+                          <h3>아주아주 마음에 들어요!</h3>
+                          <p>전체시공 > 심플 | 2020-07-13</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ</p>
+                          <p>최 승*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review5.png" alt="인테리어사진"/>
+                          <h3>디자인 괜찮네요</h3>
+                          <p>개별시공 > 세면대 | 2020-07-03</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>원래 인테리어 맞겼던 곳에서 세면대 제품이 마음에 안 들어서 세면대만 따로 온리바스에서 주문했는데 굉장히 깔끔하네요. 특히 그 이음새부분이 티가 안나서 더 좋아요~
+                          </p>
+                          <p>곽 지*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>                      
+                  </ul>
+                  <ul >
+                      <li>
+                          <img src="img/sub_community/rivew/review6.png" alt="인테리어사진"/>
+                          <h3>크기도 딱 맞고, 외형도 마음에 들어요~</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>욕조만 바꾸고 싶어서 주문했는데 사이즈도 딱 맞고, 시공도 꼼꼼하게 해주셔서 너무 감사했어요. 또 관리방법 같은 걸 알려주셔서 더 깨끗하게 사용할 수 있을 것 같아요!!
+                         </p>
+                         <p>박 승*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review7.png" alt="인테리어사진"/>
+                          <h3>고민하다가 결국 질렀습니다:)</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>우연치 않게 광고로 알게 되었다가 금액이 살짝 부담되서 몇 개월 고민하다가 질렀는데, 너무 이뻐요ㅜㅜㅜㅜ원래 욕조 없다가 생기니깐 삶의 질이 올라가는 기분이에요!</p>
+                          <p>한 예*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review8.png" alt="인테리어사진"/>
+                          <h3>거울 하나 바꿨을 뿐인데 분위기가 달라졌어요!!</h3>
+                          <p>개별시공 > 거울 | 2020-06-18</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>원래는 라이트 없는 거울을 살려고 했는데, 가격 차이가 얼마 나지 않아서 라이트 달린 거울 사서 아주 만족 중이에요! 원ㅇ래 인테리어 자체가 어두운 편이여서 더 잘 어울리는 거 같아요 ㅎㅎ</p>
+                          <p>이 수*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review9.png" alt="인테리어사진"/>
+                          <h3>독특해서 마음에 들어요</h3>
+                          <p>개별시공 > 세면대 | 2020-06-17</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>독특한 디자인 아주 좋아요~</p>
+                          <p>강 아*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review10.png" alt="인테리어사진"/>
+                          <h3>수납공간 적당해요</h3>
+                          <p>개별시공 > 욕실장 | 2020-06-08</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>욕실용품 둘만한 곳을 찾고 있었는데, 디자인이랑 수납 괜찮아보여서 주문했고, 제품 사진이랑 동일해요. 다만 샴푸 통 같이 큰 제품은 안 들어가네요..ㅜ</p>
+                          <p>정 소*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>                      
+                  </ul>
+                  <ul class="">
+                      <li>
+                          <img src="img/sub_community/rivew/review11.png" alt="인테리어사진"/>
+                          <h3>김이 안 생겨서 좋아요~</h3>
+                          <p>개별시공 > 거울 | 2020-06-07</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                              <p>샤워 할 때마다 김서리는게 싫었는데, 교체하고 나서는 안 생겨서 좋아요~</p>
+                              <p>조 수*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                          
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review12.png" alt="인테리어사진"/>
+                          <h3>사이즈 적당해요!</h3>
+                          <p>개별시공 > 욕조 | 2020-06-02</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>                          
+                              <p>아담한 사이즈를 원해서 제일 작은 걸로 시켰는 데 좋네요. 다만 높이가 조금 아쉬워요ㅠ</p>
+                              <p>김 하*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                          </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review13.png" alt="인테리어사진"/>
+                          <h3>조명이 정말 예뻐요</h3>
+                          <p>개별시공 > 거울 | 2020-05-31</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>조명이 예뻐서 좋아요. 그리고 조명만 따로 끄고 킬 수 있어서 좋았어요~</p>
+                              <p>김 고*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review14.png" alt="인테리어사진"/>
+                          <h3>고급진 느낌이 나서 만족 중이에요</h3>
+                          <p>전체시공 > 럭셔리 | 2020-05-31</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>제품 개별개별로 보면 좀 그저 그랬는데, 전체적으로 완성시키고 보니 굉장히 느낌 있네요. 이래서 전문가의 안목을 믿어야하나 봐요~감사합니다:&#41;</p>
+                              <p>김 유*</p>
+                              <i class="far fa-heart"></i><span>추천</span> 
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review15.png" alt="인테리어사진"/>
+                          <h3>깔금해서 보기 좋아요~!</h3>
+                          <p>개별시공 > 캐비넷 | 2020-06-30</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>깔끔하고 단정한 걸 찾았는데 딱 원하는 제품이 있어서 바로 주문했어요. 그리고 배송이 왔을 때도 구조에 맞게 잘 설치해주셔서 하자 없이 잘 사용중이에요!</p>
+                              <p>임 유*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>                          
+                      </li>                      
+                  </ul>
+                  <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>
+                  </div>             
+                 </div>  
+                 <div class="all_m">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review1.png" alt="인테리어사진"/>
+                          <h3>신세계에요ㅜㅜ</h3>
+                          <p>전체시공 > 모던 | 2020-07-23</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>화장실 인테리어를 바꾸고 나서 들어올 때마다 놀라고 있어요. 전의 화장실과의 인테리어랑 정반대여서 적응하는데 오래 걸리는 것 같지만, 인테리어는 정말 마음에 들어요! 또 상담과정에서 친절하게 알려주셔서 더 좋았던 거 같아요~</p>
+                          <p>곽 승*</p>                          
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review4.png" alt="인테리어사진"/>
+                          <h3>아주아주 마음에 들어요!</h3>
+                          <p>전체시공 > 심플 | 2020-07-13</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>인테리어 완전 이쁘게 나와서 매일매일 퇴근하고 욕실에서 살고 있는 1인입니다ㅠㅠㅠㅠ</p>
+                          <p>최 승*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li> 
+                      <li>
+                          <img src="img/sub_community/rivew/review14.png" alt="인테리어사진"/>
+                          <h3>고급진 느낌이 나서 만족 중이에요</h3>
+                          <p>전체시공 > 럭셔리 | 2020-05-31</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>제품 개별개별로 보면 좀 그저 그랬는데, 전체적으로 완성시키고 보니 굉장히 느낌 있네요. 이래서 전문가의 안목을 믿어야하나 봐요~감사합니다:&#41;</p>
+                              <p>김 유*</p>
+                              <i class="far fa-heart"></i><span>추천</span> 
+                          </div>
+                      </li>             
+                  </ul>
+                  <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>                        
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>
+                  </div>
+                </div>  
+                 <div class="Individual_m">                
+                  <ul class="page">
+                      <li>
+                          <img src="img/sub_community/rivew/review2.png" alt="인테리어사진"/>
+                          <h3>깔끔하니 이뻐요!!</h3>
+                          <p>개별시공 > 욕실장 | 2020-07-20</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>우선 배송이 진짜 총알배송 그 자체. 기사님들께서 친절하게 원하는 위치에 설치해 주시고 가셨어요. 그리고 화장실인테리어에 맞게 상품 추천해주셔서 구매했는데, 걱정했던것 보다 훨씬 잘 어울려서 기분이 좋네요. 또 수납공간이 넓고, 은근히 많이 들어가요.</p>
+                          <p>박 지*</p>                          
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review3.png" alt="인테리어사진"/>
+                          <h3>만족스러워요~</h3>
+                          <p>개별시공 > 세면대 | 2020-07-20</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                              <p>기존에 사용하던 세면대가 낡아서 교체했는데, 진작에 교체할 걸 이라는 생각이 계속 드네요ㅜㅜ 사진으로도 보이지만 기존 세면대와는 다른 디자인 때문인지 더 독특하게 느껴졌고, 높이도 적당해서 세안할 때 물이 팔을 타고 흐르지 않아서 너무 좋네요.</p>
+                              <p>최 지*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review5.png" alt="인테리어사진"/>
+                          <h3>디자인 괜찮네요</h3>
+                          <p>개별시공 > 세면대 | 2020-07-03</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>원래 인테리어 맞겼던 곳에서 세면대 제품이 마음에 안 들어서 세면대만 따로 온리바스에서 주문했는데 굉장히 깔끔하네요. 특히 그 이음새부분이 티가 안나서 더 좋아요~
+                          </p>
+                          <p>곽 지*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li> 
+                      <li>
+                          <img src="img/sub_community/rivew/review6.png" alt="인테리어사진"/>
+                          <h3>크기도 딱 맞고, 외형도 마음에 들어요~</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>욕조만 바꾸고 싶어서 주문했는데 사이즈도 딱 맞고, 시공도 꼼꼼하게 해주셔서 너무 감사했어요. 또 관리방법 같은 걸 알려주셔서 더 깨끗하게 사용할 수 있을 것 같아요!!
+                         </p>
+                         <p>박 승*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>  
+                      <li>
+                          <img src="img/sub_community/rivew/review7.png" alt="인테리어사진"/>
+                          <h3>고민하다가 결국 질렀습니다:)</h3>
+                          <p>개별시공 > 욕조 | 2020-06-29</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>우연치 않게 광고로 알게 되었다가 금액이 살짝 부담되서 몇 개월 고민하다가 질렀는데, 너무 이뻐요ㅜㅜㅜㅜ원래 욕조 없다가 생기니깐 삶의 질이 올라가는 기분이에요!</p>
+                          <p>한 예*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>                   
+                  </ul>
+                  <ul> 
+                      <li>
+                          <img src="img/sub_community/rivew/review8.png" alt="인테리어사진"/>
+                          <h3>거울 하나 바꿨을 뿐인데 분위기가 달라졌어요!!</h3>
+                          <p>개별시공 > 거울 | 2020-06-18</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>원래는 라이트 없는 거울을 살려고 했는데, 가격 차이가 얼마 나지 않아서 라이트 달린 거울 사서 아주 만족 중이에요! 원ㅇ래 인테리어 자체가 어두운 편이여서 더 잘 어울리는 거 같아요 ㅎㅎ</p>
+                          <p>이 수*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review9.png" alt="인테리어사진"/>
+                          <h3>독특해서 마음에 들어요</h3>
+                          <p>개별시공 > 세면대 | 2020-06-17</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>독특한 디자인 아주 좋아요~</p>
+                          <p>강 아*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review10.png" alt="인테리어사진"/>
+                          <h3>수납공간 적당해요</h3>
+                          <p>개별시공 > 욕실장 | 2020-06-08</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                          <p>욕실용품 둘만한 곳을 찾고 있었는데, 디자인이랑 수납 괜찮아보여서 주문했고, 제품 사진이랑 동일해요. 다만 샴푸 통 같이 큰 제품은 안 들어가네요..ㅜ</p>
+                          <p>정 소*</p>
+                          <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li> 
+                      <li>
+                          <img src="img/sub_community/rivew/review11.png" alt="인테리어사진"/>
+                          <h3>김이 안 생겨서 좋아요~</h3>
+                          <p>개별시공 > 거울 | 2020-06-07</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>
+                              <p>샤워 할 때마다 김서리는게 싫었는데, 교체하고 나서는 안 생겨서 좋아요~</p>
+                              <p>조 수*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                          
+                      </li> 
+                      <li>
+                          <img src="img/sub_community/rivew/review12.png" alt="인테리어사진"/>
+                          <h3>사이즈 적당해요!</h3>
+                          <p>개별시공 > 욕조 | 2020-06-02</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                          <div>                       
+                              <p>아담한 사이즈를 원해서 제일 작은 걸로 시켰는 데 좋네요. 다만 높이가 조금 아쉬워요ㅠ</p>
+                              <p>김 하*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                          </li>                                          
+                  </ul>
+                  <ul>
+                      <li>                      
+                          <img src="img/sub_community/rivew/review13.png" alt="인테리어사진"/>
+                          <h3>조명이 정말 예뻐요</h3>
+                          <p>개별시공 > 거울 | 2020-05-31</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>조명이 예뻐서 좋아요. 그리고 조명만 따로 끄고 킬 수 있어서 좋았어요~</p>
+                              <p>김 고*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="img/sub_community/rivew/review15.png" alt="인테리어사진"/>
+                          <h3>깔금해서 보기 좋아요~!</h3>
+                          <p>개별시공 > 캐비넷 | 2020-06-30</p>
+                          <a href="javascript:;;">자세히보기</a>
+                          <img src="img/icon/arrow/arrow_d.png" alt="">
+                           <div>
+                              <p>깔끔하고 단정한 걸 찾았는데 딱 원하는 제품이 있어서 바로 주문했어요. 그리고 배송이 왔을 때도 구조에 맞게 잘 설치해주셔서 하자 없이 잘 사용중이에요!</p>
+                              <p>임 유*</p>
+                              <i class="far fa-heart"></i><span>추천</span>
+                          </div>                          
+                      </li>                      
+                  </ul>
+                  <div class="pager_box">
+                      <i class="fas fa-chevron-left lb"></i>
+                        <div>
+                        <p class="pointer">1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        </div>
+                        <i class="fas fa-chevron-right rb"></i>
+                  </div>
+                 </div>  
+                 <a href="community_writing.html" class="go">리뷰작성하기</a>          
+               </article>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

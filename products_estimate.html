@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - PRODUCT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/products_estimate.css">
+    
+    <script>
+        $(document).ready(function(){
+            //이메일 직접입력, 선택체크
+            $('#selectEmail').change(function(){
+                $("#selectEmail option:selected").each(function () { if($(this).val()== "1"){  //직접입력일 경우
+                    $("#email02").val(''); //값 초기화
+                    $("#email02").attr("disabled",false);  //활성화
+                }else{  //직접입력이 아닐경우
+                    $("#email02").val($(this).text());  //선택값 입력
+                    $("#email02").attr("disabled",true);  //비활성화
+                    }
+                });
+            });
+            
+            // 공사일
+            appendMonth();
+            appendDay();
+            
+            function appendMonth(){
+                var selectValue = document.getElementById("month"); 
+                var optionIndex = 0;
+                
+                for(var i=1; i<=12; i++){
+                    selectValue.add(new Option(i),optionIndex++);
+                }
+            }
+            
+            function appendDay(){
+                var selectValue = document.getElementById("day");
+                var optionIndex = 0;
+                
+                for(var i=1; i<=31; i++){
+                    selectValue.add(new Option(i),optionIndex++);
+                }
+            } 
+            
+            
+        });
+        
+        // 우편번호 (5자리)
+        function openZipSearch() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    $('[name=zip]').val(data.zonecode); 
+                    $('[name=addr1]').val(data.address);
+                    $('[name=addr2]').val(data.buildingName);
+                }
+            }).open();
+        }
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            //contents setting
+            var section = $("section"),
+                simple = $(".simple"), modern = $(".modern"),
+                unique = $(".unique"), luxury = $(".luxury");
+            var btnHouse = $("#btnGroup input[type=button]");
+            var select = $(".selectGroup select"),
+                selectBtn = $(".selectGroup img"),
+                clicked = 10;
+            var size = $("#size");
+            var radio = $("input:radio[name='roomStyle']");
+            var estimateAdd = $("#estimateAdd"),
+                estimateReset = $("#estimateReset"),
+                addItemsCount = 0;
+            var modal = $("#modalBox");
+            var modalLayer = $(".modal_layer");
+            var modalClose = $(".modal_close_btn");
+            var choice_condition = $(".modalMid ul");
+            var choice_product = $(".modalMid > #choice_product");
+            var itemList = new Array();
+            var num = $("#number > li");
+            
+            
+            for(var i = 5; i < 41; i++){
+                if(i != 5 && i != 40){
+                    size.append("<option value='" + i + "평'>" + i + "</option>");
+                }else if(i == 5){
+                    size.append("<option value='" + i + "평 이하'>~ " + i + "</option>");
+                }else if(i ==40){
+                    size.append("<option value='" + i + "평 이상'>" + i + " ~</option>");
+                }
+            }
+            
+            /*clickEvent*/
+            btnHouse.click(function(){
+                btnHouse.removeClass("on");
+                $(this).addClass("on");
+            });
+            
+            select.click(function(){
+                var i = select.index(this);
+                spinUp(i);
+                if(clicked == i){
+                    spinDown(i);
+                    clicked = 10;
+                    return;
+                }
+                clicked = i;
+            });
+            
+            select.focusout(function(){ //포커스 해제
+                var i = select.index(this);
+                spinDown(i);
+                clicked = 10;
+            });
+            
+                /*함수 구현*/
+            function spinUp(i){
+                $(".selectGroup").eq(i).find("img").stop().animate({deg: 180},{
+                duration: 200,
+                step: function(now){
+                    $(this).css({ transform: 'rotateZ(' + now + 'deg)'});
+                }});
+            }
+            
+            function spinDown(i){
+                $(".selectGroup img").eq(i).stop().animate({deg: 0},{
+                    duration: 200,
+                    step: function(now){
+                        $(this).css({ transform: 'rotateZ(' + now + 'deg)'});
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>PRODUCT</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>상세견적</h2>
+            <form action="#">
+                <fieldset>
+                    <legend>상세견적</legend>
+                    <div class="join_box">
+                        <div>
+                            <label for="username">이름 <span>(*)</span></label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div>
+                            <label for="phone">휴대폰 <span>(*)</span></label>
+                            <input type="text" id="phone" required>
+                            <span class="ph_line">-</span>
+                            <input type="text" id="phone2" required>
+                            <span class="ph_line">-</span>
+                            <input type="text" id="phone3" required>
+                        </div>
+                        <div>
+                            <label for="email01">E-MAIL</label>
+                            <input type="text" name="email01" id="email01"> <span class="at">@</span> 
+                            <select name="selectEmail" id="selectEmail">
+                               <!-- value: 서버로 보내지는 값 -->
+                                <option value="1">직접입력</option>
+                                <option value="naver.com" selected="selected">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="hotmail.com">hotmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                <option value="freechal.com">freechal.com</option>
+                            </select>
+                            <input type="text" name="email02" id="email02" disabled value = "naver.com">
+                        </div>
+                        <div>
+                            <p>공사지주소 <span>(*)</span></p>
+                            <div class="address_box">
+                                <div><span class="add add1">우편번호</span><input type="text" name="zip"></div>
+                                <div><input type="button" onclick="openZipSearch()" value="검색" class="gray_btn"></div>
+                                <div><span class="add add2">주소</span><input type="text" name="addr1" readonly></div>
+                                <div><span class="add add3">상세</span><input type="text" name="addr2"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>희망 공사일 <span>(*)</span></p>
+                            <select name="year" id="year">
+                                <option value="2020" selected>2020</option>
+                                <option value="2020">2021</option>
+                            </select>
+                            <span class="ymd">년</span>
+                            <select name="month" id="month"></select>
+                            <span class="ymd">월</span>
+                            <select name="day" id="day"></select>
+                            <span class="ymd">일</span>
+                        </div>
+                        <div>
+                            <p>선택조건</p>
+                            <div id="conditions">
+                                <div id ="btnGroup">
+                                    <input type="button" value="아파트" class="on">
+                                    <input type="button" value="주택">
+                                </div>
+                                <div id = "selectGroup1" class="selectGroup">
+                                    <div class="sBox">
+                                        <select name="size" id="size"></select>
+                                        <img src="img/icon/select.png" alt="">
+                                    </div>
+                                    <span>평</span>
+                                </div>
+                                <div id = "selectGroup2" class="selectGroup">
+                                    <div class="sBox">
+                                        <select name="budget" id="budget">
+                                            <option value="">예산</option>
+                                            <option value="200만원 이하">~ 200</option>
+                                            <option value="200-300만원">200-300</option>
+                                            <option value="300-500만원">300-500</option>
+                                            <option value="500-800만원">500-800</option>
+                                            <option value="800만원 이상">800 ~ </option>
+                                        </select>
+                                        <img src="img/icon/select.png" alt="">
+                                    </div>
+                                    <span>만원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>선택한 견적</p>
+                            <div class="img_outbox">
+                                <div class="img_inbox">
+                                    <img src="img/sub_product/empty_box.jpg" alt="">
+                                    <img src="img/sub_product/empty_box.jpg" alt="">
+                                    <img src="img/sub_product/empty_box.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="img_detail">*PRODUCT &gt; 전체시공, 부분시공에서 선택가능합니다.</div>
+                        </div>
+                        <div>
+                            <p>문의사항</p>
+                            <textarea name="in_content" id="in_content" cols="20" rows="10" style="resize: none"></textarea>
+                        </div>
+                        <div>
+                            <p>첨부사진</p>
+                            <input type="text" id="fileName" class="file_input_textbox" readonly>
+                            <div class="file_input_div">
+                                <input type="button" value="찾아보기" class="file_input_button gray_btn">
+                                <input type="file" class="file_input_hidden" onchange="javascript: document.getElementById('fileName').value = this.value">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="in_end_container">
+                    <input type="submit" name="in_finish" value="완료" class="in_end_box black_btn">
+                    <input type="button" name="in_cancel" value="취소" class="in_end_box darkgray_btn" onclick="location.href='index.html'">
+                </div>
+            </form>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

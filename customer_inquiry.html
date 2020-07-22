@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - CUSTOMER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/customer_inquiry.css">
+
+    <script>
+        $(document).ready(function(){
+           /* $("input:text[numberOnly]").on("keyup", function() {
+                    $(this).val($(this).val().replace(/[^0-9]/g,""));
+                });*/
+            
+            $('#selectEmail').change(function(){
+                $("#selectEmail option:selected").each(function () { if($(this).val()== "1"){  //직접입력일 경우
+                    $("#email02").val(''); //값 초기화
+                    $("#email02").attr("disabled",false);  //활성화
+                }else{  //직접입력이 아닐경우
+                    $("#email02").val($(this).text());  //선택값 입력
+                    $("#email02").attr("disabled",true);  //비활성화
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="subTop">
+            <div class="subTop_bg">
+                <h1>CUSTOMER</h1>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>1:1 문의</h2>
+            <form action="#">
+                <fieldset>
+                    <legend>1:1 문의</legend>
+                    <div class="inquiry_container">
+                        <div>
+                            <p class="in_name">구분</p>
+                            <select name="in_division" id="in_division">
+                                <option value="1" selected="selected">A/S 문의/신청</option>
+                                <option value="2">시공/견적문의</option>
+                                <option value="3">개별제품문의</option>
+                                <option value="4">칭찬/개선요청</option>
+                                <option value="5">기타</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p class="in_name">제목</p>
+                            <input type="text" name="in_title" id="in_title">
+                        </div>
+                        <div>
+                            <p class="in_name">내용</p>
+                            <textarea name="in_content" id="in_content" cols="30" rows="10" style="resize: none"></textarea>
+                        </div>
+                        <div>
+                            <p class="in_name">업로드</p>
+                            <input type="text" id="fileName" class="file_input_textbox" readonly>
+                            <div class="file_input_div">
+                                <input type="button" value="찾아보기" class="file_input_button gray_btn">
+                                <input type="file" class="file_input_hidden" onchange="javascript: document.getElementById('fileName').value = this.value">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="in_name">휴대폰</p>
+                            <input type="text" class="in_phone" id="phone1">
+                            <span class="ph_line">-</span>
+                            <input type="text" class="in_phone" id="phone2">
+                            <span class="ph_line">-</span>
+                            <input type="text" class="in_phone" id="phone3">
+                        </div>
+                        <div>
+                            <p class="in_name">E-mail</p>
+                            <input type="text" name="email01" id="email01"> <span class="at">@</span> 
+                            <select name="selectEmail" id="selectEmail">
+                               <!-- value: 서버로 보내지는 값 -->
+                                <option value="1">직접입력</option>
+                                <option value="naver.com" selected="selected">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="hotmail.com">hotmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                <option value="freechal.com">freechal.com</option>
+                            </select>
+                            <input type="text" name="email02" id="email02" disabled value = "naver.com">
+                        </div>
+                        <div>
+                            <p class="in_name">답변알림</p>
+                            <input type="checkbox" name="check" class="chk" id="chk1">
+                            <label class="chk_txt" for="chk1"><span></span>SMS수신</label>
+                            <input type="checkbox" name="check" class="chk" id="chk2">
+                            <label class="chk_txt" for="chk2"><span></span>메일수신</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="in_end_container">
+                    <input type="submit" name="in_finish" value="완료" class="in_end_box black_btn">
+                    <input type="button" name="in_cancel" value="취소" class="in_end_box darkgray_btn" onclick="location.href='index.html'">
+                </div>
+            </form>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

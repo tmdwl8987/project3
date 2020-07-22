@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLYBATH - COMPANY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/sub_common.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/icon/favicon.ico">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/company_brand.css">
+    
+    
+    <script>
+        $(document).ready(function(){
+            var mybanner = $('.banner');
+            var bannerlength = mybanner.find('img').length;
+            var bannerwidth = $('.banner').width(); 
+            var current = 0;
+            
+            $('#prev').hover(function(){
+                $('#prev').attr("src", "img/sub_company/prev_hover.png");
+            },function(){
+                $('#prev').attr("src", "img/sub_company/prev.png");
+            });
+            $('#next').hover(function(){
+                $('#next').attr("src", "img/sub_company/next_hover.png");
+            },function(){
+                $('#next').attr("src", "img/sub_company/next.png");
+            });
+            $('#prev').click(function(){
+                current--;
+                if (current < 0){current = bannerlength-1};
+                showImage(current);
+            });
+            $('#next').click(function(){
+                current++;
+                if (current >= bannerlength){current = 0};
+                showImage(current);
+            });
+            
+            function showImage(i){
+                var left = (i*bannerwidth);
+                mybanner.scrollLeft(left);
+            };
+        });
+    </script>
+    
+<!--    <script language="JavaScript">
+
+        $(document).ready(function() {
+            var $banner = $(".banner2").find("ul");
+            
+            var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+            var $bannerHeight = $banner.children().outerHeight(); // 높이
+            var $length = $banner.children().length;//이미지의 갯수
+            var rollingId;
+            
+            rollingBanner();
+            
+            function rollingBanner() {
+                $banner.css("width", $bannerWidth * $length + "px");
+                $banner.css("height", $bannerHeight + "px");
+                
+                setInterval(function(){    
+                    //배너의 좌측 위치를 옮겨 준다.
+                    $banner.animate({left: - $bannerWidth + "px"}, 4000, function() { //숫자는 롤링 진행되는 시간이다.
+                        //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                        $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                        //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                        $(this).find("li:first").remove();
+                        //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                        $(this).css("left", 0);
+                    });
+                }); 
+            }
+        });  
+    </script>-->
+    
+<script language="JavaScript">
+	$(document).ready(function() {
+            var bannerLeft=0;
+            var first=1;
+            var last;
+            var imgCnt=0;
+            var $img = $(".banner2 img");
+            var $first;
+            var $last;
+
+            $img.each(function(){   // 1px 간격으로 배너 처음 위치 시킴
+                $(this).css("left",bannerLeft);
+                bannerLeft += $(this).width()+50;
+                $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+            });
+
+            last = imgCnt;
+
+            setInterval(function() {
+
+                $img.each(function(){
+                    $(this).css("left", $(this).position().left-1); // 1px씩 왼쪽으로 이동..이값으로 옮기는 속도 조절 가능하나 이 사진은 1이 제일 자연스러웠음
+                });
+                $first = $("#banner"+first);
+                $last = $("#banner"+last);
+                 if($first.position().left < -450) {    // 제일 앞에 배너 제일 뒤로 옮김 이때 설정을 이미지 가로값과 거의 일치해야 자연스럽게 넘어감
+                    $first.css("left", $last.position().left + $last.width()+50 );
+                    first++;
+                    last++;
+                    if(last > imgCnt) { last=1;}   
+                    if(first > imgCnt) { first=1;}
+                }
+            }, 15); //위에 1px과 같이 조정바람. 하나만 조정하면 삐걱거리는 현상 발생.
+    }); 
+</script>
+</head>
+
+<body>
+    <div class="brand_wrap">
+        <header></header>
+        <div class="brand_container">
+            <div class="bd_box bd_box1">
+                <div class="bd_content1">
+                    <h1>"욕실에 대한 모든 것"</h1>
+                    <p class="bd_txt bd_txt1">온니바스는 <b>고객의 니즈를 만족시키는 욕실,</b><br>오직 그 하나의 길만을 걷습니다.<br>다양한 스타일을 통해 여러 아름다움을 선보이며<br>보편적인 디자인만이 아닌 유니크한 디자인도 거침없이 해나갑니다.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bd_box bd_box2">
+                <div class="top_color"></div>
+                <div class="bd_content bd_content2">
+                    <div class="bd_num">STORY 1</div>
+                    <h2>모두의 만족을 위한 디자인</h2>
+                    <p class="bd_txt bd_txt2">온리바스는 새로운 도전을 마다하지 않습니다.<br>평범한 욕실이 아닌 눈길을 끄는, 고객님이 원하시는 개성을 담아내는 욕실을 만들고자 합니다.<br>아름다움과 함께 사용할 때의 편의성도 포기 할 수 없습니다.<br>주거공간의 중요성을 잘 알기 때문에 계속 머물고싶은 공간을 만들기 위해서 치열하게 노력 할 것입니다.</p>
+                </div>
+                <div class="out_banner">
+                    <img id="prev" src="img/sub_company/prev.png" alt="이전">
+                    <img id="next" src="img/sub_company/next.png" alt="다음">
+                    <div class="banner">
+                        <div class="banner_container">
+                            <img src="img/sub_company/s1-1.jpg" alt="유니크 인테리어">
+                            <img src="img/sub_company/s1-2.jpg" alt="심플 인테리어">
+                            <img src="img/sub_company/s1-3.jpg" alt="유니크 인테리어2">
+                        </div>
+                    </div>
+                </div>
+                <div class="bd_img_m1"><img src="img/sub_company/s1-1.jpg" alt="유니크 인테리어"></div>
+            </div>
+            
+            <div class="bd_box bd_box3">
+                <div class="bd_content bd_content3">
+                    <div class="bd_num">STORY 2</div>
+                    <h2>최고의 품질</h2>
+                    <p class="bd_txt bd_txt3">온리바스의 '욕실연구소'는 소비자의 편의를 위한 제품들과 신소재를 끊임없이 개발 중 입니다.<br>알루미늄 욕실가구, 환경친화적 천정재, 액상아크릴 소재로 만든 욕조와 세면대를 잇달아 출시하며<br>국내 건설시장에서 최고의 품질력으로 인정받고 있습니다.</p>
+                </div>
+                <div class="banner2">
+                    <ul>
+                        <li><img src="img/sub_company/s2-1.jpg" alt="욕실연구소 사진1"></li>
+                        <li><img src="img/sub_company/s2-2.jpg" alt="욕실연구소 사진2"></li>
+                        <li><img src="img/sub_company/s2-3.jpg" alt="욕실연구소 사진3"></li>
+                        <li><img src="img/sub_company/s2-4.jpg" alt="욕실연구소 사진4"></li>
+                        <li><img src="img/sub_company/s2-5.jpg" alt="욕실연구소 사진5"></li>
+                        <li><img src="img/sub_company/s2-6.jpg" alt="욕실연구소 사진6"></li>
+                        <li><img src="img/sub_company/s2-7.jpg" alt="욕실연구소 사진7"></li>
+                    </ul>
+                </div>
+                <div class="bd_img_m2"><img src="img/sub_company/s2_m.jpg" alt="욕실연구소 사진1"></div>
+            </div>
+            
+            <div class="bd_box bd_box4">
+                <div class="bd_content bd_content4">
+                    <div class="bd_num">STORY 3</div>
+                    <h2>정직을 약속드립니다</h2>
+                    <p class="bd_txt bd_txt4">시공 한번 하는데 많은 고민과 부담을 갖는 고객님을 알기 때문에<br>초기에 정확한 견적제시, 중간 유통망을 과감히 단축시켜 합리적인 가격에 정품상품 제공을 약속드립니다.<br>사용중에 하자가 발생한다면 언제든 1:1문의나 고객센터로 연락주세요. 1년 무상으로 A/S가 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>
