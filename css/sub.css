@@ -1,7 +1,7 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
 }
 .subTop{
     width: 100%;
@@ -55,7 +55,6 @@
     width: 80%;
     margin: 0 auto;
     position: relative;
-    min-height: 100vh;
 }
 
 /*large pc*/
