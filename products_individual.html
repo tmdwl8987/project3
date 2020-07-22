@@ -38,19 +38,31 @@
             grid-row-gap: 20px;
             margin-bottom: 50px;
         }
+        /*https://webclub.tistory.com/604*/
         #btnGroup{
-            justify-self: left;
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
+            
+            justify-self: left;
+            
             width: 70%; height: 100%;
         }
         #selectGroup1{
-            justify-self: center;
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
+            
+            justify-self: center;
+            
             width: 70%; height: 100%;
         }
         #selectGroup2{
-            justify-self: right;
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
+            
+            justify-self: right;
             width: 70%; height: 100%;
         }
         #radioGroup{
@@ -63,6 +75,9 @@
         }
         #estimateBox{
             grid-column: 1/4;
+            
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
         }
         
@@ -70,6 +85,7 @@
         #btnGroup input[type=button]{
             width: 100%; height: 100%; margin: 0; padding: 0;
             display: inline-block;
+            
             border: 1px solid #403E3B;
             background-color: white;
             color: #403E3B;
@@ -93,6 +109,7 @@
         /*셀렉트*/
         .sBox{
             display: inline-block; 
+            
             height: 100%; 
             position: relative;
             width: calc(100% - 40px);
@@ -142,6 +159,7 @@
         /*라디오*/
         #radioGroup label{
             width: 100px; display: inline-block;
+            
             text-align: center;
         }
         #radioGroup input[type=radio]{
@@ -169,6 +187,10 @@
         #estimateBox input[type=button]:first-child{
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
+            
+            -webkit-box-flex: 1; 
+            -ms-flex: 1; 
+            flex-grow: 1;
             flex: 1;
         }
         #estimateBox input[type=button]:last-child{
@@ -208,9 +230,15 @@
         .articleInner{
             position: absolute;
             top: 0; left: 0;
-            display: flex;
-            flex-direction: column;
             height: 100%;
+            
+            display: -webkit-box; 
+            display: -ms-flexbox;
+            display: flex;
+            
+            -webkit-box-orient: vertical; 
+            -ms-flex-direction: column; 
+            flex-direction: column;
         }
         article img{
             width: 100%;
@@ -293,13 +321,26 @@
             overflow-y: scroll;
         }
         .modal_content > .modalTop{
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
+            
+            
+            -webkit-box-align: center; 
+            -ms-flex-align: center;
             align-items: center;
+
+            -webkit-box-pack: justify; 
+            -ms-flex-pack: justify;
             justify-content: space-between;
         }
         .modal_content > .modalTop > h3{
-            flex: 1;
             text-indent: 5px;
+            
+            -webkit-box-flex: 1; 
+            -ms-flex: 1; 
+            flex-grow: 1;
+            flex: 1;
         }
         .modal_content > .modalTop > img{
             width: 20px; height: 20px;
@@ -332,7 +373,10 @@
             margin-bottom: 50px;
         }
         .modal_content > #modalForm > #modalContents > .choice_item{
+            display: -webkit-box; 
+            display: -ms-flexbox;
             display: flex;
+            
             margin-bottom: 15px;
         }
         .modal_content > #modalForm > #modalContents > .choice_item > img{
@@ -340,14 +384,23 @@
             max-height: 180px;
         }
         .modal_content > #modalForm > #modalContents > .choice_item > .modalContents_txt{
-            flex: 1;
             padding: 10px;
+            
+            -webkit-box-flex: 1; 
+            -ms-flex: 1; 
+            flex-grow: 1;
+            flex: 1;
         }
         .modal_content > #modalForm > #modalContents > .choice_item > .modalContents_txt > h3{
             padding-bottom: 15px;
         }
         .modal_content > #modalForm > .modalBot{
+            display: -webkit-box; 
+            display: -ms-flexbox; 
             display: flex;
+            
+            -webkit-box-pack: end; 
+            -ms-flex-pack: end;
             justify-content: flex-end;
         }
         .modal_content  > #modalForm > .modalBot > input{
@@ -488,6 +541,10 @@
                 width: 50%; height: auto;
                 padding: 0px 0px 0px 10px;
                 font-size: 0.9rem;
+                
+                -webkit-box-flex: 1; 
+                -ms-flex: 1; 
+                flex-grow: 1;
                 flex: 1;
             }
             .addBtn{
