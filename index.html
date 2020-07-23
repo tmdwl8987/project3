@@ -7,7 +7,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/jquery.mousewheel.min.js"></script>
+    <!--<script src="js/jquery.mousewheel.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
     <script src="js/jquery.rotating-slider.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
@@ -217,7 +219,7 @@
                         n = 0;
                     }
                     button.eq(n).trigger('click');
-                }, 600000);
+                }, 5000);
             }
 
             // 슬라이드 넘기기 왼쪽 -> 오른쪽

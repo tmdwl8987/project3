@@ -127,6 +127,7 @@ header{
     position: absolute;
     top: 50%; right: 10%;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 .bar1, .bar2, .bar3{
     width:35px;
