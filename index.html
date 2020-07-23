@@ -46,7 +46,6 @@
             if(windowWidth >= 1280){
                 section3Hover(); //???
             }
-            
             //메인페이지 : 휠
             $(".main").on("mousewheel",function(event, delta){
                 var sct = $(window).scrollTop();
@@ -251,7 +250,7 @@
             }
             // 슬라이드 넘기기 오른쪽 -> 왼쪽
             function move_pre(i){
-                button.removeClass('tgg');
+              ㅓ  button.removeClass('tgg');
                 button.eq(i).addClass('tgg');
                 
                 if(current == i) return; // 현재 페이지와 선택한 페이지 버튼이 같으면 아무것도 실행하지 않는다.

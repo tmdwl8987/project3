@@ -10,7 +10,7 @@ html, body{
 }
 
 body {
-    -ms-overflow-style: none; /* IE and Edge */
+    /*-ms-overflow-style: none;*/ /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     font-family: 'Nanumsquare';
 }

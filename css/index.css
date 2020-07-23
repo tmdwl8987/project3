@@ -1,4 +1,13 @@
-body {font-family: 'Nanumsquare', 'Raleway'; overflow-x: hidden; _overflow-y: auto;}
+body {font-family: 'Nanumsquare', 'Raleway'; overflow-x: hidden; _overflow-y: scroll;}
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    font-family: 'Nanumsquare';
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 #wrap{
     height: 100%;
 }

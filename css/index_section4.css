@@ -262,7 +262,7 @@
         overflow-y: scroll;
         height: 74px;
         text-align: justify;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
     .i_show .modal div p:nth-child(2)::-webkit-scrollbar{width: 10px;}
     .i_show .modal div p:nth-child(2)::-webkit-scrollbar-thumb{

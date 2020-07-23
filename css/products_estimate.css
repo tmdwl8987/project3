@@ -67,7 +67,7 @@ textarea {border: 1px solid #c1c1c1;}
 
 
 .join_box > div:nth-child(7) p {position: relative; left: 0; top: -180px;}
-.join_box > div:nth-child(7) > .img_outbox {width: 70%; height: 200px; display: inline-block; margin-left: -4px; border: 1px solid #dedede; background: rgba(239,239,239,0.3); overflow-x: scroll;}
+.join_box > div:nth-child(7) > .img_outbox {width: 70%; height: 200px; display: inline-block; margin-left: -4px; border: 1px solid #dedede; background: rgba(239,239,239,0.3); overflow-x: auto;}
 .join_box > div:nth-child(7) .img_outbox .img_inbox {width: 200%;}
 .join_box > div:nth-child(7) .img_outbox img {width: 200px; margin-right: 20px; float: left; margin-top: 20px;}
 .join_box > div:nth-child(7) .img_outbox img:nth-child(1) {margin-left: 20px;}
