@@ -19,10 +19,13 @@ body {font-family: 'Nanumsquare', 'Raleway'; overflow-x: hidden; _overflow-y: au
     transform: translateY(-50%);
     width: 50px;
     height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
+    
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column;
+    -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-around;
+    /*around 익스플로러 적용불가능*/
+    -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end;
+    
 }
 .scrollBox > div{
     width: 40%;
