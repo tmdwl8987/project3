@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 input, select, label{
     cursor: pointer;
 }
@@ -15,89 +8,79 @@ input, select, label{
     background-image: url("../img/sub_product/main_menu.png");
     background-position: 30% center;
 }
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 #conditions{
     width: 100%; 
     max-width: 1000px;
-    margin: 0 auto; 
-    display: -ms-grid; 
+    margin: 0 auto;
+    
+    display: -ms-grid;
+    
     display: grid;
     -ms-grid-rows: 40px 20px 40px 20px 40px;
     grid-template-rows: repeat(3, 40px);
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 20px;
+    
     margin-bottom: 50px;
 }
-#conditions > *:nth-child(1){
+#conditions > #btnGroup{
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-}
-#conditions > *:nth-child(2){
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-}
-#conditions > *:nth-child(3){
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-}
-#conditions > *:nth-child(4){
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-}
-#conditions > *:nth-child(5){
-    -ms-grid-row: 3;
-    -ms-grid-column: 2;
-}
-#conditions > *:nth-child(6){
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
-}
-#conditions > *:nth-child(7){
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-}
-#conditions > *:nth-child(8){
-    -ms-grid-row: 5;
-    -ms-grid-column: 2;
-}
-#conditions > *:nth-child(9){
-    -ms-grid-row: 5;
-    -ms-grid-column: 3;
-}
-#btnGroup{
+    
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    
+    -ms-grid-column-align: left;
     justify-self: left;
     width: 70%; height: 100%;
 }
-#selectGroup1{
+#conditions > #selectGroup1{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    
+    -ms-grid-column-align: center;
     justify-self: center;
     width: 70%; height: 100%;
 }
-#selectGroup2{
-    /*display: -webkit-box; 
-    display: -ms-flexbox;*/
-    display: -webkit-box;
+#conditions > #selectGroup2{
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    
+    display: -webkit-box; 
     display: -ms-flexbox;
     display: flex;
-
+    
+    -ms-grid-column-align: end;
     justify-self: right;
     width: 70%; height: 100%;
 }
-#radioGroup{
+#conditions > #radioGroup{
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
+    
     grid-column: 1/4;
 }
-#estimateBox{
+#conditions > #estimateBox{
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
+    
     grid-column: 1/4;
-    display: -webkit-box;
+    display: -webkit-box; 
     display: -ms-flexbox;
     display: flex;
 }
@@ -170,8 +153,7 @@ input, select, label{
     border-bottom-right-radius: 3px;
 
     padding: 12px 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     background-color: #403E3B;
     color: white;
     font-size: 0.9rem;
@@ -180,6 +162,7 @@ input, select, label{
 /*라디오*/
 #radioGroup input[type=radio]{
     border: 1px solid #403E3B;
+    border-radius: 50%;
     width: 20px; height: 20px;
     vertical-align: middle;
 }
@@ -190,8 +173,7 @@ input, select, label{
 #radioGroup li label{
     font-size: 1.1rem;
     padding-right: 10px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     letter-spacing: 3px;
 }
 /*견적신청 버튼*/
@@ -204,9 +186,7 @@ input, select, label{
 #estimateBox input[type=button]:first-child{
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
 }
 #estimateBox input[type=button]:last-child{
     margin-left: -4px;
@@ -224,9 +204,7 @@ input, select, label{
 /*본문*/
 section{
     width: 100%;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 30px;
 }
@@ -234,8 +212,6 @@ article{
     width: 100%;
     margin-bottom: 0px;
     position: relative;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
     transition: 1s;
 }
 article::before{
@@ -248,15 +224,8 @@ article::before{
     top: 0; left: 0;
     height: 100%;
     
-    display: -webkit-box;
-    
-    display: -ms-flexbox;
-    
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
 }
 article img{
     width: 100%;
@@ -266,13 +235,11 @@ article h3{
     font-size: 1.2rem;
 
     padding-top: 5px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 article > .articleInner > p{
     padding: 10px 0 50px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-size: 1rem;
     height: 80px;
 }
@@ -324,32 +291,22 @@ article > .articleInner > p{
 .modal_content{
     width: 90%; height: 70%; 
     max-width: 600px; max-height: 800px;
-    padding: 20px 20px; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding: 20px 20px; box-sizing: border-box;
     background-color: white;
     position: absolute;
     z-index: 9999;
     top: 50%; left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     overflow-y: scroll;
 }
 .modal_content > .modalTop{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
 }
 .modal_content > .modalTop > h3{
     text-indent: 5px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
 }
 .modal_content > .modalTop > img{
     width: 20px; height: 20px;
@@ -360,9 +317,7 @@ article > .articleInner > p{
     background-color: #403E3B;
     color: white;
     outline: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    appearance: none;
 }
 .modal_content > .modalTop > button:active{
     background-color: white;
@@ -384,8 +339,6 @@ article > .articleInner > p{
     margin-bottom: 50px;
 }
 .modal_content > #modalForm > #modalContents > .choice_item{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 15px;
 }
@@ -395,20 +348,14 @@ article > .articleInner > p{
 }
 .modal_content > #modalForm > #modalContents > .choice_item > .modalContents_txt{
     padding: 10px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
 }
 .modal_content > #modalForm > #modalContents > .choice_item > .modalContents_txt > h3{
     padding-bottom: 15px;
 }
 .modal_content > #modalForm > .modalBot{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
 }
 .modal_content  > #modalForm > .modalBot > input{
     border: 1px solid #403E3B;
@@ -438,7 +385,6 @@ article > .articleInner > p{
 /*tablet*/
 @media screen and (max-width:1279px){
     section{
-        -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     }
     article{
@@ -466,90 +412,76 @@ article > .articleInner > p{
     }
     #conditions{
         -ms-grid-rows: 40px 5px 40px 5px 40px 5px 50px 5px 60px;
-        grid-template-rows: 40px 40px 40px 50px 60px;
         -ms-grid-columns: (1fr)[1];
+        grid-template-rows: 40px 40px 40px 50px 60px;
         grid-template-columns: repeat(1, 1fr);
         grid-row-gap: 5px;
         margin-bottom: 30px;
     }
-    #conditions > *:nth-child(1){
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    }
-    #conditions > *:nth-child(2){
-        -ms-grid-row: 3;
-        -ms-grid-column: 1;
-    }
-    #conditions > *:nth-child(3){
-        -ms-grid-row: 5;
-        -ms-grid-column: 1;
-    }
-    #conditions > *:nth-child(4){
-        -ms-grid-row: 7;
-        -ms-grid-column: 1;
-    }
-    #conditions > *:nth-child(5){
-        -ms-grid-row: 9;
-        -ms-grid-column: 1;
-    }
-    #conditions > *{
+    
+    #conditions > #btnGroup{
         -ms-grid-column-align: center;
-            justify-self: center;
+        justify-self: center;
         width: 100%;
         max-width: 450px;
-    }
-    #btnGroup{
+        
         -ms-grid-row: 1;
-        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        
         grid-row: 1/2;
     }
-    #selectGroup1{
-        -ms-grid-row: 2;
-        -ms-grid-row-span: 1;
+    #conditions > #selectGroup1{
+        -ms-grid-column-align: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 450px;
+        
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        
         grid-row: 2/3;
     }
-    #selectGroup2{
-        -ms-grid-row: 3;
-        -ms-grid-row-span: 1;
+    #conditions > #selectGroup2{
+        -ms-grid-column-align: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 450px;
+        
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        
         grid-row: 3/4;
     }
-    #estimateBox{
-        -ms-grid-row: 4;
-        -ms-grid-row-span: 1;
+    #conditions > #estimateBox{
+        -ms-grid-column-align: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 450px;
+        
+        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+        
         grid-row: 4/5;
         height: 60%;
-        /*margin-top: 20px;*/
     }
-    #radioGroup{
-        -ms-grid-row: 5;
-        -ms-grid-row-span: 1;
+    #conditions > #radioGroup{
+        -ms-grid-column-align: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 450px;
+        
+        -ms-grid-row: 9;
+        -ms-grid-column: 1;
         grid-row: 5/6;
-        display: -ms-grid;
+        
         display: grid;
-        -ms-grid-rows: (30px)[2];
         grid-template-rows: repeat(2, 30px);
-        -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
     }
-    #radioGroup > *:nth-child(1){
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    }
-    #radioGroup > *:nth-child(2){
-        -ms-grid-row: 1;
-        -ms-grid-column: 2;
-    }
-    #radioGroup > *:nth-child(3){
-        -ms-grid-row: 2;
-        -ms-grid-column: 1;
-    }
-    #radioGroup > *:nth-child(4){
-        -ms-grid-row: 2;
-        -ms-grid-column: 2;
-    }
-
-
+    
+    
+    
     #btnGroup input[type=button]{
         width: 50%;
     }
@@ -568,7 +500,6 @@ article > .articleInner > p{
         height: 120%;
     }
     section{
-        -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
     }
     article{
@@ -604,9 +535,7 @@ article > .articleInner > p{
         width: 50%; height: auto;
         padding: 0px 0px 0px 10px;
         font-size: 0.9rem;
-        -webkit-box-flex: 1;
-            -ms-flex: 1;
-                flex: 1;
+        flex: 1;
     }
     .addBtn{
         width: calc(50% - 5px); height: 30px;
