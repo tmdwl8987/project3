@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
     <script src="js/jquery-3.4.1.min.js"></script>
-    <!--<script src="js/jquery.mousewheel.min.js"></script>-->
+    <script src="js/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
     <script src="js/jquery.rotating-slider.js"></script>
@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="css/index_section5.css">
     
     
+
+   
     <script>
         $(document).ready(function(){
             $("header").load("header.html");
@@ -112,7 +114,7 @@
                 
             });
             
-            //스크롤바 - 활성화
+            /*스크롤바 - 활성화*/
             function scrollBar(i){
                 if(i >= 0 && i < 5){
                     $(".scrollBox div").removeClass("onScroll");
@@ -120,7 +122,7 @@
                 }
             }
             
-            //스크롤바 - 클릭
+            /*스크롤바 - 클릭*/
             $(".scrollBox div").click(function(){
                 var tg = $(this).index();
                 $(".scrollBox div").removeClass("onScroll");
@@ -128,9 +130,8 @@
                 
                 $("html, body").stop().animate({scrollTop: tg * windowHeight},1000);
             });
-            
 
-            //헤더 - 색상 변화
+            /*헤더 - 색상 변화*/
             function white(){
                 $("#logo img").attr("src", "img/icon/logo_white.png");
                 $(".pcNav > .gnb > li > a").css("color","white");
@@ -173,8 +174,8 @@
             
             $(window).resize(function(){
                 if($(this).width() >= 1280){
-                    // 태블릿이하 모바일메뉴가 열린상태에서 
-                    //pc로 갔다가 태블릿으로 돌아왔을때 [메뉴가 닫혀있도록]
+                    /*태블릿이하 모바일메뉴가 열린상태에서 
+                    pc로 갔다가 태블릿으로 돌아왔을때 [메뉴가 닫혀있도록]*/
                     $(".mobtn").removeClass("change");
                     $(".mobileNav").stop().animate({left:"100%"}, 300);
                     
