@@ -268,6 +268,10 @@
                 itemList.length = 0;
             }); 
             estimateAdd.click(function(){
+                if($("#selectGroup2 #budget option:selected").val() == ""){
+                    alert("예산을 입력 후 견적을 확인해주세요.");
+                    return false;
+                }
                 $('html, body').css({'overflow': 'hidden'});
                 modal.show();
                 

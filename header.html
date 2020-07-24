@@ -24,16 +24,20 @@
             $(".mobileNav").animate({left:"100%"}, 300);
         }
     });
-    $(".mobileNav").click(function(){})
+    $(".mobileNav").click(function(){
+        //mobileBox 에 $(".mobileNav").click 이벤트 전파되지 못하도록 막기 필요
+        $(".mobtn").removeClass("change");
+        $(".mobileNav").animate({left:"100%"}, 300);
+    });
     
     var rank = $(".rank li");
     var rankCount = 0;
     
-    rank.eq(rankCount).css("top","0");
+    rank.eq(rankCount).css("top","15%");
     
     setInterval(function () {
         var prev = rank.eq(rankCount);
-        rankShow(prev, 0, "-100%");
+        rankShow(prev, "15%", "-115%");
 
         rankCount++;
 
@@ -42,7 +46,7 @@
         }
 
         var next = rank.eq(rankCount);
-        rankShow(next, "100%", 0);
+        rankShow(next, "115%", "15%");
     }, 3000);
 
     function rankShow(tg, start, end) {
@@ -121,9 +125,9 @@
         </li>
         <li>
             <ul class="rank">
-                <li><strong>1</strong><a href="products_individual.html">욕조</a></li>
-                <li><strong>2</strong><a href="products_individual.html">세면대</a></li>
-                <li><strong>3</strong><a href="products_all.html">전체시공</a></li>
+                <li><strong>1</strong><a href="products_estimate.html">견적 신청</a></li>
+                <li><strong>2</strong><a href="products_all.html">전체 시공</a></li>
+                <li><strong>3</strong><a href="products_individual.html">욕조</a></li>
             </ul>
             <span>HOT!</span>
         </li>
