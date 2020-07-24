@@ -19,22 +19,21 @@
     <link rel="stylesheet" href="css/products_allAndInd.css">
     
     <style>
-    /*본문*/
-    .simple, .modern, .unique, .luxury{
-        display: none;
-    }
-    #radioGroup{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
+        #radioGroup{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .stylePack{
+            display: none;
+        }
         
     /*large pc*/
     @media screen and (max-width:1599px){
@@ -86,7 +85,8 @@
                 "공간이 트여 씻기전에도 상쾌한 기분을 선사하는 인테리어",
                 "따뜻한 분위기에 사랑이 싹트는 인테리어 ",
                 "독특하고 감각적인 패턴의 인테리어"
-            ], modernGuide = [
+            ];
+            var modernGuide = [
                 "호텔 부럽지않은 나만의 작은 인테리어",
                 "모던, 심플, 깔끔 그 자체의 인테리어",
                 "역사가 깊은 브랜드의 느낌있는 인테리어",
@@ -95,7 +95,8 @@
                 "클래식한 분위기와 세련미가 돋보이는 인테리어",
                 "은은한 조명을 더한 빈티지 인테리어",
                 "자연이 움틉니다. 우리 부모님께 효도 인테리어"
-            ], uniqueGuide = [
+            ];
+            var uniqueGuide = [
                 "화이트와 브라운의 감각적인 인테리어",
                 "후끈한 사우나 우드 인테리어",
                 "우리 아이가 좋아해요. 깨발랄 인테리어",
@@ -107,7 +108,8 @@
                 "어딘가 독특한 매력이 있는 독창적 인테리어",
                 "겨울바다 느낌 물씬 풍기는 인테리어",
                 "단 하나뿐인 디자인의 인테리어"
-            ], luxuryGuide = [
+            ];
+            var luxuryGuide = [
                 "마치 북유럽에 있는듯한 매력적인 인테리어",
                 "최고의 디자인으로 선보인 패턴 인테리어",
                 "포인트를 주어 심플하면서도 톡톡 튀는 인테리어",
@@ -116,27 +118,71 @@
                 "우아하고 고풍적인 인테리어",
                 "고급스러운 컬러감으로 완성된 인테리어",
                 "모여봐요 럭셔리숲 인테리어"
-            ]
+            ];
+            
+            var simplePack = [
+                "simple1: 거울, 조명, 세면대2, 수납장, 변기",
+                "simple2: 거울, 조명2, 세면대, 수납장, 욕조, 변기",
+                "simple3: 거울, 조명5, 세면대, 수납장, 변기",
+                "simple4: 거울, 조명, 세면대, 수납장, 변기, 샤워부스",
+                "simple5: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "simple6: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "simple7: 거울, 조명, 세면대, 수납장, 욕조, 변기, 샤워부스",
+                "simple8: 거울, 조명, 세면대, 수납장, 욕조, 변기"
+            ];
+            var modernPack = [
+                "modern 1: 거울, 조명, 세면대2, 수납장, 변기",
+                "modern 2: 거울, 조명2, 세면대, 수납장, 욕조, 변기",
+                "modern 3: 거울, 조명5, 세면대, 수납장, 변기",
+                "modern 4: 거울, 조명, 세면대, 수납장, 변기, 샤워부스",
+                "modern 5: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "modern 6: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "modern 7: 거울, 조명, 세면대, 수납장, 욕조, 변기, 샤워부스",
+                "modern 8: 거울, 조명, 세면대, 수납장, 욕조, 변기"
+            ];
+            var uniquePack = [
+                "unique 1: 거울, 조명, 세면대2, 수납장, 변기",
+                "unique 2: 거울, 조명2, 세면대, 수납장, 욕조, 변기",
+                "unique 3: 거울, 조명5, 세면대, 수납장, 변기",
+                "unique 4: 거울, 조명, 세면대, 수납장, 변기, 샤워부스",
+                "unique 5: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "unique 6: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "unique 7: 거울, 조명, 세면대, 수납장, 욕조, 변기, 샤워부스",
+                "unique 8: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "unique 9: 거울, 조명, 세면대, 수납장, 욕조",
+                "unique 10: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "unique 11: 거울, 조명, 세면대, 수납장, 욕조"
+            ];
+            var luxuryPack = [
+                "luxury 1: 거울, 조명, 세면대2, 수납장, 변기",
+                "luxury 2: 거울, 조명2, 세면대, 수납장, 욕조, 변기",
+                "luxury 3: 거울, 조명5, 세면대, 수납장, 변기",
+                "luxury 4: 거울, 조명, 세면대, 수납장, 변기, 샤워부스",
+                "luxury 5: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "luxury 6: 거울, 조명, 세면대, 수납장, 욕조, 변기",
+                "luxury 7: 거울, 조명, 세면대, 수납장, 욕조, 변기, 샤워부스",
+                "luxury 8: 거울, 조명, 세면대, 수납장, 욕조, 변기"
+            ];
             
                 /*setting*/
             for(var i = 0; i < 8; i++){
                 simple.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/simple/simple' + (i+1) + '.jpg" alt="simple' + (i+1) + '"><h3>두샘 심플 스타일' + (i+1) + '</h3><p>' + simpleGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/simple/simple' + (i+1) + '.jpg" alt="simple' + (i+1) + '"><h3>두샘 심플 스타일' + (i+1) + '</h3><p>' + simpleGuide[i] + '</p><p class="stylePack">'+ simplePack[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 8 ; i++){
                 modern.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/modern/modern' + (i+1) + '.jpg" alt="modern' + (i+1) + '"><h3>두샘 모던 스타일' + (i+1) + '</h3><p>' + modernGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/modern/modern' + (i+1) + '.jpg" alt="modern' + (i+1) + '"><h3>두샘 모던 스타일' + (i+1) + '</h3><p>' + modernGuide[i] + '</p><p class="stylePack">'+ modernPack[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 11 ; i++){
                 unique.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/unique/unique' + (i+1) + '.jpg" alt="unique' + (i+1) + '"><h3>두샘 유니크 스타일' + (i+1) + '</h3><p>' + uniqueGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/unique/unique' + (i+1) + '.jpg" alt="unique' + (i+1) + '"><h3>두샘 유니크 스타일' + (i+1) + '</h3><p>' + uniqueGuide[i] + '</p><p class="stylePack">'+ uniquePack[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 8 ; i++){
                 luxury.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/luxury/luxury' + (i+1) + '.jpg" alt="luxury' + (i+1) + '"><h3>두샘 럭셔리 스타일' + (i+1) + '</h3><p>' + luxuryGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/luxury/luxury' + (i+1) + '.jpg" alt="luxury' + (i+1) + '"><h3>두샘 럭셔리 스타일' + (i+1) + '</h3><p>' + luxuryGuide[i] + '</p><p class="stylePack">'+ luxuryPack[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             
@@ -162,7 +208,8 @@
                 }
             }
             
-            simple.css("display","grid");
+            modern.hide(); unique.hide(); luxury.hide();
+            simple.show();
             
             estimateAction(addItemsCount);
             var articleBtn = $("article > .articleInner > input[type=button]"); //세팅 후 변수 할당
@@ -268,12 +315,6 @@
                 $(this).addClass("page");
             });
             
-                /*모달 스크롤 방지*/
-            /*modal.on('scroll touchmove mousewheel', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
-            });*/
             
                 /*함수 구현*/
             function spinUp(i){
@@ -317,8 +358,9 @@
             
             
             function basket(item, isItem){
-                var itemImg = item.prev().prev().prev().attr("src");
-                var itemName = item.prev().prev().clone().text();
+                var itemImg = item.prev().prev().prev().prev().attr("src");
+                var itemName = item.prev().prev().prev().clone().text();
+                var itemInfo = item.prev().clone().text();
                 
                 var i = articleBtn.index(item);
                 
@@ -330,7 +372,7 @@
                     $("#modalContents").append(function(){
                     return '<div class="choice_item">' + '<img src="'+ itemImg +'">'
                         + '<div class="modalContents_txt"><h3 class="productName">'
-                        + itemName + '</h3><p>설명 설명 설명</p></div></div></div>'
+                        + itemName + '</h3><p>' + itemInfo + '</p></div></div></div>'
                     });
                 }else{
                     console.log("error");

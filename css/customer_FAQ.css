@@ -24,7 +24,7 @@
 .nt_box_bottom .nt_sub {padding: 20px; font-size: 14px; line-height: 1.7;}
 .inquire_bottom {height: 40px; line-height: 40px; margin-top: 30px; margin-bottom: 200px;}
 .inquire_bottom .inquire_txt {width: calc(100% - 120px); font-size: 13px; display: inline-block; line-height: 1.5;}
-.inquire_bottom .inquire_btn {display: inline-block; width: 120px; background: #f2505d;text-align: center; border-radius: 5px; margin-left: -4px;}
+.inquire_bottom .inquire_btn {display: inline-block; width: 120px; background: #f2505d; text-align: center; border-radius: 5px; margin-left: -4px;}
 .inquire_bottom .inquire_btn a { color: #fff; font-size: 15px;}
 
 

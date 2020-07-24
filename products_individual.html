@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="css/products_allAndInd.css">
     
     <style>
+        #conditions{
+            -ms-grid-rows: 40px 20px 55px 20px 40px;
+            grid-template-rows: 40px 55px 40px;
+            -ms-grid-columns: (1fr)[3];
+            grid-template-columns: repeat(3, 1fr);
+            grid-row-gap: 20px;
+        }
         /*라디오*/
         #radioGroup{
             display: -ms-grid;
@@ -68,11 +75,9 @@
             -ms-grid-column: 4;
         }
         
-        /*본문*/
-        .bathtub, .cabinet, .mirror, .sink, .door, .lighting, .tile, .toilet{
+        .productInfo{
             display: none;
         }
-        
         
         /*large pc*/
         @media screen and (max-width:1599px){}
@@ -82,6 +87,13 @@
 
         /*mobile*/
         @media screen and (max-width:767px){
+            #conditions{
+                -ms-grid-rows: 40px 5px 40px 5px 40px 5px 50px 5px 150px;
+                -ms-grid-columns: (1fr)[1];
+                grid-template-rows: 40px 40px 40px 50px 150px;
+                grid-template-columns: repeat(1, 1fr);
+                grid-row-gap: 5px;
+            }
             #radioGroup{
                 -ms-grid-rows: auto 10px auto 10px auto 10px auto;
                 grid-template-rows: repeat(4, auto);
@@ -153,74 +165,74 @@
             var modalReset = $(".modalBot > input:reset");
             
             var bathtubGuide = [
-                "Sentec로 만든 독립형 욕조", // 1715 x 815 x 450 mm, 226332
-                "릴리프가있는 독립형 욕조", // 1600 x 815 x 535 mm, 221342
-                "욕조, 장착 버전, 중앙 콘센트 있음", // 1780 x 820 x 460 mm, 245971
-                "Sentec로 만든 독립형 욕조", // 1830 x 870 x 460 mm, 1830 x 870 x 460 mm, 245972
-                "독립형 욕조, 타원형, 패널 있음, 중앙 배출구 있음, 위생 아크릴", //2030 x 1020 x 460 mm, 241970
-                "Sentec 고체 표면으로 만들어진 독립형 욕조", // 1800 x 890 x 540 mm, 245802
-                "욕조와 패널이 딸린 독립형 욕조", // 1800 x 900 x 455 mm, 231800
-                "욕조, 드롭 인 버전, Sentec 솔리드 표면으로 제작", // 1700 x 860 x 440 mm, 223331
-                "Sentec로 만든 독립형 욕조" // 1760 x 760 x 440 mm, 222332
+                "Sentec로 만든 독립형 욕조",
+                "릴리프가있는 독립형 욕조",
+                "욕조, 장착 버전, 중앙 콘센트 있음",
+                "Sentec로 만든 독립형 욕조",
+                "독립형 욕조, 타원형, 패널 있음, 중앙 배출구 있음, 위생 아크릴",
+                "Sentec 고체 표면으로 만들어진 독립형 욕조",
+                "욕조와 패널이 딸린 독립형 욕조",
+                "욕조, 드롭 인 버전, Sentec 솔리드 표면으로 제작",
+                "Sentec로 만든 독립형 욕조"
             ];
             var cabinetGuide = [
-                "PS소재의 경사가 있는 유니버셜 디자인 수납장", // 1300 x 900 x 240 mm
-                "수납공간이 깊은 도어 단차이가 없는 알루미늄 소재의 수납장", //, 1200 x 800 x 191.3 mm, PSS-1000
-                "알루미늄소재의 실버색상 수납장", // 600 x 810 x 170 mm, SA-1493
-                "알루미늄소재의 실버색상 수납장", // 1200 x 810 x 170 mm, SA-1492
-                "알루미늄소재의 실버색상 수납장", // 400 x 810 x 170 mm, SA-1491
-                "키가 큰 캐비닛, 1 개의 도어, 왼쪽 힌지 형, 양쪽에 대칭, 4 개의 유리 수납장", //, 400 x 300 x 1700 mm, 458011
-                "키가 큰 수납장, 1 개의 도어, 왼쪽 힌지", // 360 x 310 x 1650 mm, 406751
-                "벽 수납장, 작은 돌출부, 1 도어, 왼쪽 힌지", // 850 x 350 x 180 mm, 483113
-                "중간 수납장, 도어 1개, 왼쪽 힌지, 유리 선반 2 개" // 350 x 335 x 1000 mm, 483111
+                "PS소재의 경사가 있는 유니버셜 디자인 수납장",
+                "수납공간이 깊은 도어 단차이가 없는 알루미늄 소재의 수납장",
+                "알루미늄소재의 실버색상 수납장",
+                "알루미늄소재의 실버색상 수납장",
+                "알루미늄소재의 실버색상 수납장",
+                "키가 큰 캐비닛, 1 개의 도어, 왼쪽 힌지 형, 양쪽에 대칭, 4 개의 유리 수납장",
+                "키가 큰 수납장, 1 개의 도어, 왼쪽 힌지",
+                "벽 수납장, 작은 돌출부, 1 도어, 왼쪽 힌지",
+                "중간 수납장, 도어 1개, 왼쪽 힌지, 유리 선반 2 개"
             ];
             var mirrorGuide = [
-                "통합 조명, 400mm 프레임 및 데 미스터 (거울 가열)가있는 거울",// 400 x 60 x 1000 mm, 448411
-                "통합 조명, 800mm 프레임 및 데 미스터 (거울 가열)가있는 거울", // , 800 x 60 x 400 mm, 448421
-                "조명, 1200mm, 프레임 및 디 미스터 (미러 가열)가 통합 된 거울", // 1200 x 60 x 400 mm, 448431
-                "통합 조명, 1600mm, 프레임 및 데 미스터 (거울 가열)가있는 거울", // 1600 x 60 x 400 mm, 448441
-                "거울 '모든 성도들', 플라스틱", // 780 x 40 x 780 mm, 386333
-                "알루미늄 프레임 거울", // 500 x 80 x 700 mm, 406070
-                "LED 주변 조명이있는 세라믹 미러, 실내 스위치 용, 4000K", // 1500 x 25 x 700 mm, 447409
-                "터치 센서 1 개 (On / Off / Dimmer), 알루미늄 프레임, 4000K, IP44", // 1500 x 38 x 700 mm, 447692
-                "실내 스위치, 알루미늄 프레임, 4000K, IP44 용" // 1800 x 38 x 700 mm, 447701
+                "통합 조명, 400mm 프레임 및 데 미스터 (거울 가열)가있는 거울",
+                "통합 조명, 800mm 프레임 및 데 미스터 (거울 가열)가있는 거울",
+                "조명, 1200mm, 프레임 및 디 미스터 (미러 가열)가 통합 된 거울",
+                "통합 조명, 1600mm, 프레임 및 데 미스터 (거울 가열)가있는 거울", 
+                "거울 '모든 성도들', 플라스틱",
+                "알루미늄 프레임 거울",
+                "LED 주변 조명이있는 세라믹 미러, 실내 스위치 용, 4000K",
+                "터치 센서 1 개 (On / Off / Dimmer), 알루미늄 프레임, 4000K, IP44",
+                "실내 스위치, 알루미늄 프레임, 4000K, IP44 용"
             ];
             var sinkGuide = [
-                "Vanity washbasin", // 1200 x 480 x 165 mm, 813858
-                "세면대", // 1000 x 420 x 145 mm, 810347
-                "세면대, 선반 오른쪽, 은폐 오버플로 포함 세라믹 폐기물 덮개", // 900 x 500 x 165 mm, 814975
-                "통합 받침대가있는 세면대", // 520 x 530 x 850 mm, 811971
-                "탭 뱅크가있는 볼 세면대", // 520 x 520 x 175 mm, 818971
-                "비대칭 세면대", // 1200 x 500 x 40 mm, 814806
-                "통합 받침대가있는 세면대", // 525 x 435 x 900 mm, 811804
-                "반 습식 영역 및 탭 뱅크가있는 보울 세면대", // 525 x 435 x 900 mm, 811804
-                "Combipack 500mm, 세면대 '슬림', 화장대 2 개" // 500 x 500 x 725 mm, 860331
+                "Vanity washbasin",
+                "세면대",
+                "세면대, 선반 오른쪽, 은폐 오버플로 포함 세라믹 폐기물 덮개",
+                "통합 받침대가있는 세면대",
+                "탭 뱅크가있는 볼 세면대",
+                "비대칭 세면대",
+                "통합 받침대가있는 세면대",
+                "반 습식 영역 및 탭 뱅크가있는 보울 세면대",
+                "Combipack 500mm, 세면대 '슬림', 화장대 2 개"
             ];
             var doorGuide = [
-                "세로 음각 패턴", // DLD 001
-                "헤링본 패턴 음각", // DLD 002
-                "팔각 음각 몰딩 DLD 003",
-                "대형 스퀘어 프레임, 프레임 몰딩", // DLD 004
-                "실제 구동되는 시계 적용(한면)", // DLD 011
-                "밀크 브라운의 따뜻한 컬러감", // DLD M010
-                "투톤의 시트조합", // DLD H008
-                "프레임 몰딩, 유리 5종 중 택1", // DLD 005
-                "특정 패턴이 없는 내추럴 브라운 도어" // DLD B014
+                "세로 음각 패턴",
+                "헤링본 패턴 음각",
+                "팔각 음각 몰딩",
+                "대형 스퀘어 프레임, 프레임 몰딩",
+                "실제 구동되는 시계 적용(한면)",
+                "밀크 브라운의 따뜻한 컬러감",
+                "투톤의 시트조합",
+                "프레임 몰딩, 유리 5종 중 택1",
+                "특정 패턴이 없는 내추럴 브라운 도어"
             ];
             var lightingGuide = [
-                "벽걸이 형 램프 'Rifly', 플라스틱, 홀더 크롬", // 80 x 85 x 300 mm, 389332
-                "펜던트 램프 'Rifly', 300mm, 플라스틱, 홀더 크롬", // 80 x 80 x 300 mm, 389333
-                "펜던트 램프 'Rifly', 900mm, 플라스틱, 홀더 크롬", // 80 x 80 x 900 mm, 389335
-                "수직 형 LED 조명 요소 (미러 700 용)", // 700 x 25 x 25 mm, 447571
-                "LED 조명 요소, 수평, 스위치 포함", // 450 x 25 x 25 mm, 447452
-                "LED 조명 요소, 수평", // 1000 x 25 x 25 mm, 447511
-                "LED 조명 요소, 수평", // 1300 x 25 x 25 mm, 447531
-                "LED 조명 요소, 수평", // 1800 x 25 x 25 mm, 447551
-                "프레임, 검은 색 매트의 조명, 수평, 4000K, IP44" // 400 x 50 x 13 mm, 447563
+                "벽걸이 형 램프 'Rifly', 플라스틱, 홀더 크롬",
+                "펜던트 램프 'Rifly', 300mm, 플라스틱, 홀더 크롬",
+                "펜던트 램프 'Rifly', 900mm, 플라스틱, 홀더 크롬",
+                "수직 형 LED 조명 요소 (미러 700 용)",
+                "LED 조명 요소, 수평, 스위치 포함",
+                "LED 조명 요소, 수평",
+                "LED 조명 요소, 수평",
+                "LED 조명 요소, 수평",
+                "프레임, 검은 색 매트의 조명, 수평, 4000K, IP44"
             ];
             var tileGuide = [
                 "화이트 그리드 타일",
-                "타일 설명2",
+                "돌무늬 타일",
                 "그레이 블럭 타일",
                 "화이트 사각 타일",
                 "살구 직각 타일",
@@ -230,56 +242,146 @@
                 "그레이 직사각 타일"
             ];
             var toiletGuide = [
-                "벽걸이 형 화장실, 세척, 무테", // 530 x 370 x 340 mm, 820341
-                "플로어 스탠딩 WC '무림', 세척, 플러싱 림 없음, 출구 수평 / 수직", // 540 x 370 x 430 mm, 823341
-                "일체형 수세식, 사이펀 작동, 단일 세척", // 745 x 405 x 730 mm, 823971
-                "플로어 스탠딩 WC, 세척, 플러싱 림, 배출구 수평 / 수직", // 360 x 560 x 430 mm, 823806
-                "플러싱 림이없는 플로어 스탠딩 WC '무림', 밀착 결합, 세척", // 660 x 370 x 440 mm, 824337
-                "플로어 스탠딩 화장실, 세척, 무테, 출구 수평 또는 수직", // 530 x 370 x 430 mm, 823851
-                "플로어 스탠딩 화장실, 밀착 형, 세척, 플러싱 림, 배출구 수평 / 수직", // 560 x 360 x 430 mm, 823701
-                "벽걸이 형 화장실, 세척, 플러싱 림", // 560 x 360 x 345 mm, 820700
-                "벽걸이 형 WC '림리스', 세척, 림 플러시 없음" // 585 x 390 x 355 mm, 820971
+                "벽걸이 형 화장실, 세척, 무테",
+                "플로어 스탠딩 WC '무림', 세척, 플러싱 림 없음, 출구 수평 / 수직",
+                "일체형 수세식, 사이펀 작동, 단일 세척",
+                "플로어 스탠딩 WC, 세척, 플러싱 림, 배출구 수평 / 수직",
+                "플러싱 림이없는 플로어 스탠딩 WC '무림', 밀착 결합, 세척",
+                "플로어 스탠딩 화장실, 세척, 무테, 출구 수평 또는 수직",
+                "플로어 스탠딩 화장실, 밀착 형, 세척, 플러싱 림, 배출구 수평 / 수직",
+                "벽걸이 형 화장실, 세척, 플러싱 림",
+                "벽걸이 형 WC '림리스', 세척, 림 플러시 없음" 
             ];
+            
+            var bathtubInfo = [
+                "1715 x 815 x 450 mm, 226332",
+                "1600 x 815 x 535 mm, 221342",
+                "1780 x 820 x 460 mm, 245971",
+                "1830 x 870 x 460 mm, 245972",
+                "2030 x 1020 x 460 mm, 241970",
+                "1800 x 890 x 540 mm, 245802",
+                "1800 x 900 x 455 mm, 231800",
+                "1700 x 860 x 440 mm, 223331",
+                "1760 x 760 x 440 mm, 222332"
+            ];
+            var cabinetInfo = [
+                "1300 x 900 x 240 mm",
+                "1200 x 800 x 191.3 mm, PSS-1000",
+                "600 x 810 x 170 mm, SA-1493",
+                "1200 x 810 x 170 mm, SA-1492",
+                "400 x 810 x 170 mm, SA-1491",
+                "400 x 300 x 1700 mm, 458011",
+                "360 x 310 x 1650 mm, 406751",
+                "850 x 350 x 180 mm, 483113",
+                "350 x 335 x 1000 mm, 483111"
+            ];
+            var mirrorInfo = [
+                "400 x 60 x 1000 mm, 448411",
+                "800 x 60 x 400 mm, 448421",
+                "1200 x 60 x 400 mm, 448431",
+                "1600 x 60 x 400 mm, 448441",
+                "780 x 40 x 780 mm, 386333",
+                "500 x 80 x 700 mm, 406070",
+                "1500 x 25 x 700 mm, 447409",
+                "1500 x 38 x 700 mm, 447692",
+                "1800 x 38 x 700 mm, 447701"
+            ];
+            var sinkInfo = [
+                "1200 x 480 x 165 mm, 813858",
+                "1000 x 420 x 145 mm, 810347",
+                "900 x 500 x 165 mm, 814975",
+                "520 x 530 x 850 mm, 811971",
+                "520 x 520 x 175 mm, 818971",
+                "1200 x 500 x 40 mm, 814806",
+                "525 x 435 x 900 mm, 811804",
+                "525 x 435 x 900 mm, 811804",
+                "500 x 500 x 725 mm, 860331"
+            ];
+            var doorInfo = [
+                "DLD 001",
+                "DLD 002",
+                "DLD 003",
+                "DLD 004",
+                "DLD 011",
+                "DLD M010",
+                "DLD H008",
+                "DLD 005",
+                "DLD B014"
+            ];
+            var lightingInfo = [
+                "80 x 85 x 300 mm, 389332",
+                "80 x 80 x 300 mm, 389333",
+                "80 x 80 x 900 mm, 389335",
+                "700 x 25 x 25 mm, 447571",
+                "450 x 25 x 25 mm, 447452",
+                "1000 x 25 x 25 mm, 447511",
+                "1300 x 25 x 25 mm, 447531",
+                "1800 x 25 x 25 mm, 447551",
+                "400 x 50 x 13 mm, 447563"
+            ];
+            var tileInfo = [
+                "규격: 10 x 10",
+                "규격: 15 x 15",
+                "규격: 20 x 20",
+                "규격: 10 x 10",
+                "규격: 15 x 15",
+                "규격: 20 x 20",
+                "규격: 10 x 10",
+                "규격: 15 x 15",
+                "규격: 20 x 20"
+            ];
+            var toiletInfo = [
+                "530 x 370 x 340 mm, 820341",
+                "540 x 370 x 430 mm, 823341",
+                "745 x 405 x 730 mm, 823971",
+                "360 x 560 x 430 mm, 823806",
+                "660 x 370 x 440 mm, 824337",
+                "530 x 370 x 430 mm, 823851",
+                "560 x 360 x 430 mm, 823701",
+                "560 x 360 x 345 mm, 820700",
+                "585 x 390 x 355 mm, 820971"
+            ];
+            
             
                 /*setting*/
             for(var i = 0; i < 9; i++){
                 bathtub.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/bathtub/bathtub' + (i+1) + '.jpeg" alt=""><h3>욕조' + (i+1) + '</h3><p>' + bathtubGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/bathtub/bathtub' + (i+1) + '.jpeg" alt=""><h3>욕조' + (i+1) + '</h3><p>' + bathtubGuide[i] + '</p><p class="productInfo">'+ bathtubInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 cabinet.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/cabinet/cabinet' + (i+1) + '.jpg" alt=""><h3>캐비넷' + (i+1) + '</h3><p>' + cabinetGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/cabinet/cabinet' + (i+1) + '.jpg" alt=""><h3>캐비넷' + (i+1) + '</h3><p>' + cabinetGuide[i] + '</p><p class="productInfo">'+ cabinetInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 mirror.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/mirror/mirror' + (i+1) + '.jpeg" alt=""><h3>거울' + (i+1) + '</h3><p>' + mirrorGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/mirror/mirror' + (i+1) + '.jpeg" alt=""><h3>거울' + (i+1) + '</h3><p>' + mirrorGuide[i] + '</p><p class="productInfo">'+ mirrorInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 sink.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/sink/sink' + (i+1) + '.jpeg" alt=""><h3>세면대' + (i+1) + '</h3><p>' + sinkGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/sink/sink' + (i+1) + '.jpeg" alt=""><h3>세면대' + (i+1) + '</h3><p>' + sinkGuide[i] + '</p><p class="productInfo">'+ sinkInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){ /*VVV*/
                 door.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/door/door' + (i+1) + '.jpg" alt=""><h3>문' + (i+1) + '</h3><p>' + doorGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/door/door' + (i+1) + '.jpg" alt=""><h3>문' + (i+1) + '</h3><p>' + doorGuide[i] + '</p><p class="productInfo">'+ doorInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 lighting.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/lighting/lighting' + (i+1) + '.jpeg" alt=""><h3>조명' + (i+1) + '</h3><p>' + lightingGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/lighting/lighting' + (i+1) + '.jpeg" alt=""><h3>조명' + (i+1) + '</h3><p>' + lightingGuide[i] + '</p><p class="productInfo">'+ lightingInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){ /*VVV*/
                 tile.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/tile/tile' + (i+1) + '.png" alt=""><h3>타일' + (i+1) + '</h3><p>' + tileGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/tile/tile' + (i+1) + '.png" alt=""><h3>타일' + (i+1) + '</h3><p>' + tileGuide[i] + '</p><p class="productInfo">'+ tileInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             for(var i = 0; i < 9; i++){
                 toilet.append(
-                    '<article><div class="articleInner"><img src="img/sub_product/toilet/toilet' + (i+1) + '.jpeg" alt=""><h3>변기' + (i+1) + '</h3><p>' + toiletGuide[i] + '</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
+                    '<article><div class="articleInner"><img src="img/sub_product/toilet/toilet' + (i+1) + '.jpeg" alt=""><h3>변기' + (i+1) + '</h3><p>' + toiletGuide[i] + '</p><p class="productInfo">'+ toiletInfo[i] +'</p><input type="button" id="addBtn' + i + '" name="addBtn" value="견적 추가" class="addBtn"></div></article>'
                 );
             }
             
@@ -304,8 +406,11 @@
                     size.append("<option value='" + i + "평 이상'>" + i + " ~</option>");
                 }
             }
+        
+            cabinet.hide(); mirror.hide(); sink.hide(); door.hide(); 
+            lighting.hide(); tile.hide(); toilet.hide();
             
-            bathtub.css("display","grid");
+            bathtub.show();
             estimateAction(addItemsCount);
             var articleBtn = $("article > .articleInner > input[type=button]"); //세팅 후 변수 할당
             
@@ -456,8 +561,9 @@
             } 
             
             function basket(item, isItem){
-                var itemImg = item.prev().prev().prev().attr("src");
-                var itemName = item.prev().prev().clone().text();
+                var itemImg = item.prev().prev().prev().prev().attr("src");
+                var itemName = item.prev().prev().prev().clone().text();
+                var itemInfo = item.prev().clone().text();
                 
                 var i = articleBtn.index(item);
                 
@@ -469,7 +575,7 @@
                     $("#modalContents").append(function(){
                     return '<div class="choice_item">' + '<img src="'+ itemImg +'">' 
                         + '<div class="modalContents_txt"><h3 class="productName">' 
-                        + itemName + '</h3><p>설명 설명 설명</p></div></div></div>'
+                        + itemName + '</h3><p>' + itemInfo + '</p></div></div></div>'
                     });
                 }else{
                     console.log("error");

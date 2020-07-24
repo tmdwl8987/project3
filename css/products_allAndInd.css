@@ -1,3 +1,11 @@
+/*
+* IE ver 참고 사이트 (autoprefixer)
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 input, select, label{
     cursor: pointer;
 }
@@ -8,12 +16,6 @@ input, select, label{
     background-image: url("../img/sub_product/main_menu.png");
     background-position: 30% center;
 }
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
 
 #conditions{
     width: 100%; 
@@ -21,7 +23,6 @@ input, select, label{
     margin: 0 auto;
     
     display: -ms-grid;
-    
     display: grid;
     -ms-grid-rows: 40px 20px 40px 20px 40px;
     grid-template-rows: repeat(3, 40px);
@@ -204,10 +205,50 @@ input, select, label{
 /*본문*/
 section{
     width: 100%;
+    display: -ms-grid;
     display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 30px;
 }
+section article:nth-child(1){
+    -ms-grid-row:1;
+    -ms-grid-column: 1;
+}
+section article:nth-child(2){
+    -ms-grid-row:2;
+    -ms-grid-column: 1;
+}
+section article:nth-child(3){
+    -ms-grid-row:3;
+    -ms-grid-column: 1;
+}
+section article:nth-child(4){
+    -ms-grid-row:1;
+    -ms-grid-column: 3;
+}
+section article:nth-child(5){
+    -ms-grid-row:2;
+    -ms-grid-column: 3;
+}
+section article:nth-child(6){
+    -ms-grid-row:3;
+    -ms-grid-column: 3;
+}
+section article:nth-child(7){
+    -ms-grid-row:1;
+    -ms-grid-column: 5;
+}
+section article:nth-child(8){
+    -ms-grid-row:2;
+    -ms-grid-column: 5;
+}
+section article:nth-child(9){
+    -ms-grid-row:3;
+    -ms-grid-column: 5;
+}
+
 article{
     width: 100%;
     margin-bottom: 0px;
@@ -222,7 +263,7 @@ article::before{
 .articleInner{
     position: absolute;
     top: 0; left: 0;
-    height: 100%;
+    width: 100%; height: 100%;
     
     display: flex;
     flex-direction: column;
@@ -385,7 +426,44 @@ article > .articleInner > p{
 /*tablet*/
 @media screen and (max-width:1279px){
     section{
+        -ms-grid-columns: 1fr 30px 1fr;
         grid-template-columns: repeat(2, 1fr);
+    }
+    section article:nth-child(1){
+        -ms-grid-row:1;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(2){
+        -ms-grid-row:1;
+        -ms-grid-column: 3;
+    }
+    section article:nth-child(3){
+        -ms-grid-row:2;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(4){
+        -ms-grid-row:2;
+        -ms-grid-column: 3;
+    }
+    section article:nth-child(5){
+        -ms-grid-row:3;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(6){
+        -ms-grid-row:3;
+        -ms-grid-column: 3;
+    }
+    section article:nth-child(7){
+        -ms-grid-row:4;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(8){
+        -ms-grid-row:4;
+        -ms-grid-column: 3;
+    }
+    section article:nth-child(9){
+        -ms-grid-row:5;
+        -ms-grid-column: 1;
     }
     article{
         margin-bottom: 50px;
@@ -480,8 +558,6 @@ article > .articleInner > p{
         text-align: center;
     }
     
-    
-    
     #btnGroup input[type=button]{
         width: 50%;
     }
@@ -500,7 +576,44 @@ article > .articleInner > p{
         height: 120%;
     }
     section{
-        grid-template-columns: repeat(1, auto);
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section article:nth-child(1){
+        -ms-grid-row:1;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(2){
+        -ms-grid-row:2;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(3){
+        -ms-grid-row:3;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(4){
+        -ms-grid-row:4;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(5){
+        -ms-grid-row:5;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(6){
+        -ms-grid-row:6;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(7){
+        -ms-grid-row:7;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(8){
+        -ms-grid-row:8;
+        -ms-grid-column: 1;
+    }
+    section article:nth-child(9){
+        -ms-grid-row:9;
+        -ms-grid-column: 1;
     }
     article{
         width: 100%;
