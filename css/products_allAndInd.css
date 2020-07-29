@@ -217,32 +217,32 @@ section article:nth-child(1){
     -ms-grid-column: 1;
 }
 section article:nth-child(2){
-    -ms-grid-row:2;
-    -ms-grid-column: 1;
-}
-section article:nth-child(3){
-    -ms-grid-row:3;
-    -ms-grid-column: 1;
-}
-section article:nth-child(4){
     -ms-grid-row:1;
     -ms-grid-column: 3;
+}
+section article:nth-child(3){
+    -ms-grid-row:1;
+    -ms-grid-column: 5;
+}
+section article:nth-child(4){
+    -ms-grid-row:2;
+    -ms-grid-column: 1;
 }
 section article:nth-child(5){
     -ms-grid-row:2;
     -ms-grid-column: 3;
 }
 section article:nth-child(6){
-    -ms-grid-row:3;
-    -ms-grid-column: 3;
-}
-section article:nth-child(7){
-    -ms-grid-row:1;
-    -ms-grid-column: 5;
-}
-section article:nth-child(8){
     -ms-grid-row:2;
     -ms-grid-column: 5;
+}
+section article:nth-child(7){
+    -ms-grid-row:3;
+    -ms-grid-column: 1;
+}
+section article:nth-child(8){
+    -ms-grid-row:3;
+    -ms-grid-column: 3;
 }
 section article:nth-child(9){
     -ms-grid-row:3;

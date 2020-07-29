@@ -250,7 +250,7 @@
             }
             // 슬라이드 넘기기 오른쪽 -> 왼쪽
             function move_pre(i){
-              ㅓ  button.removeClass('tgg');
+                button.removeClass('tgg');
                 button.eq(i).addClass('tgg');
                 
                 if(current == i) return; // 현재 페이지와 선택한 페이지 버튼이 같으면 아무것도 실행하지 않는다.
@@ -343,6 +343,11 @@
                  
              });
              closeBtn.click(function () {
+                 $('.i_show').hide(); 
+                 $('#main4').css({'overflow': 'auto', 'height': '100%'});
+                 review.removeClass();
+             });
+             $('.i_show').click(function(){
                  $('.i_show').hide(); 
                  $('#main4').css({'overflow': 'auto', 'height': '100%'});
                  review.removeClass();
