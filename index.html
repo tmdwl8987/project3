@@ -219,7 +219,7 @@
                         n = 0;
                     }
                     button.eq(n).trigger('click');
-                }, 5000);
+                }, 5000000);
             }
 
             // 슬라이드 넘기기 왼쪽 -> 오른쪽
@@ -377,6 +377,42 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script><!--Section5-->
+    <script>
+        $(document).ready(function(){
+            var current = 0,
+                banner = $('.event_slide'),
+                left = $('.event_prev'),
+                right = $('.event_next')
+        
+        function move(tg, start, end){
+        tg.css('left', start)
+        .stop().animate({left:end},1).fadeIn(2000);
+        }
+            
+        left.click(function(e){
+            banner.hide();
+            var prev = banner.eq(current);
+            move(prev, 0, "100%");
+            current++;
+            if(current == banner.length) current = 0;
+            
+            var next = banner.eq(current);
+            move(next, "-100%", 0);
+        });
+        
+        right.click(function(e){
+            banner.hide();
+            var prev = banner.eq(current);
+            move(prev, 0, "-100%");
+            current++;
+            if(current == banner.length) current = 0;
+            
+            var next = banner.eq(current);
+            move(next, "100%", 0); 
+        }); 
+            
+        })
+    </script>
 </head>
 <body>
     <header>
@@ -856,6 +892,22 @@
                       </div>
                     </li>
                 </ul>
+            </div>
+            <div class="event_mbox">
+                <div class="event_wrap">
+                    <h1 class="main_h1">EVENT</h1>
+                    <div class="event_prev"><img src="img/icon/arrow_left.png" alt=""></div>
+                    <div class="event_next"><img src="img/icon/arrow_right.png" alt=""></div>
+                    <div class="event_outbox">
+                        <div class="event_inbox">
+                            <div class="event_container">
+                                <div class="event_slide"><img src="img/index/EVENT1.jpg" alt=""></div>
+                                <div class="event_slide"><img src="img/index/EVENT2.jpg" alt=""></div>
+                                <div class="event_slide"><img src="img/index/EVENT3.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <h1 class="main_h1">EVENT</h1>
             <footer></footer>
