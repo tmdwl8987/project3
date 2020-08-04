@@ -52,8 +52,8 @@ textarea {border: 1px solid #c1c1c1;}
 
 .join_box > div:nth-child(6) p {position: relative; left: 0; top: -25px;}
 .join_box > div:nth-child(6) #conditions {width: 70%; display: inline-block; position: relative; margin-left: -4px;}
-.join_box > div:nth-child(6) #conditions #btnGroup {width: 30%; display: inline-block; position: relative; left: 0; top: -4px; margin-right: 5%;}
-.join_box > div:nth-child(6) #conditions #selectGroup1 {width: 30%; display: inline-block; margin-left: -4px; margin-right: 5%; }
+.join_box > div:nth-child(6) #conditions #btnGroup {width: 30%; display: inline-block; position: relative; left: 0; top: 0; margin-right: 5%;}
+.join_box > div:nth-child(6) #conditions #selectGroup1 {width: 30%; display: inline-block; margin-left: -4px; margin-right: 5%;}
 .join_box > div:nth-child(6) #conditions #selectGroup2 {width: 30%; display: inline-block; margin-left: -4px;}
         
 #btnGroup input[type=button]{display: inline-block; border: 1px solid #66625e; background-color: white; color: #66625e; width: 50%; height: 36px; font-size: 15px;}
