@@ -168,7 +168,6 @@ input, select, label{
     vertical-align: middle;
 }
 #radioGroup input[type=radio]:checked{
-    border: 1px solid #F2505D;
     background-color: #F2505D;
 }
 #radioGroup li label{
